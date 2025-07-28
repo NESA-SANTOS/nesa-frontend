@@ -1,0 +1,90 @@
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
+  from {
+    transform: translateX(0);
+  }
+}
+
+@mixin fade($width) {
+  content: "";
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: $width;
+  z-index: 2;
+}
+
+.scroll-con {
+  position: relative;
+
+  @media (max-width: 768px) {
+    &::after {
+      @include fade(50px);
+      right: 0;
+      background: linear-gradient(to left, #15110b 15%, #15110b81, rgba(0, 0, 0, 0));
+    }
+
+    &::before {
+      @include fade(50px);
+      left: 0;
+      background: linear-gradient(to right, #15110b 15%, #15110b81, rgba(0, 0, 0, 0));
+    }
+  }
+}
+
+.head-scroll-con {
+  position: relative;
+  white-space: nowrap;
+  padding: 8px 0;
+  width: 100vw; // Ensure full viewport width
+  left: 50%; // Center the container
+  transform: translateX(-50%); // Offset by half width to center
+  margin-left: 0;
+  margin-right: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .head-scroll-text {
+    display: inline-block;
+    animation: scroll 15s linear infinite; // Reduced duration for better pacing
+    animation-delay: 2s; // Add 2 second delay before scrolling starts
+    white-space: nowrap; // Ensure text stays on one line
+  }
+}
+
+.award_con {
+  &::after {
+    @include fade(50px);
+    right: 0;
+    background: linear-gradient(to left, #141007, rgba(0, 0, 0, 0));
+  }
+
+  &::before {
+    @include fade(50px);
+    left: 0;
+    background: linear-gradient(to right, #141007, rgba(0, 0, 0, 0));
+  }
+
+  &:hover div {
+    animation-play-state: paused;
+  }
+
+  @media screen and (max-width: 768px) {
+    &::after,
+    &::before {
+      @include fade(0px);
+    }
+  }
+}
+
+.scroll-el {
+  animation: scroll 80s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll 80s linear infinite reverse;
+}
