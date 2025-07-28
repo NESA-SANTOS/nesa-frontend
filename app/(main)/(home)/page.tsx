@@ -17,22 +17,27 @@ import CountdownTimer from "@/components/Common/Others/countdown";
 
 
 const Page = () => {
+  const handleTimeUpdate = (time: { days: number; hours: number; minutes: number }) => {
+    // Handle time update if needed
+    console.log('Time updated:', time);
+  };
+
   return (
     <>
       <HomeHeader />
       <AwardCategories />
-       <CountdownTimer
-        onTimeUpdate={(time) => ''}
+      <CountdownTimer
+        onTimeUpdate={handleTimeUpdate}
         targetDateProp="2025-09-10T19:55:00Z"
       />
       <MediaSection />
-     
-        
+
+
         {/* <AboutNewEducation /> */}
         <Judges />
         <HomePartners />
         {/* <Category /> */}
-        
+
         {/* <GetInvolved /> */}
         {/* <Refer /> */}
         {/* <Timeline /> */}

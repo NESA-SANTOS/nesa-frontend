@@ -16,6 +16,11 @@ import PlatinumOverview from "@/components/UI/categorynominate/PlatinumOverview"
 
 
 const Page = () => {
+  const handleTimeUpdate = (time: { days: number; hours: number; minutes: number }) => {
+    // Handle time update if needed
+    console.log('Time updated:', time);
+  };
+
   const categoryData = [
     {
       title: "Best Educational-Friendly State in Nigeria",
@@ -68,9 +73,9 @@ const Page = () => {
     <>
       <CategoryHeader categoryData={categoryData} type="non-competitive" />
       <main className="pb-8">
-      <CountdownTimer 
-        onTimeUpdate={(time) => ''} 
-        targetDateProp="2025-09-10T19:55:00Z" 
+      <CountdownTimer
+        onTimeUpdate={handleTimeUpdate}
+        targetDateProp="2025-09-10T19:55:00Z"
       />
       <PlatinumOverview />
       <Whynominate />

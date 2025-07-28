@@ -14,6 +14,11 @@ import CountdownTimer from "@/components/Common/Others/countdown";
  import CompetitiveCategoriesOverview from "@/components/UI/categorynominate/CompetitiveCategoriesOverview";
  
 const Page = () => {
+  const handleTimeUpdate = (time: { days: number; hours: number; minutes: number }) => {
+    // Handle time update if needed
+    console.log('Time updated:', time);
+  };
+
   const categoryData = [
     {
       title: "Best Media Organization in Educational Advocacy (Nigeria)",
@@ -64,9 +69,9 @@ const Page = () => {
     <>
       <CategoryHeader categoryData={categoryData} />
           <main className="pb-8">
-            <CountdownTimer 
-              onTimeUpdate={(time) => ''} 
-              targetDateProp="2025-09-10T19:55:00Z" 
+            <CountdownTimer
+              onTimeUpdate={handleTimeUpdate}
+              targetDateProp="2025-09-10T19:55:00Z"
             />
            
 
