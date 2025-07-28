@@ -321,7 +321,7 @@ const SignupFlowContent: React.FC = () => {
 
         {/* Right Side - Form */}
         <div className="w-full md:w-2/3 p-4 sm:p-6 md:p-12 bg-white min-h-screen md:min-h-0">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto signup-form-container">
             {/* Navigation Buttons */}
             <NavigationButtons />
 
@@ -336,7 +336,13 @@ const SignupFlowContent: React.FC = () => {
             )}
 
             {/* Current Step Content */}
-            <div role="main" aria-label="Signup form content">
+            <div
+              id="signup-form-content"
+              role="main"
+              aria-label="Signup form content"
+              className="signup-step-content"
+              tabIndex={-1}
+            >
               {renderCurrentStep()}
             </div>
           </div>

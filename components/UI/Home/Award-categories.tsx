@@ -74,7 +74,7 @@ const AwardCategories = () => {
         </motion.div>
 
         {/* Award Structure Overview - Enhanced */}
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-primaryGold/20 p-8 mb-16 relative overflow-hidden"
         >
@@ -112,7 +112,7 @@ const AwardCategories = () => {
           <p className="mt-6 text-darkBrown/80 text-center font-poppins">
             All determined through nomination, expert judging, AGC-powered voting, and stakeholder validation.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Hero Card - Hidden/Removed */}
 

@@ -48,12 +48,13 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(({
 
   const baseInputClasses = `
     w-full px-4 py-3 border rounded-lg transition-all duration-200
-    focus:outline-none focus:border-orange-500
+    focus:outline-none focus:border-[#ea580c]
     disabled:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-500
     ${error
       ? 'border-red-500 bg-red-50'
       : 'border-gray-300 bg-white hover:border-gray-400'
     }
+    ${isPasswordType ? 'pr-12' : ''}
     ${className}
   `;
 
@@ -101,7 +102,7 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(({
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#ea580c] focus:outline-none focus:text-[#ea580c] transition-colors duration-200 p-1 rounded-md hover:bg-gray-50"
             aria-label={showPassword ? 'Hide password' : 'Show password'}
             tabIndex={-1}
           >

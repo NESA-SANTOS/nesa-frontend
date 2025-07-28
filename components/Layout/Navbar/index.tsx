@@ -261,19 +261,19 @@ const AuthButtons = ({ user }: { user: any }) => {
     };
 
     return (
-      <div className="flex items-center space-x-4">
+      <div className="flex flex-col space-y-3 w-full">
         <Link href="/ProfileSetting">
-          <motion.div className="flex items-center justify-center space-x-2 cursor-pointer">
-            <User className="text-white w-6 h-6" />
-            <span className="text-white font-medium">Account</span>
+          <motion.div className="flex items-center justify-center space-x-3 cursor-pointer bg-gradient-to-r from-[#17120a]/60 to-[#1a140b]/60 border border-[#ea580c]/15 rounded-lg p-4 hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5 transition-all duration-200 min-h-[56px]">
+            <User className="text-gray-300 w-5 h-5" />
+            <span className="text-gray-200 font-medium text-base">My Account</span>
           </motion.div>
         </Link>
         <button
           onClick={handleLogout}
-          className="px-3 sm:px-4 rounded-md flex items-center space-x-2 transition-all duration-300 hover:opacity-80 active:transform active:scale-95"
+          className="flex items-center justify-center space-x-3 bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 hover:bg-gradient-to-r hover:from-[#ea580c]/25 hover:to-[#ea580c]/15 rounded-lg p-4 transition-all duration-200 min-h-[56px] border border-[#FFB92E]/30"
         >
-          <IoLogOut size={20} className="text-deepGold" />
-          <span className="text-deepGold font-medium">Log Out</span>
+          <IoLogOut size={20} className="text-[#FFB92E]" />
+          <span className="text-[#FFB92E] font-medium text-base">Log Out</span>
         </button>
       </div>
     );
@@ -297,10 +297,13 @@ const MobileSidebar = ({
   <aside
     className={`${
       sidebarOpen ? "translate-x-0" : "translate-x-full"
-    } fixed top-0 right-0 w-full h-full bg-black/95 backdrop-blur-sm text-white select-none flex duration-300 ease-out items-center justify-center z-[2000] overflow-hidden lg:hidden`}
+    } fixed top-0 right-0 w-full h-full bg-black text-white select-none flex duration-300 ease-out items-start justify-center z-[2000] overflow-y-auto lg:hidden`}
   >
-    <motion.div className="absolute right-8 top-8 cursor-pointer">
-      <X size={28} onClick={() => controlMenu(false)} />
+    <motion.div
+      className="absolute right-6 top-6 cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors duration-200"
+      whileTap={{ scale: 0.95 }}
+    >
+      <X size={24} onClick={() => controlMenu(false)} className="text-white" />
     </motion.div>
     <MobileSideMenu controlMenu={controlMenu} user={user} pathname={pathname} />
   </aside>
@@ -329,32 +332,40 @@ const MobileSideMenu = ({
   };
 
   return (
-    <motion.div className="flex flex-col justify-center items-center w-full px-8 py-12 overflow-y-auto max-h-screen">
+    <motion.div
+      className="flex flex-col w-full px-4 sm:px-6 py-8 pt-16 overflow-y-auto max-h-screen"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Navigation Tabs */}
-      <div className="flex w-full mb-8 border-b border-white/20">
+      <div className="flex w-full mb-6 border-b border-[#ea580c]/20 bg-gradient-to-r from-[#17120a]/80 to-[#1a140b]/80 rounded-t-lg">
         <button
           onClick={() => setActiveTab('main')}
-          className={`flex-1 py-3 text-center font-medium text-base ${
-            activeTab === 'main' ? 'text-deepGold border-b-2 border-deepGold' : 'text-white'
+          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tl-lg ${
+            activeTab === 'main'
+              ? 'text-[#FFB92E] border-b-2 border-[#FFB92E] bg-gradient-to-b from-[#ea580c]/10 to-[#ea580c]/5'
+              : 'text-gray-300 hover:text-[#FFB92E] hover:bg-[#ea580c]/5'
           }`}
         >
-          Main
+          Main Navigation
         </button>
         <button
           onClick={() => setActiveTab('secondary')}
-          className={`flex-1 py-3 text-center font-medium text-base ${
-            activeTab === 'secondary' ? 'text-deepGold border-b-2 border-deepGold' : 'text-white'
+          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tr-lg ${
+            activeTab === 'secondary'
+              ? 'text-[#FFB92E] border-b-2 border-[#FFB92E] bg-gradient-to-b from-[#ea580c]/10 to-[#ea580c]/5'
+              : 'text-gray-300 hover:text-[#FFB92E] hover:bg-[#ea580c]/5'
           }`}
         >
-          Access
+          Quick Access
         </button>
       </div>
 
       {/* Main Navigation */}
       {activeTab === 'main' && (
         <div className="w-full">
-          <h3 className="text-deepGold font-semibold text-lg mb-4 text-center">Main Navigation</h3>
-          <div className="flex flex-col space-y-3 w-full">
+          <div className="flex flex-col space-y-2 w-full">
             {navlinks.map((link, id) => {
               const isActive = pathname === link.path;
               const hasDropdown = link.children && link.children.length > 0;
@@ -366,17 +377,17 @@ const MobileSideMenu = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: id * 0.05 }}
-                  className={styles['mobile-nav-item']}
+                  className="bg-gradient-to-r from-[#17120a]/60 to-[#1a140b]/60 rounded-lg border border-[#ea580c]/15 overflow-hidden backdrop-blur-sm"
                 >
                   {hasDropdown ? (
                     <div>
                       {/* Dropdown Toggle Button */}
                       <button
                         onClick={() => toggleMobileDropdown(link.label)}
-                        className={`${styles['mobile-dropdown-toggle']} ${isExpanded ? styles.expanded : ''} ${
+                        className={`w-full flex items-center justify-between px-4 py-4 text-left font-medium transition-all duration-200 min-h-[56px] ${
                           isActive
-                            ? 'text-deepGold bg-deepGold/10 border-l-4 border-deepGold'
-                            : 'text-white hover:text-deepGold hover:bg-white/5'
+                            ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E]'
+                            : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
                         }`}
                         aria-expanded={isExpanded}
                         aria-haspopup="true"
@@ -384,20 +395,26 @@ const MobileSideMenu = ({
                       >
                         <div className="flex items-center flex-1">
                           {link.icon && (
-                            <span className={styles['mobile-dropdown-toggle-icon']}>
+                            <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
+                              isActive ? 'text-[#FFB92E]' : 'text-gray-400 group-hover:text-[#ea580c]'
+                            }`}>
                               {renderIcon({ name: link.icon, size: 18 })}
                             </span>
                           )}
-                          <span className={styles['mobile-dropdown-toggle-text']}>{link.label}</span>
+                          <span className="text-base">{link.label}</span>
                         </div>
-                        <span className={styles['dropdown-arrow']}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 ml-2 transition-all duration-200 ${
+                          isExpanded ? 'rotate-180 text-[#FFB92E]' : 'rotate-0 text-gray-400'
+                        }`}>
                           {renderIcon({ name: 'ChevronDown', size: 16 })}
                         </span>
                       </button>
 
                       {/* Dropdown Content */}
                       <div
-                        className={`${styles['mobile-dropdown-content']} ${isExpanded ? styles.expanded : ''}`}
+                        className={`overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#17120a]/95 to-[#1a140b]/95 border-t border-[#FFB92E]/30 ${
+                          isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
                         id={`mobile-dropdown-${link.label.replace(/\s+/g, '-').toLowerCase()}`}
                         role="menu"
                         aria-label={`${link.label} submenu`}
@@ -406,16 +423,16 @@ const MobileSideMenu = ({
                           <Link
                             key={childIndex}
                             href={child.path}
-                            className={styles['mobile-dropdown-item']}
+                            className="flex items-center px-6 py-3 text-gray-300 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/10 hover:to-[#ea580c]/5 transition-all duration-200 border-b border-[#ea580c]/10 last:border-b-0 min-h-[48px]"
                             onClick={() => controlMenu(false)}
                             role="menuitem"
                           >
                             {child.icon && (
-                              <span className={styles['mobile-dropdown-item-icon']}>
-                                {renderIcon({ name: child.icon, size: 16 })}
+                              <span className="inline-flex items-center justify-center w-4 h-4 mr-3 text-gray-500 group-hover:text-[#ea580c] transition-colors duration-200">
+                                {renderIcon({ name: child.icon, size: 14 })}
                               </span>
                             )}
-                            <span className={styles['mobile-dropdown-item-text']}>{child.label}</span>
+                            <span className="text-sm font-medium">{child.label}</span>
                           </Link>
                         ))}
                       </div>
@@ -423,27 +440,74 @@ const MobileSideMenu = ({
                   ) : (
                     <Link
                       href={link.path}
-                      className={`${styles['mobile-nav-item-link']} ${
+                      className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${
                         isActive
-                          ? 'text-deepGold bg-deepGold/15 border-l-4 border-deepGold shadow-lg'
-                          : ''
+                          ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E] shadow-lg'
+                          : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
                       }`}
                       onClick={() => controlMenu(false)}
                     >
                       {link.icon && (
-                        <span className={styles['mobile-nav-item-icon']}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
+                          isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
+                        }`}>
                           {renderIcon({ name: link.icon, size: 18 })}
                         </span>
                       )}
-                      <span className={styles['mobile-nav-item-text']}>{link.label}</span>
+                      <span className="text-base">{link.label}</span>
                     </Link>
                   )}
                 </motion.div>
               );
             })}
           </div>
-          <div className="mt-8 w-full flex justify-center">
+          <div className="mt-6 pt-6 border-t border-[#ea580c]/20">
             <AuthButtons user={user} />
+          </div>
+        </div>
+      )}
+
+      {/* Secondary Navigation */}
+      {activeTab === 'secondary' && (
+        <div className="w-full">
+          <div className="flex flex-col space-y-2 w-full">
+            {secondaryNavlinks.map((link, id) => {
+              const isActive = pathname === link.path;
+
+              return (
+                <motion.div
+                  key={id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: id * 0.05 }}
+                  className="bg-gradient-to-r from-[#17120a]/60 to-[#1a140b]/60 rounded-lg border border-[#ea580c]/15 overflow-hidden backdrop-blur-sm"
+                >
+                  <Link
+                    href={link.path}
+                    className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${
+                      isActive
+                        ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E] shadow-lg'
+                        : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
+                    }`}
+                    onClick={() => controlMenu(false)}
+                  >
+                    {link.icon && (
+                      <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
+                        isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
+                      }`}>
+                        {renderIcon({ name: link.icon, size: 18 })}
+                      </span>
+                    )}
+                    <div className="flex-1">
+                      <span className="text-base block">{link.label}</span>
+                      {link.description && (
+                        <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
+                      )}
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       )}

@@ -204,8 +204,8 @@ const PersonalInfoStep: React.FC = () => {
   const getPasswordStrengthColor = (score: number) => {
     if (score <= 1) return 'bg-red-500';
     if (score <= 2) return 'bg-yellow-500';
-    if (score <= 3) return 'bg-blue-500';
-    return 'bg-green-500';
+    if (score <= 3) return 'bg-[#FFB92E]';
+    return 'bg-[#ea580c]';
   };
 
   const getPasswordStrengthText = (score: number) => {
@@ -345,75 +345,60 @@ const PersonalInfoStep: React.FC = () => {
         <div>
           <h3 className="text-lg font-medium text-gray-900 mb-4">Account Security</h3>
           
-          <div className="relative">
-            <FormInput
-              {...register('password')}
-              type={showPassword ? 'text' : 'password'}
-              label="Password"
-              placeholder="Create a strong password"
-              required
-              error={getErrorMessage(errors.password)}
-              autoComplete="new-password"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-9 text-gray-500 hover:text-gray-700"
-            >
-              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-            </button>
-          </div>
+          <FormInput
+            {...register('password')}
+            type="password"
+            label="Password"
+            placeholder="Create a strong password"
+            required
+            error={getErrorMessage(errors.password)}
+            autoComplete="new-password"
+          />
 
           {/* Password Strength Indicator */}
           {watchedPassword && (
-            <div className="mb-4">
+            <div className="mb-4 w-full overflow-hidden">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">Password strength:</span>
-                <span className={`text-sm font-medium ${
+                <span className="text-sm text-gray-600 flex-shrink-0">Password strength:</span>
+                <span className={`text-sm font-medium flex-shrink-0 ml-2 ${
                   passwordStrength.score <= 1 ? 'text-red-600' :
                   passwordStrength.score <= 2 ? 'text-yellow-600' :
-                  passwordStrength.score <= 3 ? 'text-blue-600' : 'text-green-600'
+                  passwordStrength.score <= 3 ? 'text-blue-600' : 'text-[#ea580c]'
                 }`}>
                   {getPasswordStrengthText(passwordStrength.score)}
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
                 <div
                   className={`h-2 rounded-full transition-all duration-300 ${getPasswordStrengthColor(passwordStrength.score)}`}
                   style={{ width: `${(passwordStrength.score / 4) * 100}%` }}
                 ></div>
               </div>
               {passwordStrength.feedback.length > 0 && (
-                <ul className="mt-2 text-xs text-gray-600 space-y-1">
-                  {passwordStrength.feedback.map((feedback, index) => (
-                    <li key={index} className="flex items-center">
-                      <span className="w-1 h-1 bg-gray-400 rounded-full mr-2"></span>
-                      {feedback}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                  <p className="text-xs text-gray-600 mb-2 font-medium">Requirements:</p>
+                  <ul className="text-xs text-gray-600 space-y-1 max-w-full">
+                    {passwordStrength.feedback.map((feedback, index) => (
+                      <li key={index} className="flex items-start break-words">
+                        <span className="w-1 h-1 bg-gray-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                        <span className="flex-1 leading-relaxed">{feedback}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </div>
           )}
 
-          <div className="relative">
-            <FormInput
-              {...register('confirmPassword')}
-              type={showConfirmPassword ? 'text' : 'password'}
-              label="Confirm Password"
-              placeholder="Confirm your password"
-              required
-              error={getErrorMessage(errors.confirmPassword)}
-              autoComplete="new-password"
-            />
-            <button
-              type="button"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-9 text-gray-500 hover:text-gray-700"
-            >
-              {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-            </button>
-          </div>
+          <FormInput
+            {...register('confirmPassword')}
+            type="password"
+            label="Confirm Password"
+            placeholder="Confirm your password"
+            required
+            error={getErrorMessage(errors.confirmPassword)}
+            autoComplete="new-password"
+          />
         </div>
 
         {/* Terms and Privacy */}

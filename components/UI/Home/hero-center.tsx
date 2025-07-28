@@ -22,8 +22,8 @@ const HeroCenter = () => {
         />
       </div>
 
-      {/* Full-width scrolling announcement banner - breaks out of container padding */}
-      <div className="w-full relative pt-8 mt-2 mb-4 sm:pt-6 sm:mt-1 sm:mb-3 md:pt-4 md:mt-0 md:mb-2 lg:pt-2 lg:-mt-2 lg:mb-1 xl:pt-0 xl:-mt-4">
+      {/* Mobile-Optimized Scrolling Announcement Banner */}
+      <div className="w-full relative pt-4 sm:pt-6 md:pt-8 mb-4 sm:mb-6 md:mb-8 overflow-hidden">
         <motion.div
           {...opacityTrans}
           transition={{ delay: 1, duration: 1.5 }}
@@ -31,12 +31,13 @@ const HeroCenter = () => {
         >
           <motion.div
             {...opacityTrans}
-            className={`w-full space-x-3 border-y-[1px] overflow-hidden border-gradient-to-r from-transparent via-border-[#FFD700] to-transparent border-opacity-50 border-[#d9a53c] ${styles["head-scroll-con"]} bg-transparent`}
+            className={`space-x-3 border-y-2 overflow-hidden border-[#ea580c] ${styles["head-scroll-con"]} bg-gradient-to-r from-[#ea580c]/10 via-[#FFB92E]/5 to-[#ea580c]/10 backdrop-blur-sm`}
           >
             {new Array(3).fill(null).map((_, id) => (
-              <p key={id} className={`md:py-1 py-0 ${styles["head-scroll-text"]}`}>
-                <span className="text-sm uppercase tracking-wide text-white font-medium">
-                  <span className="font-bold">ANNOUNCEMENT –</span> Nomination Starts from May 1st, 2025, Get ready to nominate your Education Champion!
+              <p key={id} className={`py-2 sm:py-3 md:py-4 ${styles["head-scroll-text"]}`}>
+                <span className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-white font-medium leading-tight">
+                  <span className="font-bold text-[#FFB92E]">🎉 ANNOUNCEMENT –</span>
+                  <span className="ml-2">Nomination Starts from May 1st, 2025, Get ready to nominate your Education Champion!</span>
                 </span>
               </p>
             ))}

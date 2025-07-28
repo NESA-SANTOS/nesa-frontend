@@ -130,7 +130,7 @@ const HomePartners = () => {
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div variants={itemVariants} className="text-center">
+        {/* <motion.div variants={itemVariants} className="text-center">
           <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-primaryGold/20">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Target className="text-primaryGold w-8 h-8" />
@@ -154,7 +154,7 @@ const HomePartners = () => {
               <ArrowRight className="w-5 h-5 ml-2 inline" />
             </motion.div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

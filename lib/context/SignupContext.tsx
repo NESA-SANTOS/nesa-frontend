@@ -172,6 +172,59 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   };
 
+  // Scroll to form top with smooth behavior
+  const scrollToFormTop = () => {
+    // Use requestAnimationFrame to ensure DOM has updated
+    requestAnimationFrame(() => {
+      try {
+        // Try to find the form container with priority order
+        const formContainer = document.getElementById('signup-form-content') ||
+                             document.querySelector('.signup-form-container') ||
+                             document.querySelector('[role="main"]') ||
+                             document.querySelector('.signup-step-content') ||
+                             document.querySelector('form') ||
+                             document.querySelector('main');
+
+        if (formContainer) {
+          // Calculate offset for better positioning (account for fixed headers/navigation)
+          const isMobile = window.innerWidth < 768;
+          const offset = isMobile ? 20 : 40; // More offset on mobile for better UX
+
+          const elementTop = formContainer.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = Math.max(0, elementTop - offset); // Ensure we don't scroll to negative position
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Additional focus management for accessibility
+          if (isMobile) {
+            // On mobile, also ensure the form container is focused for screen readers
+            setTimeout(() => {
+              if (formContainer instanceof HTMLElement) {
+                formContainer.focus({ preventScroll: true });
+              }
+            }, 300); // Wait for scroll animation to complete
+          }
+        } else {
+          // Fallback to window scroll
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+      } catch (error) {
+        // Fallback for any errors
+        console.warn('Error during scroll to form top:', error);
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  };
+
   // Move to next step
   const nextStep = () => {
     const next = getNextStep(stepProgress.currentStep, formData);
@@ -189,6 +242,9 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       };
 
       setStepProgress(newStepProgress);
+
+      // Scroll to top of form after step transition
+      scrollToFormTop();
     }
   };
 
@@ -197,7 +253,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const previous = getPreviousStep(stepProgress.currentStep, formData);
     if (previous) {
       const newCompletedSteps = stepProgress.completedSteps.filter(step => step !== previous);
-      
+
       const newStepProgress: StepProgress = {
         currentStep: previous,
         completedSteps: newCompletedSteps,
@@ -206,6 +262,9 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       };
 
       setStepProgress(newStepProgress);
+
+      // Scroll to top of form after step transition
+      scrollToFormTop();
     }
   };
 
@@ -214,7 +273,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const stepIndex = STEP_ORDER.indexOf(step);
     if (stepIndex !== -1) {
       const newCompletedSteps = STEP_ORDER.slice(0, stepIndex);
-      
+
       const newStepProgress: StepProgress = {
         currentStep: step,
         completedSteps: newCompletedSteps,
@@ -223,6 +282,9 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       };
 
       setStepProgress(newStepProgress);
+
+      // Scroll to top of form after step transition
+      scrollToFormTop();
     }
   };
 

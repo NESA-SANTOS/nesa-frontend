@@ -372,6 +372,34 @@
   }
 }
 
+/* Enhanced mobile navigation improvements */
+@media (max-width: 1024px) {
+  /* Ensure proper touch targets */
+  .mobile-nav-item,
+  .mobile-dropdown-toggle,
+  .mobile-nav-item-link {
+    min-height: 56px;
+    touch-action: manipulation;
+  }
+
+  /* Improve visual feedback for touch interactions */
+  .mobile-nav-item:active,
+  .mobile-dropdown-toggle:active,
+  .mobile-nav-item-link:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Enhanced focus states for accessibility */
+  .mobile-nav-item:focus-within,
+  .mobile-dropdown-toggle:focus,
+  .mobile-nav-item-link:focus {
+    outline: 2px solid #ea580c;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
 /* Mobile Navigation Styles */
 .mobile-nav {
   .mobile-nav-item {

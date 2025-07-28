@@ -13,23 +13,67 @@
   top: 0px;
   height: 100%;
   width: $width;
-  z-index: 2;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .scroll-con {
   position: relative;
+  overflow: hidden; // Ensure clean edges
 
   @media (max-width: 768px) {
     &::after {
-      @include fade(50px);
+      @include fade(20px);
       right: 0;
-      background: linear-gradient(to left, #15110b 15%, #15110b81, rgba(0, 0, 0, 0));
+      background: linear-gradient(
+        to left,
+        rgba(234, 88, 12, 0.15) 0%,
+        rgba(234, 88, 12, 0.08) 30%,
+        rgba(234, 88, 12, 0.03) 70%,
+        transparent 100%
+      );
+      pointer-events: none;
     }
 
     &::before {
-      @include fade(50px);
+      @include fade(20px);
       left: 0;
-      background: linear-gradient(to right, #15110b 15%, #15110b81, rgba(0, 0, 0, 0));
+      background: linear-gradient(
+        to right,
+        rgba(234, 88, 12, 0.15) 0%,
+        rgba(234, 88, 12, 0.08) 30%,
+        rgba(234, 88, 12, 0.03) 70%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    &::after {
+      @include fade(40px);
+      right: 0;
+      background: linear-gradient(
+        to left,
+        rgba(234, 88, 12, 0.12) 0%,
+        rgba(234, 88, 12, 0.06) 40%,
+        rgba(234, 88, 12, 0.02) 80%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    &::before {
+      @include fade(40px);
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba(234, 88, 12, 0.12) 0%,
+        rgba(234, 88, 12, 0.06) 40%,
+        rgba(234, 88, 12, 0.02) 80%,
+        transparent 100%
+      );
+      pointer-events: none;
     }
   }
 }
@@ -37,12 +81,33 @@
 .head-scroll-con {
   position: relative;
   white-space: nowrap;
-  padding: 8px 0;
-  width: 100vw; // Ensure full viewport width
-  left: 50%; // Center the container
-  transform: translateX(-50%); // Offset by half width to center
-  margin-left: 0;
-  margin-right: 0;
+  overflow: hidden;
+
+  // Mobile-first approach for better edge handling
+  @media (max-width: 768px) {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    // Ensure no horizontal scrollbars and clean edges
+    max-width: 100vw;
+    box-sizing: border-box;
+
+    // Additional mobile edge handling
+    @media (max-width: 480px) {
+      // Slightly reduce width on very small screens to prevent edge issues
+      width: 99.5vw;
+    }
+  }
+
+  @media (min-width: 769px) {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -50,9 +115,23 @@
 
   .head-scroll-text {
     display: inline-block;
-    animation: scroll 15s linear infinite; // Reduced duration for better pacing
-    animation-delay: 2s; // Add 2 second delay before scrolling starts
-    white-space: nowrap; // Ensure text stays on one line
+    white-space: nowrap;
+    animation-fill-mode: both;
+
+    @media (max-width: 480px) {
+      animation: scroll 25s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      animation: scroll 22s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @media (min-width: 769px) {
+      animation: scroll 18s linear infinite;
+      animation-delay: 2s;
+    }
   }
 }
 
