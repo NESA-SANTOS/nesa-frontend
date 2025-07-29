@@ -44,7 +44,7 @@ const HomeHeader = () => {
 
   return (
      <header>               
-     <div className={`min-h-screen max-w-screen relative bg-[#191307CC] ${styles.homeHeader}`}>
+     <div className={` max-w-screen relative bg-[#191307CC] ${styles.homeHeader}`}>
 
             {Slides.map((slide, index) => {
               return (
@@ -52,7 +52,7 @@ const HomeHeader = () => {
                   // <section className={`absolute z-0 bg-[#191307CC] bg-opacity-20 top-0 left-0 w-full h-full text-white  ${
                   //        currentSlide === index ? "opacity-100" : "opacity-0 hidden"
                   //      }`}>
-                  <section key={index} className="bg-[#0D0D0D] bg-opacity-20 text-white px-4 py-2 md:py-20 relative">
+                  <section key={index} className="bg-[#0D0D0D] bg-opacity-20 text-white px-4 py-2 relative">
                     {slide}
                   </section>
                 ) : (

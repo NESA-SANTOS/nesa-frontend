@@ -66,35 +66,40 @@ export const navlinks: NavLink[] = [
     icon: "Users",
     children: [
       {
-        label: "Become a Volunteer",
-        path: "/get-involved/volunteer",
+        label: "Get Endorsed",
+        path: "/get-involved/get-endorsred",
         icon: "HandHeart",
       },
       {
-        label: "Become a Sponsor",
-        path: "/get-involved/sponsor",
-        icon: "Heart",
+        label: "Apply As An NRC Volunteer",
+        path: "/get-involved/NRC-volunteer",
+        icon: "Users",
       },
+      // {
+      //   label: "Become a Sponsor",
+      //   path: "/get-involved/sponsor",
+      //   icon: "Heart",
+      // },
       {
-        label: "Partner with Us",
+        label: "Partner With Us",
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-      {
-        label: "Donate to Empower Education for All",
-        path: "/get-involved/donate",
-        icon: "Gift",
-      },
-      {
-        label: "Become a Member",
-        path: "/get-involved/member",
-        icon: "UserPlus",
-      },
-      {
-        label: "Become an Ambassador",
-        path: "/get-involved/ambassador",
-        icon: "UserCheck",
-      },
+      // {
+      //   label: "Donate to Empower Education for All",
+      //   path: "/get-involved/donate",
+      //   icon: "Gift",
+      // },
+      // {
+      //   label: "Become a Member",
+      //   path: "/get-involved/member",
+      //   icon: "UserPlus",
+      // },
+      // {
+      //   label: "Become an Ambassador",
+      //   path: "/get-involved/ambassador",
+      //   icon: "UserCheck",
+      // },
     ],
   },
   {
@@ -118,34 +123,6 @@ export const navlinks: NavLink[] = [
     label: "Donate",
     path: "/donate",
   },
-  {
-    label: "Language",
-    path: "/language",
-    icon: "Languages",
-    children: [
-      {
-        label: "English",
-        path: "/language/en",
-        icon: "EN",
-      },
-      {
-        label: "French",
-        path: "/language/fr",
-        icon: "FR",
-      },
-      {
-        label: "swahili",
-        path: "/language/sw",
-        icon: "AR",
-      },
-      {
-        label: "Portuguese",
-        path: "/language/pt",
-        icon: "PT",
-      },
-    ]
-
-  }, 
   {
     label: "Login",
     path: "/account/login",
@@ -174,8 +151,42 @@ export const navlinks: NavLink[] = [
         path: "/help",
         icon: "LifeBuoy",
       },
+      
     ],
   },
+  {
+    label: "Language",
+    path: "/language",
+    icon: "Languages",
+    children: [
+      {
+        label: "English",
+        path: "/language/en",
+        icon: "EN",
+      },
+      {
+        label: "French",
+        path: "/language/fr",
+        icon: "FR",
+      },
+      {
+        label: "Arabic",
+        path: "/language/ar",
+        icon: "AR",
+      },
+      {
+        label: "Swahili",
+        path: "/language/sw",
+        icon: "AR",
+      },
+      {
+        label: "Portuguese",
+        path: "/language/pt",
+        icon: "PT",
+      },
+    ]
+
+  }, 
 ];
 
 // Level 2 Navigation - Secondary Tab Bar
