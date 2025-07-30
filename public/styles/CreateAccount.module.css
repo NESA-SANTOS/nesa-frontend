@@ -3,15 +3,24 @@
     display: flex;
     min-height: 100vh;
     width: 100%;
+    position: relative;
   }
-  
+
   .leftColumn {
     width: 29%;
-    background-image: url('/images/Hero section.png');  
+    background-image: url('/images/Hero section.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
   }
   
   .logoContainer { 
@@ -43,15 +52,25 @@
   
   .rightColumn {
     flex-grow: 1;
+    margin-left: 29%;
+    min-height: 100vh;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 40px;
+    padding-top: 60px;
+    position: relative;
   }
   
   .content {
     width: 100%;
     max-width: 600px;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 40px;
   }
   
   .backButton {
@@ -197,15 +216,43 @@
     .container {
       flex-direction: column;
     }
-  
+
     .leftColumn {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logoContainer {
+      margin-bottom: 0;
+    }
+
+    .nesaBadge {
+      flex: 0;
+      margin: 0 20px;
+    }
+
+    .contactInfo {
       display: none;
     }
-  
+
     .rightColumn {
       width: 100%;
+      margin-left: 0;
+      min-height: calc(100vh - 200px);
+      padding-top: 20px;
+      align-items: center;
     }
-  
+
+    .content {
+      min-height: auto;
+    }
+
     .options {
       grid-template-columns: 1fr;
       width: 95%;
@@ -215,15 +262,62 @@
   }
   
   @media (max-width: 768px) {
+    .leftColumn {
+      height: 150px;
+      padding: 15px;
+    }
+
     .rightColumn {
       padding: 20px;
+      min-height: calc(100vh - 150px);
     }
-  
+
     .content {
       width: 100%;
+      padding-bottom: 20px;
     }
-  
+
     .options {
       width: 100%;
     }
+
+    .nesaBadge img {
+      width: 80px !important;
+      height: 80px !important;
+    }
+
+    .logoContainer img {
+      width: 120px !important;
+      height: 60px !important;
+    }
+  }
+
+  /* Smooth scrolling for the right column */
+  .rightColumn {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure proper scrollbar styling */
+  .rightColumn::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .rightColumn::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  .rightColumn::-webkit-scrollbar-thumb {
+    background: #FFC247;
+    border-radius: 3px;
+  }
+
+  .rightColumn::-webkit-scrollbar-thumb:hover {
+    background: #E48900;
+  }
+
+  /* For Firefox */
+  .rightColumn {
+    scrollbar-width: thin;
+    scrollbar-color: #FFC247 #f1f1f1;
   }

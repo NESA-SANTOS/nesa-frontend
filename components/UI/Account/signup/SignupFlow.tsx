@@ -268,6 +268,7 @@ const SignupFlowContent: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full">
         {/* Left Side - Background Image (matching existing design) */}
+        
         <div className="w-full md:w-1/3 relative overflow-hidden hidden md:block">
           <div className="absolute inset-0">
             <Image
@@ -280,15 +281,7 @@ const SignupFlowContent: React.FC = () => {
           </div>
           {/* Overlay Content */}
           <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
-            {/* <div>
-              <Image
-                src="/images/NESA logo_UPDATED 1.png"
-                alt="NEW EDUCATION STANDARD AWARDS AFRICA"
-                width={150}
-                height={75}
-                className="mb-4"
-              />
-            </div> */}
+          
             <div className="flex justify-center items-center flex-grow">
               <Image
                 src="/images/NESA Logo 2.png"
@@ -298,24 +291,6 @@ const SignupFlowContent: React.FC = () => {
                 className="max-w-full h-auto"
               />
             </div>
-            {/* <div className="text-sm">
-              <p className="mb-2 flex items-center">
-                <MdLocationPin className="mr-2" />
-                19 Godwin Okigbo Street, Masha Kilo, bus stop, Surulere, Lagos
-              </p>
-              <p className="mb-2 flex items-center">
-                <Phone className="mr-2" />
-                +234-907-962-1110
-              </p>
-              <p className="mb-2 flex items-center">
-                <Phone className="mr-2" />
-                +234-810-976-5897
-              </p>
-              <p className="flex items-center">
-                <Mail className="mr-2" />
-                nesa.africa@gmail.com
-              </p>
-            </div> */}
           </div>
         </div>
 

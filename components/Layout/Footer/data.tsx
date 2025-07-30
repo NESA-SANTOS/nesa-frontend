@@ -5,29 +5,29 @@ import { CiMail } from "react-icons/ci";
 
 export const footerData: FooterData[] = [
   {
-    heading: "Quick Links",
+    heading: "Company",
     children: [
-      { path: "/about", label: "About NESA" },
-      { path: "/categories", label: "Award Categories" },
-      { path: "/nominate", label: "Nominate Now" },
-      { path: "/vote", label: "Vote" },
+      { path: "/about", label: "About Us" },
+      { path: "/mission", label: "Mission" },
+      { path: "/vision", label: "Vision" },
+      { path: "/get-involved", label: "Get Involved" },
     ],
   },
   {
-    heading: "Support",
+    heading: "Award Category",
     children: [
-      { path: "/faq", label: "FAQ" },
-      { path: "/contact", label: "Contact Us" },
-      { path: "/chapters", label: "Local Chapters" },
-      { path: "/volunteer", label: "Volunteer" },
+      { path: "/nominate", label: "Nominate your Champion" },
+      { path: "/award-timelines", label: "Award Timelines" },
+      { path: "/sponsorship", label: "Sponsorship" },
     ],
   },
 ];
 
 export const bottomLinks = [
-  { label: "Terms", path: "/terms" },
+  { label: "Terms and Condition", path: "/terms" },
   { label: "Privacy", path: "/privacy" },
-  { label: "FAQ", path: "/faq" },
+  { label: "Cookies", path: "/cookies" },
+  { label: "FAQs", path: "/faqs" },
 ];
 
 export const socials: Social[] = [
@@ -69,11 +69,29 @@ export const socials: Social[] = [
     label: "Twitter",
     path: "https://twitter.com/nesaafrica",
   },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+        <path d="M10 2.66602C12.2083 2.66602 12.4583 2.67435 13.2917 2.70768C14.125 2.74102 14.7083 2.87435 15.2083 3.07435C15.7333 3.28268 16.1667 3.55768 16.6 3.99102C17.0333 4.42435 17.3083 4.85768 17.5167 5.38268C17.7167 5.88268 17.85 6.46602 17.8833 7.29935C17.9167 8.13268 17.925 8.38268 17.925 10.591C17.925 12.7993 17.9167 13.0493 17.8833 13.8827C17.85 14.716 17.7167 15.2993 17.5167 15.7993C17.3083 16.3243 17.0333 16.7577 16.6 17.191C16.1667 17.6243 15.7333 17.8993 15.2083 18.1077C14.7083 18.3077 14.125 18.441 13.2917 18.4743C12.4583 18.5077 12.2083 18.516 10 18.516C7.79167 18.516 7.54167 18.5077 6.70833 18.4743C5.875 18.441 5.29167 18.3077 4.79167 18.1077C4.26667 17.8993 3.83333 17.6243 3.4 17.191C2.96667 16.7577 2.69167 16.3243 2.48333 15.7993C2.28333 15.2993 2.15 14.716 2.11667 13.8827C2.08333 13.0493 2.075 12.7993 2.075 10.591C2.075 8.38268 2.08333 8.13268 2.11667 7.29935C2.15 6.46602 2.28333 5.88268 2.48333 5.38268C2.69167 4.85768 2.96667 4.42435 3.4 3.99102C3.83333 3.55768 4.26667 3.28268 4.79167 3.07435C5.29167 2.87435 5.875 2.74102 6.70833 2.70768C7.54167 2.67435 7.79167 2.66602 10 2.66602ZM10 6.24935C8.67392 6.24935 7.40215 6.77633 6.46447 7.71401C5.52678 8.65169 5 9.92346 5 11.2493C5 12.5752 5.52678 13.847 6.46447 14.7847C7.40215 15.7223 8.67392 16.2493 10 16.2493C11.3261 16.2493 12.5979 15.7223 13.5355 14.7847C14.4732 13.847 15 12.5752 15 11.2493C15 9.92346 14.4732 8.65169 13.5355 7.71401C12.5979 6.77633 11.3261 6.24935 10 6.24935ZM15.2083 5.99935C15.2083 5.66768 14.9417 5.40102 14.6083 5.40102C14.275 5.40102 14.0083 5.66768 14.0083 5.99935C14.0083 6.33102 14.275 6.59768 14.6083 6.59768C14.9417 6.59768 15.2083 6.33102 15.2083 5.99935ZM10 8.08268C10.7956 8.08268 11.5587 8.39875 12.1213 8.96136C12.6839 9.52397 13 10.287 13 11.0827C13 11.8783 12.6839 12.6414 12.1213 13.204C11.5587 13.7666 10.7956 14.0827 10 14.0827C9.20435 14.0827 8.44129 13.7666 7.87868 13.204C7.31607 12.6414 7 11.8783 7 11.0827C7 10.287 7.31607 9.52397 7.87868 8.96136C8.44129 8.39875 9.20435 8.08268 10 8.08268Z" fill="white"/>
+      </svg>
+    ),
+    label: "Instagram",
+    path: "https://instagram.com/nesaafrica",
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+        <path d="M17.5 5.41602C17.5 4.58268 16.8333 3.91602 16 3.91602H4C3.16667 3.91602 2.5 4.58268 2.5 5.41602V15.416C2.5 16.2493 3.16667 16.916 4 16.916H16C16.8333 16.916 17.5 16.2493 17.5 15.416V5.41602ZM8.33333 13.7493V7.08268L13.3333 10.416L8.33333 13.7493Z" fill="white"/>
+      </svg>
+    ),
+    label: "YouTube",
+    path: "https://youtube.com/@nesaafrica",
+  },
 ];
 
 export const contactInfos: { value: string; icon: JSX.Element }[] = [
   {
-    value: "19 Godwin Okigbo Street, Masha Kilo, bus stop, Surulere, Lagos",
+    value: "19, Maxwell Okigbo Street off Ain Mesha rd, Surulere-Lagos, Nigeria",
     icon: <CiLocationOn />,
   },
   {

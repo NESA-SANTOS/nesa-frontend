@@ -32,11 +32,11 @@ const JudgeApplication = () => {
         </p>
         
         <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-          <Link href="/apply" className="bg-gradient-to-r from-[#FFC247] to-[#E48900] hover:bg-yellow-500 text-black font-medium py-3 px-6 rounded-xl text-center w-full md:w-[300px]">
+          <Link href="/judgeapply" className="bg-gradient-to-r from-[#FFC247] to-[#E48900] hover:bg-yellow-500 text-black font-medium py-3 px-6 rounded-xl text-center w-full md:w-[300px]">
             Apply To Judge
           </Link>
-          
-          <Link href="/nominate" className="bg-gradient-to-r from-[#E1E1E1] to-[#BDBDBD] hover:bg-gray-300 text-black font-medium py-3 px-6 rounded-xl text-center w-full md:w-[300px]">
+
+          <Link href="/Judgesnominate" className="bg-gradient-to-r from-[#E1E1E1] to-[#BDBDBD] hover:bg-gray-300 text-black font-medium py-3 px-6 rounded-xl text-center w-full md:w-[300px]">
             Nominate A Judge
           </Link>
         </div>

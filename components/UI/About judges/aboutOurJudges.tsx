@@ -77,8 +77,8 @@ const AboutOurJudges: React.FC = () => (
     <h3 className="text-2xl font-bold mb-4 mt-8">📝 Join the Judging Council</h3>
     <p className="mb-2">We welcome professionals, CSR leads, education experts, and global partners to apply or nominate judges.</p>
     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-      <a href="mailto:judges@nesa.africa" className="bg-primaryGold text-black px-6 py-2 rounded font-semibold shadow hover:bg-yellow-400 transition">Apply to Judge</a>
-      <a href="mailto:judges@nesa.africa" className="bg-white border border-primaryGold text-primaryGold px-6 py-2 rounded font-semibold shadow hover:bg-yellow-50 transition">Nominate a Judge</a>
+      <a href="/judgeapply" className="bg-primaryGold text-black px-6 py-2 rounded font-semibold shadow hover:bg-yellow-400 transition">Apply to Judge</a>
+      <a href="/Judgesnominate" className="bg-white border border-primaryGold text-primaryGold px-6 py-2 rounded font-semibold shadow hover:bg-yellow-50 transition">Nominate a Judge</a>
     </div>
     <div className="text-sm text-gray-600 mb-2">Application Deadline: <span className="font-semibold text-black">August 25, 2025</span></div>
     <div className="text-sm text-gray-600 mb-2">Visit: <a href="https://www.nesa.africa" className="text-primaryGold underline">www.nesa.africa</a></div>

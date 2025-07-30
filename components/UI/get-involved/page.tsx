@@ -3,10 +3,10 @@ import React from 'react';
 import Image from 'next/image';
 import Button from "@/components/Common/Button";
 import { ArrowRight } from 'lucide-react';
-import SponsorshipPackages from '@/components/UI/getinvolved/sponsorship';
-import NesaAmbassador from '@/components/UI/getinvolved/ambassador';
-import DonateNow from '@/components/UI/getinvolved/donate';
-import VolunteerWithUs from '@/components/UI/getinvolved/volunteer';
+import SponsorshipPackages from '@/components/UI/get-involved/sponsorship';
+import NesaAmbassador from '@/components/UI/get-involved/ambassador';
+import DonateNow from '@/components/UI/get-involved/donate';
+import VolunteerWithUs from '@/components/UI/get-involved/volunteer';
 import { useRouter } from 'next/navigation'
 
 
@@ -178,9 +178,11 @@ const NESACommunityPage = () => {
         {/* Left side - Image */}
         <div className="md:w-1/2">
           <div className="rounded-2xl overflow-hidden h-full">
-            <Image 
-              src="/images/involvedshake.png" // Replace with actual image path or import it from the public folder (e.g., /public/images/involvedshake.png) in your project.
-              alt="Business handshake representing sponsorship" 
+            <Image
+              src="/images/involvedshake.png"
+              alt="Business handshake representing sponsorship"
+              width={600}
+              height={400}
               className="w-full h-full object-cover"
             />
           </div>

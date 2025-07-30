@@ -1,6 +1,5 @@
 import { NavLink, SecondaryNavLink, CTANavLink } from "../types/global";
 
-// Level 1 Navigation - Top Sticky Bar with Dropdown Menus
 export const navlinks: NavLink[] = [
   {
     label: "Home",
@@ -39,6 +38,11 @@ export const navlinks: NavLink[] = [
     icon: "Trophy",
     children: [
       {
+        label: "Awards",
+        path: "/awards",
+        icon: "Scale",
+      },
+      {
         label: "African Icon",
         path: "/awards/african-icon",
         icon: "Crown",
@@ -66,6 +70,11 @@ export const navlinks: NavLink[] = [
     icon: "Users",
     children: [
       {
+        label: "Nominate Now",
+        path: "/get-involved/nomination",
+        icon: "UserPlus",
+      },
+      {
         label: "Get Endorsed",
         path: "/get-involved/get-endorsred",
         icon: "HandHeart",
@@ -75,31 +84,12 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/NRC-volunteer",
         icon: "Users",
       },
-      // {
-      //   label: "Become a Sponsor",
-      //   path: "/get-involved/sponsor",
-      //   icon: "Heart",
-      // },
       {
         label: "Partner With Us",
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-      // {
-      //   label: "Donate to Empower Education for All",
-      //   path: "/get-involved/donate",
-      //   icon: "Gift",
-      // },
-      // {
-      //   label: "Become a Member",
-      //   path: "/get-involved/member",
-      //   icon: "UserPlus",
-      // },
-      // {
-      //   label: "Become an Ambassador",
-      //   path: "/get-involved/ambassador",
-      //   icon: "UserCheck",
-      // },
+     
     ],
   },
   {
@@ -189,11 +179,11 @@ export const navlinks: NavLink[] = [
   }, 
 ];
 
-// Level 2 Navigation - Secondary Tab Bar
+
 export const secondaryNavlinks: SecondaryNavLink[] = [
   {
     label: "Become a Judge",
-    path: "/join-chapter",
+    path: "/judgeapply",
     description: "Regional form/interactive map",
   },
   {
@@ -208,17 +198,17 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   },
   {
     label: "Become a volunteer",
-    path: "/gala-tickets",
-    description: "Ticket platform",
+    path: "/volunteer",
+    description: "Volunteer platform",
   },
   {
     label: "Join the Local chapters",
-    path: "/referral",
-    description: "Referral dashboard",
+    path: "/local-chapters",
+    description: "Local chapter platform",
   },
   {
     label: "Vote with AfriGoldcoin",
-    path: "/donate",
+    path: "/vote",
     description: "GFA Wallet donation",
   },
   {
@@ -277,6 +267,7 @@ export const legacyNavlinks = [
     label: "Awards",
     path: "/awards",
     children: [
+      { label: "Awards", path: "/awards"},
       { label: "African Icon", path: "/nomination/sub-categories/africa-lifetime-education-icon" },
       { label: "Competitive", path: "/competitive" },
       { label: "Non-Competitive", path: "/non-competitive" },
