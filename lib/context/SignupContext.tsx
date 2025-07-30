@@ -117,7 +117,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     // Handle role-selection step (conditional)
     if (currentStep === 'personal-info' || currentStep === 'organization-info') {
-      const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge'];
+      const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge', 'Apply as NRC Volunteer'];
       const hasRoleIntent = formData.intents?.some(intent => roleRequiredIntents.includes(intent));
 
       if (hasRoleIntent) {

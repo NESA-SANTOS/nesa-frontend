@@ -97,6 +97,15 @@ const intentOptions = [
     color: 'text-orange-500',
     bgColor: 'bg-orange-50',
     borderColor: 'border-orange-200'
+  },
+  {
+    value: 'Apply as NRC Volunteer' as UserIntent,
+    label: 'Apply as NRC Volunteer',
+    description: 'Join the Nominee Research Corps to identify education leaders',
+    icon: Users,
+    color: 'text-emerald-500',
+    bgColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200'
   }
 ];
 

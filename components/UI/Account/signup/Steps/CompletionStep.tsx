@@ -130,6 +130,11 @@ const CompletionStep: React.FC = () => {
                 title = 'Judge Application';
                 description = 'Complete your judge application and access evaluation tools';
                 break;
+              case 'Apply as NRC Volunteer':
+                icon = <Users className="w-5 h-5 text-emerald-600" />;
+                title = 'NRC Volunteer Program';
+                description = 'Access the Nominee Research Corps and start identifying education leaders';
+                break;
               case 'Join Webinar/Expo':
                 icon = <CheckCircle className="w-5 h-5 text-indigo-600" />;
                 title = 'Event Calendar';

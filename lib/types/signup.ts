@@ -8,7 +8,7 @@ export type AccountType =
   | "School" 
   | "Diaspora Group";
 
-export type UserIntent = 
+export type UserIntent =
   | "Vote or Nominate"
   | "Apply for Scholarship"
   | "Become Ambassador"
@@ -16,14 +16,16 @@ export type UserIntent =
   | "Sponsor or CSR Partner"
   | "Apply as Judge"
   | "Join Local Chapter"
-  | "Join NESA Team";
+  | "Join NESA Team"
+  | "Apply as NRC Volunteer";
 
-export type UserRole = 
+export type UserRole =
   | "Free Member"
   | "Standard Member"
   | "Ambassador"
   | "Judge"
   | "Volunteer"
+  | "NRC Volunteer"
   | "Intern"
   | "Nominee"
   | "Sponsor"

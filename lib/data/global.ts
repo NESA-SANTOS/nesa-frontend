@@ -81,7 +81,7 @@ export const navlinks: NavLink[] = [
       },
       {
         label: "Apply As An NRC Volunteer",
-        path: "/get-involved/NRC-volunteer",
+        path: "/get-involved/nrc-volunteer",
         icon: "Users",
       },
       {

@@ -118,6 +118,9 @@ export const calculateAGCBonus = (accountType: AccountType, intents: UserIntent[
   if (intents.includes('Apply as Judge')) {
     amount += 2;
   }
+  if (intents.includes('Apply as NRC Volunteer')) {
+    amount += 2;
+  }
   if (intents.includes('Join NESA Team')) {
     amount += 2;
   }
@@ -134,6 +137,7 @@ export const calculateAGCBonus = (accountType: AccountType, intents: UserIntent[
 export const assignUserRole = (intents: UserIntent[]): UserRole => {
   if (intents.includes('Become Ambassador')) return 'Ambassador';
   if (intents.includes('Apply as Judge')) return 'Judge';
+  if (intents.includes('Apply as NRC Volunteer')) return 'NRC Volunteer';
   if (intents.includes('Join NESA Team')) return 'Volunteer';
   if (intents.includes('Sponsor or CSR Partner')) return 'Sponsor';
   return 'Free Member';

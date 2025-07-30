@@ -36,13 +36,14 @@ const accountTypeSchema = z.enum(['Individual', 'NGO', 'Corporation', 'Governmen
 // User intent schema
 const userIntentSchema = z.enum([
   'Vote or Nominate',
-  'Apply for Scholarship', 
+  'Apply for Scholarship',
   'Become Ambassador',
   'Join Webinar/Expo',
   'Sponsor or CSR Partner',
   'Apply as Judge',
   'Join Local Chapter',
-  'Join NESA Team'
+  'Join NESA Team',
+  'Apply as NRC Volunteer'
 ] as const);
 
 // Gender schema

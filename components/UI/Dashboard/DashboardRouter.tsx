@@ -45,6 +45,13 @@ const DashboardRouter: React.FC = () => {
       return <AmbassadorDashboard />;
     }
 
+    // Check if user has NRC Volunteer intent
+    if (user?.intents?.includes('Apply as NRC Volunteer') || user?.role === 'NRC Volunteer') {
+      // Redirect to NRC dashboard instead of showing a component here
+      window.location.href = '/get-involved/nrc-volunteer/dashboard';
+      return <div>Redirecting to NRC Dashboard...</div>;
+    }
+
     // Route based on account type
     switch (accountType || user?.accountType) {
       case 'Individual':

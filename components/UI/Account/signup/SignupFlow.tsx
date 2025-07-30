@@ -100,7 +100,7 @@ const ProgressIndicator: React.FC = () => {
     }
 
     // Add role selection step if user has volunteer/staff intents
-    const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge'];
+    const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge', 'Apply as NRC Volunteer'];
     const hasRoleIntent = formData.intents?.some(intent => roleRequiredIntents.includes(intent));
     if (hasRoleIntent) {
       baseSteps.push('role-selection');
