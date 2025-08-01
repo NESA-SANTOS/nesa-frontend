@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from "@/components/Layout/Footer";
+import JudgeProtectedRoute from "@/components/Common/JudgeProtectedRoute";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -93,52 +94,30 @@ export default function JudgeLayout({ children }: JudgeLayoutProps) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen ">
-      <nav className="text-white py-4 bg-[#17120a] fixed w-full z-50">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <Image src="/svgs/logo.svg" alt="NEW EDUCATION STANDARD AWARDS AFRICA" width={150} height={50} />
-          </Link>
-          <div className="hidden md:flex space-x-6 items-center">
-            <NavItem href="/judge" label="Home" />
-            <NavDropdown label="Nomination" items={[
-              { href: "/nomination/sub-categories/africa-lifetime-education-icon", label: "African Icon" },
-              { href: "/judge/competitive", label: "Competitive" },
-              { href: "/judge/non-competitive", label: "Non-Competitive" },
-              { href: "/judge/SeeAll", label: "See All" },
-            ]} />
-            <NavDropdown label="Judges Arena" items={[
-              { href: "/judge/SeeJudges", label: "See Judges" },
-              { href: "/chatroom", label: "Judge Chat Room" },
-            ]} />
-            <NavDropdown label="Reviews" items={[
-              { href: "/judge/JudgeReview", label: "JudgeReview" },
-            ]} />
-          </div>
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-white rounded-full p-2 text-[#36322f] hover:bg-[#f6b146] transition-colors">
-              <IoNotificationsSharp size={20} />
-            </button>
-            <button className="bg-[#f6b146] rounded-full p-2 text-[#36322f] hover:bg-white transition-colors">
-              <CgProfile size={20} />
-            </button>
-          </div>
-          <button className="md:hidden text-white" onClick={toggleMenu}>
-            {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-          </button>
-        </div>
-        {isMenuOpen && (
-          <div className="md:hidden bg-[#191307E6] mt-2 p-4">
-            <NavItem href="/judge" label="Home" mobile />
-            <NavItem href="/judge/nomination" label="Nomination" isHighlighted mobile />
-            <NavDropdown label="Judges Arena" items={[
-              { href: "/judge/SeeJudges", label: "See Judges" },
-              { href: "/judge/JudgeChat", label: "Judge Chat Room" },
-            ]} mobile />
-            <NavDropdown label="Reviews" items={[
-              { href: "/judge/JudgeReview", label: "JudgeReview" },
-            ]} mobile />
-            <div className="flex justify-center mt-4 space-x-4">
+    <JudgeProtectedRoute requireActiveJudge={true}>
+      <div className="flex flex-col min-h-screen ">
+        <nav className="text-white py-4 bg-[#17120a] fixed w-full z-50">
+          <div className="container mx-auto px-4 flex justify-between items-center">
+            <Link href="/" className="flex items-center">
+              <Image src="/svgs/logo.svg" alt="NEW EDUCATION STANDARD AWARDS AFRICA" width={150} height={50} />
+            </Link>
+            <div className="hidden md:flex space-x-6 items-center">
+              <NavItem href="/judge" label="Home" />
+              <NavDropdown label="Nomination" items={[
+                { href: "/nomination/sub-categories/africa-lifetime-education-icon", label: "African Icon" },
+                { href: "/judge/competitive", label: "Competitive" },
+                { href: "/judge/non-competitive", label: "Non-Competitive" },
+                { href: "/judge/SeeAll", label: "See All" },
+              ]} />
+              <NavDropdown label="Judges Arena" items={[
+                { href: "/judge/SeeJudges", label: "See Judges" },
+                { href: "/chatroom", label: "Judge Chat Room" },
+              ]} />
+              <NavDropdown label="Reviews" items={[
+                { href: "/judge/JudgeReview", label: "JudgeReview" },
+              ]} />
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
               <button className="bg-white rounded-full p-2 text-[#36322f] hover:bg-[#f6b146] transition-colors">
                 <IoNotificationsSharp size={20} />
               </button>
@@ -146,15 +125,39 @@ export default function JudgeLayout({ children }: JudgeLayoutProps) {
                 <CgProfile size={20} />
               </button>
             </div>
+            <button className="md:hidden text-white" onClick={toggleMenu}>
+              {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+            </button>
           </div>
-        )}
-      </nav>
+          {isMenuOpen && (
+            <div className="md:hidden bg-[#191307E6] mt-2 p-4">
+              <NavItem href="/judge" label="Home" mobile />
+              <NavItem href="/judge/nomination" label="Nomination" isHighlighted mobile />
+              <NavDropdown label="Judges Arena" items={[
+                { href: "/judge/SeeJudges", label: "See Judges" },
+                { href: "/judge/JudgeChat", label: "Judge Chat Room" },
+              ]} mobile />
+              <NavDropdown label="Reviews" items={[
+                { href: "/judge/JudgeReview", label: "JudgeReview" },
+              ]} mobile />
+              <div className="flex justify-center mt-4 space-x-4">
+                <button className="bg-white rounded-full p-2 text-[#36322f] hover:bg-[#f6b146] transition-colors">
+                  <IoNotificationsSharp size={20} />
+                </button>
+                <button className="bg-[#f6b146] rounded-full p-2 text-[#36322f] hover:bg-white transition-colors">
+                  <CgProfile size={20} />
+                </button>
+              </div>
+            </div>
+          )}
+        </nav>
 
-      <main className="flex-grow pt-16 md:pt-0">
-        {children}
-      </main>
+        <main className="flex-grow pt-16 md:pt-0">
+          {children}
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </JudgeProtectedRoute>
   );
 }

@@ -91,12 +91,17 @@ const AccountTypeStep: React.FC = () => {
 
   return (
     <div className="w-full">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mb-6">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">
           Choose Your Account Type
         </h1>
-        <p className="text-gray-600">
-          Select the type of account that best describes you or your organization.
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Select the type of account that best describes you or your organization. This helps us personalize your NESA-Africa experience.
         </p>
       </div>
 
@@ -110,8 +115,8 @@ const AccountTypeStep: React.FC = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {accountTypeOptions.map((option) => {
             const IconComponent = option.icon;
             const isSelected = selectedAccountType === option.value;
@@ -120,11 +125,11 @@ const AccountTypeStep: React.FC = () => {
               <label
                 key={option.value}
                 className={`
-                  relative flex items-center p-4 border rounded-lg cursor-pointer transition-all duration-200
-                  hover:border-orange-300 focus-within:border-orange-500
+                  relative flex items-center p-6 border-2 rounded-xl cursor-pointer transition-all duration-300 group
+                  hover:border-orange-300 hover:shadow-lg hover:scale-105 focus-within:border-orange-500 focus-within:ring-4 focus-within:ring-orange-100
                   ${isSelected
-                    ? 'border-orange-500 bg-orange-50'
-                    : 'border-gray-300 bg-white'
+                    ? 'border-orange-500 bg-gradient-to-br from-orange-50 to-orange-100 shadow-lg scale-105'
+                    : 'border-gray-200 bg-white hover:bg-gray-50'
                   }
                 `}
                 tabIndex={0}
@@ -144,32 +149,36 @@ const AccountTypeStep: React.FC = () => {
                   aria-describedby={`${option.value}-description`}
                 />
 
-                <div className="flex items-center space-x-3 w-full">
-                  <div className={`flex-shrink-0 p-2 rounded-lg ${option.color}`}>
-                    <IconComponent className="h-5 w-5" />
+                <div className="flex items-center space-x-4 w-full">
+                  <div className={`flex-shrink-0 p-3 rounded-xl ${option.color} group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className="h-6 w-6" />
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-medium text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
                       {option.label}
                     </h3>
                     <p
                       id={`${option.value}-description`}
-                      className="text-sm text-gray-600"
+                      className="text-sm text-gray-600 leading-relaxed"
                     >
                       {option.description}
                     </p>
                   </div>
 
-                  {isSelected && (
-                    <div className="flex-shrink-0">
-                      <div className="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0">
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+                      isSelected
+                        ? 'bg-orange-500 border-orange-500'
+                        : 'border-gray-300 group-hover:border-orange-300'
+                    }`}>
+                      {isSelected && (
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                      </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
               </label>
             );
@@ -181,15 +190,15 @@ const AccountTypeStep: React.FC = () => {
           className="text-center"
         />
 
-        <div className="flex justify-end pt-6">
+        <div className="flex justify-center pt-8">
           <Button
             type="submit"
-            text="Continue"
+            text="Continue to Next Step"
             variant="filled"
-            size="medium"
+            size="large"
             disabled={!isValid || isLoading}
             loading={isLoading}
-            className="px-8 py-3"
+            className="px-12 py-4 text-lg font-semibold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           />
         </div>
       </form>

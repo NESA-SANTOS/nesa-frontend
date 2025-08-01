@@ -21,10 +21,32 @@ export default function JudgingPanel() {
           
             
                    <p className="text-gray-800 mb-6 font-normal">
-                   The New Education Standard Award Africa 2025, hosted by SCEF Nigeria Local Chapter, invites 
-               distinguished professionals, educators, policymakers, corporate leaders, and education advocates to 
-               apply or be nominated to serve as volunteer judges for this year's awards.
+                   The NESA-Africa 2025 Awards invite distinguished professionals, educators, policymakers,
+               corporate leaders, and education advocates to join our prestigious judging panel through four official entry paths.
              </p>
+
+             {/* Four Entry Paths */}
+             <div className="mb-8">
+               <h3 className="text-xl font-bold text-gray-900 mb-4">Four Ways to Become a Judge:</h3>
+               <div className="grid md:grid-cols-2 gap-4 mb-6">
+                 <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                   <h4 className="font-bold text-blue-800 mb-2">1. Official Invitation</h4>
+                   <p className="text-blue-700 text-sm">Handpicked by the Board of Advisors or CVO due to past impact and sector expertise.</p>
+                 </div>
+                 <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                   <h4 className="font-bold text-green-800 mb-2">2. Institutional Nomination</h4>
+                   <p className="text-green-700 text-sm">Endorsed by registered NESA-Africa partners, chapters, universities, or agencies.</p>
+                 </div>
+                 <div className="bg-orange-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                   <h4 className="font-bold text-amber-800 mb-2">3. Direct Application</h4>
+                   <p className="text-amber-700 text-sm">Qualified professionals and education experts apply directly via our online portal.</p>
+                 </div>
+                 <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
+                   <h4 className="font-bold text-purple-800 mb-2">4. Ambassador Upgrade</h4>
+                   <p className="text-purple-700 text-sm">Active volunteers or board members promoted after internal recommendation and training.</p>
+                 </div>
+               </div>
+             </div>
           </div>
 
           <div className={styles.grid}>
@@ -46,10 +68,17 @@ export default function JudgingPanel() {
              </p>
             
             <div className="flex flex-wrap gap-4">
-              <Button text="Apply To Judge" variant="filled" onClick={() => router.push("/judgeapply")} className="bg-amber-400 hover:bg-amber-500 text-black font-medium py-3 px-8 rounded-md transition-colors" />
-                
-              
-              <button onClick={()=> router.push("Judgesnominate")} className="bg-gray-200 hover:bg-gray-300 text-black font-medium py-3 px-8 rounded-md transition-colors">
+              <Button
+                text="Apply To Judge"
+                variant="filled"
+                onClick={() => router.push("/judge-application-form")}
+                className="bg-amber-400 hover:bg-amber-500 text-black font-medium py-3 px-8 rounded-md transition-colors"
+              />
+
+              <button
+                onClick={() => router.push("/Judgesnominate")}
+                className="bg-gray-200 hover:bg-gray-300 text-black font-medium py-3 px-8 rounded-md transition-colors"
+              >
                 Nominate A Judge
               </button>
             </div>

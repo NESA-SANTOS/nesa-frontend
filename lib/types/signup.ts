@@ -10,13 +10,15 @@ export type AccountType =
 
 export type UserIntent =
   | "Vote or Nominate"
-  | "Apply for Scholarship"
+  | "Apply for Eduaid Scholarship"
   | "Become Ambassador"
   | "Join Webinar/Expo"
   | "Sponsor or CSR Partner"
   | "Apply as Judge"
   | "Join Local Chapter"
   | "Join NESA Team"
+  | "Get Gala Ticket"
+  | "Donate"
   | "Apply as NRC Volunteer";
 
 export type UserRole =

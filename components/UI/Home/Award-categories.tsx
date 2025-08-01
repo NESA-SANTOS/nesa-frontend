@@ -152,7 +152,7 @@ const AwardCategories = () => {
               </h3>
 
               <p className="text-primaryGold text-sm font-medium mb-4">
-                (2014–2024)
+                (2015–2025)
               </p>
 
               <p className="text-white/80 mb-6 leading-relaxed">
@@ -189,7 +189,7 @@ const AwardCategories = () => {
                   />
                 </motion.div>
               </div>
-
+                <Link href="nomination/sub-categories/africa-lifetime-education-icon">
               <motion.div
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-3 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-shadow duration-300 w-full justify-center mt-auto"
                 whileHover={{ scale: 1.05 }}
@@ -198,9 +198,10 @@ const AwardCategories = () => {
                 Learn More
                 <span className="text-lg">→</span>
               </motion.div>
+              </Link>
             </motion.div>
           </div>
-
+                
           {/* Competitive Category Card */}
           <Link href="/competitive" className="block group flex-1 max-w-sm mx-auto lg:mx-0">
             <motion.div

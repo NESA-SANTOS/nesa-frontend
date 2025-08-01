@@ -36,13 +36,15 @@ const accountTypeSchema = z.enum(['Individual', 'NGO', 'Corporation', 'Governmen
 // User intent schema
 const userIntentSchema = z.enum([
   'Vote or Nominate',
-  'Apply for Scholarship',
+  'Apply for Eduaid Scholarship',
   'Become Ambassador',
   'Join Webinar/Expo',
   'Sponsor or CSR Partner',
   'Apply as Judge',
   'Join Local Chapter',
   'Join NESA Team',
+  'Get Gala Ticket',
+  'Donate',
   'Apply as NRC Volunteer'
 ] as const);
 
@@ -70,7 +72,7 @@ const baseFormFields = {
   accountType: accountTypeSchema,
   intents: z.array(userIntentSchema)
     .min(1, 'Please select at least one intent')
-    .max(3, 'Please select no more than 3 intents'),
+    .max(6, 'Please select no more than 6 intents'),
   email: emailSchema,
   password: passwordSchema,
   confirmPassword: z.string(),
@@ -151,7 +153,15 @@ export const accountTypeStepSchema = z.object({
 export const intentSelectionStepSchema = z.object({
   intents: z.array(userIntentSchema)
     .min(1, 'Please select at least one intent')
-    .max(3, 'Please select no more than 3 intents')
+    .max(6, 'Please select no more than 6 intents')
+    .refine((intents) => {
+      // Mutual exclusion: Scholarship and Sponsor cannot be selected together
+      const hasScholarship = intents.includes('Apply for Eduaid Scholarship');
+      const hasSponsor = intents.includes('Sponsor or CSR Partner');
+      return !(hasScholarship && hasSponsor);
+    }, {
+      message: 'You cannot select both "Apply for Eduaid Scholarship" and "Sponsor or CSR Partner" at the same time'
+    })
 });
 
 export const personalInfoStepSchema = z.object({

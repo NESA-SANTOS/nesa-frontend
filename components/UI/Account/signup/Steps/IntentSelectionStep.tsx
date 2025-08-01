@@ -3,16 +3,18 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { 
-  Vote, 
-  GraduationCap, 
-  Users, 
-  Calendar, 
-  Heart, 
-  Scale, 
-  MapPin, 
+import {
+  Vote,
+  GraduationCap,
+  Users,
+  Calendar,
+  Heart,
+  Scale,
+  MapPin,
   Briefcase,
-  ArrowLeft
+  ArrowLeft,
+  Ticket,
+  DollarSign
 } from 'lucide-react';
 import { UserIntent } from '@/lib/types/signup';
 import { intentSelectionStepSchema } from '@/lib/validation/signupSchemas';
@@ -36,8 +38,8 @@ const intentOptions = [
     borderColor: 'border-blue-200'
   },
   {
-    value: 'Apply for Scholarship' as UserIntent,
-    label: 'Apply for Scholarship',
+    value: 'Apply for Eduaid Scholarship' as UserIntent,
+    label: 'Apply for Eduaid Scholarship',
     description: 'Access educational scholarships and funding opportunities',
     icon: GraduationCap,
     color: 'text-green-500',
@@ -106,6 +108,24 @@ const intentOptions = [
     color: 'text-emerald-500',
     bgColor: 'bg-emerald-50',
     borderColor: 'border-emerald-200'
+  },
+  {
+    value: 'Get Gala Ticket' as UserIntent,
+    label: 'Get Gala Ticket',
+    description: 'Attend the prestigious NESA-Africa Awards Gala',
+    icon: Ticket,
+    color: 'text-pink-500',
+    bgColor: 'bg-pink-50',
+    borderColor: 'border-pink-200'
+  },
+  {
+    value: 'Donate' as UserIntent,
+    label: 'Donate',
+    description: 'Support educational initiatives through donations',
+    icon: DollarSign,
+    color: 'text-cyan-500',
+    bgColor: 'bg-cyan-50',
+    borderColor: 'border-cyan-200'
   }
 ];
 
@@ -137,8 +157,17 @@ const IntentSelectionStep: React.FC = () => {
         return;
       }
 
-      if (data.intents.length > 3) {
-        setSubmitError('Please select no more than 3 purposes.');
+      if (data.intents.length > 6) {
+        setSubmitError('Please select no more than 6 purposes.');
+        return;
+      }
+
+      // Check for mutual exclusion
+      const hasScholarship = data.intents.includes('Apply for Eduaid Scholarship');
+      const hasSponsor = data.intents.includes('Sponsor or CSR Partner');
+
+      if (hasScholarship && hasSponsor) {
+        setSubmitError('You cannot select both "Apply for Eduaid Scholarship" and "Sponsor or CSR Partner" at the same time.');
         return;
       }
 
@@ -151,11 +180,27 @@ const IntentSelectionStep: React.FC = () => {
 
   const toggleIntent = (intent: UserIntent, currentIntents: UserIntent[]) => {
     if (currentIntents.includes(intent)) {
+      // Remove the intent
       return currentIntents.filter(i => i !== intent);
-    } else if (currentIntents.length < 3) {
+    } else {
+      // Check if we can add the intent
+      if (currentIntents.length >= 6) {
+        return currentIntents; // Already at max limit
+      }
+
+      // Check for mutual exclusion
+      const isScholarship = intent === 'Apply for Eduaid Scholarship';
+      const isSponsor = intent === 'Sponsor or CSR Partner';
+      const hasScholarship = currentIntents.includes('Apply for Eduaid Scholarship');
+      const hasSponsor = currentIntents.includes('Sponsor or CSR Partner');
+
+      if ((isScholarship && hasSponsor) || (isSponsor && hasScholarship)) {
+        return currentIntents; // Cannot add due to mutual exclusion
+      }
+
+      // Add the intent
       return [...currentIntents, intent];
     }
-    return currentIntents;
   };
 
   return (
@@ -165,11 +210,22 @@ const IntentSelectionStep: React.FC = () => {
           What would you like to do on NESA-Africa?
         </h1>
         <p className="text-gray-600 mb-2">
-          Select up to 3 activities that interest you. This helps us personalize your experience.
+          Select up to 6 activities that interest you. This helps us personalize your experience.
         </p>
         <p className="text-sm text-orange-600 font-medium">
-          {selectedIntents.length}/3 selected
+          {selectedIntents.length}/6 selected
         </p>
+        {/* Mutual exclusion warning */}
+        {selectedIntents.includes('Apply for Eduaid Scholarship') && (
+          <p className="text-sm text-amber-600 font-medium mt-1">
+            ⚠️ Note: You cannot select "Sponsor or CSR Partner" when applying for scholarship
+          </p>
+        )}
+        {selectedIntents.includes('Sponsor or CSR Partner') && (
+          <p className="text-sm text-amber-600 font-medium mt-1">
+            ⚠️ Note: You cannot select "Apply for Eduaid Scholarship" when sponsoring
+          </p>
+        )}
       </div>
 
       {/* Error Messages */}
@@ -191,7 +247,25 @@ const IntentSelectionStep: React.FC = () => {
               {intentOptions.map((option) => {
                 const IconComponent = option.icon;
                 const isSelected = field.value.includes(option.value);
-                const isDisabled = !isSelected && field.value.length >= 3;
+
+                // Check if option should be disabled
+                let isDisabled = false;
+                if (!isSelected) {
+                  // Disable if at max limit
+                  if (field.value.length >= 6) {
+                    isDisabled = true;
+                  }
+
+                  // Disable due to mutual exclusion
+                  const isScholarship = option.value === 'Apply for Eduaid Scholarship';
+                  const isSponsor = option.value === 'Sponsor or CSR Partner';
+                  const hasScholarship = field.value.includes('Apply for Eduaid Scholarship');
+                  const hasSponsor = field.value.includes('Sponsor or CSR Partner');
+
+                  if ((isScholarship && hasSponsor) || (isSponsor && hasScholarship)) {
+                    isDisabled = true;
+                  }
+                }
 
                 return (
                   <label

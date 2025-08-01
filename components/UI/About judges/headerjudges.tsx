@@ -15,12 +15,12 @@ const JudgesSection = () => {
                 lg:flex-row lg:items-start">
         <div className="w-full lg:w-3/5 text-center flex bg-blue flex-col lg:text-left">
           <h2 className={styles.text1}>
-          New Education Standard Award: Our Prestigious Judges
+          NESA-Africa 2025: Our Distinguished Judges Panel
           </h2>
           <p className="text-base sm:text-lg lg:text-xl font-light leading-relaxed mx-auto lg:mx-0 lg:-ml-10">
-            NESA stands as the pinnacle award of the decade, a fervent celebration of excellence within the Nigerian 
-            education system. We uplift contributors, ignite innovation, and envision an ecosystem where 
-            excellence becomes the driving force for transformative change.
+            Meet the elite panel of accomplished judges — thought leaders, educators, innovators, media professionals,
+            NGO executives, CSR advocates, and public servants — collectively shaping the future of African education.
+            These distinguished professionals serve as the gatekeepers of Africa's most prestigious educational recognition system.
           </p>
         </div>
         <div className="w-full lg:w-2/5 flex justify-center lg:justify-end mt-8 lg:mt-0">

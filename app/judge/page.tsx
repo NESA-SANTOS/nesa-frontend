@@ -1,13 +1,13 @@
 "use client";
 
-import JudgePage from "@/components/UI/judgenomination/judge";
+import JudgesDashboard from "./dashboard/page";
 
-const MainPage = () => {
+const JudgeMainPage = () => {
   return (
     <div>
-      <JudgePage />
+      <JudgesDashboard />
     </div>
   );
 };
 
-export default MainPage;
+export default JudgeMainPage;

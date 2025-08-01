@@ -16,6 +16,11 @@ export const navlinks: NavLink[] = [
         icon: "Eye",
       },
       {
+        label: "About NESA-Africa 2025 Judges",
+        path: "/about-judges",
+        icon: "scale",
+      },
+      {
         label: "About NESA Africa/Nigeria 2025 Awards",
         path: "/about/awards-2025",
         icon: "Award",
@@ -59,7 +64,7 @@ export const navlinks: NavLink[] = [
       },
       {
         label: "Judges Portal",
-        path: "/awards/judges-portal",
+        path: "/judge",
         icon: "Scale",
       },
     ],
@@ -75,8 +80,8 @@ export const navlinks: NavLink[] = [
         icon: "UserPlus",
       },
       {
-        label: "Get Endorsed",
-        path: "/get-involved/get-endorsred",
+        label: "Endorse Nesa Africa",
+        path: "/get-involved/endorse-nesa-africa",
         icon: "HandHeart",
       },
       {
@@ -188,7 +193,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   },
   {
     label: "Become a sponsor",
-    path: "/ambassador",
+    path: "/sponsor",
     description: "Ambassador pathway",
   },
   {
@@ -273,6 +278,7 @@ export const legacyNavlinks = [
       { label: "Non-Competitive", path: "/non-competitive" },
       { label: "Nomination Process", path: "/nomination" },
       { label: "Judge Portal", path: "/judge" },
+      { label: "Judge Application Status", path: "/judge-status" },
     ],
   },
   {

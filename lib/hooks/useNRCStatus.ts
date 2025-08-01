@@ -24,15 +24,24 @@ export const useNRCStatus = (): NRCStatus => {
   const [volunteer, setVolunteer] = useState<NRCVolunteer | undefined>();
 
   const checkStatus = async () => {
-    if (!user?.email) {
+    // Debug logging
+    console.log('NRC Status Check - User object:', user);
+
+    // Try different email properties that might exist
+    const userEmail = user?.email || user?.Email || user?.emailAddress;
+
+    if (!userEmail) {
+      console.log('NRC Status Check - No email found, setting loading to false');
       setLoading(false);
       return;
     }
 
+    console.log('NRC Status Check - Using email:', userEmail);
     setLoading(true);
     try {
-      const response = await checkUserNRCStatus(user.email);
-      
+      const response = await checkUserNRCStatus(userEmail);
+      console.log('NRC Status Check - Response:', response);
+
       if (response.success && response.data) {
         setHasApplication(response.data.hasApplication);
         setApplication(response.data.application);
@@ -48,7 +57,15 @@ export const useNRCStatus = (): NRCStatus => {
 
   useEffect(() => {
     checkStatus();
-  }, [user?.email]);
+
+    // Fallback timeout to prevent infinite loading
+    const timeout = setTimeout(() => {
+      console.log('NRC Status Check - Timeout reached, forcing loading to false');
+      setLoading(false);
+    }, 5000); // 5 second timeout
+
+    return () => clearTimeout(timeout);
+  }, [user]);
 
   const isPending = hasApplication && application?.status === 'pending';
   const isRejected = hasApplication && application?.status === 'rejected';

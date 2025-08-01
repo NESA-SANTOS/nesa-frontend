@@ -25,7 +25,7 @@ const NRCLandingPage: React.FC = () => {
 
   const handleApplyNow = () => {
     if (!isAuthenticated) {
-      router.push('/auth/login');
+      router.push('/account/login');
       return;
     }
 

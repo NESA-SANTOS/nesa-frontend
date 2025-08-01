@@ -78,6 +78,20 @@ export async function POST(request: NextRequest) {
     // Store application (in production, save to database)
     judgeApplications.push(application);
 
+    // Add to status tracking system
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/judge-apply/status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(application)
+      });
+    } catch (trackingError) {
+      console.error('Failed to add to tracking system:', trackingError);
+      // Don't fail the application submission if tracking fails
+    }
+
     // Send verification email
     try {
       await sendVerificationEmail(email, full_name, verificationToken);

@@ -5,7 +5,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import { FormFieldProps } from '@/lib/types/signup';
 
 interface FormInputProps extends FormFieldProps {
-  type?: 'text' | 'email' | 'password' | 'tel' | 'date' | 'number';
+  type?: 'text' | 'email' | 'password' | 'tel' | 'date' | 'number' | 'url';
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;

@@ -105,8 +105,26 @@ const JudgeSignupPage: React.FC = () => {
         state: applicationData?.state || ''
       });
 
+      // Update application status to account_created
+      try {
+        await fetch('/api/judge-apply/status', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: data.email,
+            status: 'account_created',
+            notes: 'Judge account successfully created.',
+            next_steps: 'You can now access the judges dashboard and begin your judging activities.'
+          })
+        });
+      } catch (statusError) {
+        console.error('Failed to update application status:', statusError);
+      }
+
       // Redirect to judge dashboard
-      router.push('/judge/dashboard');
+      router.push('/judge');
     } catch (error: any) {
       console.error('Judge signup error:', error);
     } finally {

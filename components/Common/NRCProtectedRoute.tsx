@@ -30,7 +30,7 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
 
   // User is not authenticated
   if (!user) {
-    router.push('/auth/login');
+    router.push('/account/login');
     return null;
   }
 
