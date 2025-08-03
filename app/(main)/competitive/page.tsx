@@ -11,7 +11,8 @@ import CategoryHeader from "@/components/UI/Categories/categories-header";
 import HowToNominate from "@/components/UI/categorynominate/howtonominate";
 import Category from "@/components/UI/categorynominate/nominatecategories";
 import CountdownTimer from "@/components/Common/Others/countdown";
- import CompetitiveCategoriesOverview from "@/components/UI/categorynominate/CompetitiveCategoriesOverview";
+import CompetitiveCategoriesOverview from "@/components/UI/categorynominate/CompetitiveCategoriesOverview";
+import CompetitiveAwards from "@/components/UI/nomination/CompetitiveAwards";
  
 const Page = () => {
   const handleTimeUpdate = (time: { days: number; hours: number; minutes: number }) => {
@@ -68,18 +69,19 @@ const Page = () => {
   return (
     <>
       <CategoryHeader categoryData={categoryData} />
-          <main className="pb-8">
-            <CountdownTimer
-              onTimeUpdate={handleTimeUpdate}
-              targetDateProp="2025-09-10T19:55:00Z"
-            />
-           
+      <main className="pb-8">
+        {/* <CountdownTimer
+          onTimeUpdate={handleTimeUpdate}
+          targetDateProp="2025-09-10T19:55:00Z"
+        /> */}
 
+        {/* Enhanced Competitive Awards Section */}
+        <CompetitiveAwards />
 
-<CompetitiveCategoriesOverview />
+        {/* <CompetitiveCategoriesOverview /> */}
         <Whynominate />
         <HowToNominate />
-        <Category categoryData={categoryData} head ={title} />
+        <Category categoryData={categoryData} head={title} />
       </main>
     </>
   );

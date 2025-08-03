@@ -73,15 +73,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ categoryData, head }) => {
                     {category.description}
                   </p>
                   <Link href={category.subCategoryPath}>
-                    <button
-                      className="w-full py-2 md:py-3 mt-4 text-black font-normal hover:bg-yellow-600 transition duration-300 rounded-xl"
+                    <div
+                      className="w-full py-2 md:py-3 mt-4 text-black font-normal hover:bg-yellow-600 transition duration-300 rounded-xl text-center cursor-pointer"
                       style={{
                         background:
                           'linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)',
                       }}
                     >
                       See Sub-Categories
-                    </button>
+                    </div>
                   </Link>
                 </div>
               </div>

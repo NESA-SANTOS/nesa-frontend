@@ -115,26 +115,22 @@ const MediaSection = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link href="/nesatv" className="group">
-                <motion.div
-                  className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                <div
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
                 >
                   <FaTv className="text-lg" />
                   Watch on NESA TV
                   <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.div>
+                </div>
               </Link>
               
               <Link href="/media" className="group">
-                <motion.div
-                  className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border-2 border-primaryGold text-darkBrown px-8 py-4 rounded-full font-semibold hover:bg-primaryGold/10 transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <div
+                  className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border-2 border-primaryGold text-darkBrown px-8 py-4 rounded-full font-semibold hover:bg-primaryGold/10 transition-all duration-300 hover:scale-102"
                 >
                   Explore Media Gallery
                   <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.div>
+                </div>
               </Link>
             </motion.div>
           </motion.div>

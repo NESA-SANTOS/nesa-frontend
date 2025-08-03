@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/components/Common/Slide/style.module.scss";
 import { motion } from "framer-motion";
 import { opacityTrans } from "@/lib/utils/transitions";
@@ -156,22 +157,25 @@ const HeroCenter = () => {
           </motion.div>
 
           {/* Nominate Now */}
+          
           <motion.div className="group">
-            <motion.button
-              onClick={() => console.log("Nominate Now")}
-              className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40"
-              whileHover={{
-                scale: 1.05,
-                y: -3,
-                boxShadow: "0 25px 50px -12px rgba(243, 169, 40, 0.5)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Nominate someone for NESA Africa awards"
-            >
-              <FaTrophy size={20} />
-              Nominate Now
-            </motion.button>
+            <Link href="/get-involved/nomination">
+              <motion.div
+                className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40 cursor-pointer"
+                whileHover={{
+                  scale: 1.05,
+                  y: -3,
+                  boxShadow: "0 25px 50px -12px rgba(243, 169, 40, 0.5)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Nominate someone for NESA Africa awards"
+              >
+                <FaTrophy size={20} />
+                Nominate Now
+              </motion.div>
+            </Link>
           </motion.div>
+          
 
           {/* Get Gala Tickets */}
           <motion.div className="group">

@@ -122,9 +122,13 @@ const AwardCategories = () => {
           className="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-16 justify-center items-stretch"
         >
           {/* African Education Icon Card */}
-          <div className="block group flex-1 max-w-sm mx-auto lg:mx-0">
+          <Link
+            href="/nomination/sub-categories/africa-lifetime-education-icon"
+            className="block group flex-1 max-w-sm mx-auto lg:mx-0"
+            aria-label="Navigate to African Education Icon Award page - Lifetime achievement recognition for decade-long institutional contributions"
+          >
             <motion.div
-              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col"
+              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-primaryGold focus-within:ring-offset-2 focus-within:ring-offset-darkBrown"
               whileHover="hover"
               variants={{
                 hover: {
@@ -132,6 +136,14 @@ const AwardCategories = () => {
                   scale: 1.02,
                   transition: { duration: 0.3, ease: "easeOut" },
                 },
+              }}
+              role="article"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/nomination/sub-categories/africa-lifetime-education-icon';
+                }
               }}
             >
               {/* Background Pattern */}
@@ -189,23 +201,24 @@ const AwardCategories = () => {
                   />
                 </motion.div>
               </div>
-                <Link href="nomination/sub-categories/africa-lifetime-education-icon">
-              <motion.div
+
+              <div
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-3 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-shadow duration-300 w-full justify-center mt-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                Learn More
+                Nominate Now
                 <span className="text-lg">→</span>
-              </motion.div>
-              </Link>
+              </div>
             </motion.div>
-          </div>
-                
+          </Link>
+
           {/* Competitive Category Card */}
-          <Link href="/competitive" className="block group flex-1 max-w-sm mx-auto lg:mx-0">
+          <Link
+            href="/competitive"
+            className="block group flex-1 max-w-sm mx-auto lg:mx-0"
+            aria-label="Navigate to Competitive Awards page - Public voting and judging-based selection"
+          >
             <motion.div
-              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col"
+              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-primaryGold focus-within:ring-offset-2 focus-within:ring-offset-darkBrown"
               whileHover="hover"
               variants={{
                 hover: {
@@ -213,6 +226,14 @@ const AwardCategories = () => {
                   scale: 1.02,
                   transition: { duration: 0.3, ease: "easeOut" },
                 },
+              }}
+              role="article"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/competitive';
+                }
               }}
             >
               {/* Background Pattern */}
@@ -267,21 +288,23 @@ const AwardCategories = () => {
                 </motion.div>
               </div>
 
-              <motion.div
+              <div
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-3 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-shadow duration-300 w-full justify-center mt-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 Nominate Now
                 <span className="text-lg">→</span>
-              </motion.div>
+              </div>
             </motion.div>
           </Link>
 
           {/* Non-Competitive Category Card */}
-          <Link href="/non-competitive" className="block group flex-1 max-w-sm mx-auto lg:mx-0">
+          <Link
+            href="/non-competitive"
+            className="block group flex-1 max-w-sm mx-auto lg:mx-0"
+            aria-label="Navigate to Non-Competitive Awards page - Merit-based recognition through expert panel evaluation"
+          >
             <motion.div
-              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col"
+              className="relative bg-gradient-to-br from-darkBrown via-secondaryDark to-darkBrown rounded-2xl p-8 shadow-xl border border-primaryGold/20 h-full overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-deepGold focus-within:ring-offset-2 focus-within:ring-offset-darkBrown"
               whileHover="hover"
               variants={{
                 hover: {
@@ -289,6 +312,14 @@ const AwardCategories = () => {
                   scale: 1.02,
                   transition: { duration: 0.3, ease: "easeOut" },
                 },
+              }}
+              role="article"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.location.href = '/non-competitive';
+                }
               }}
             >
               {/* Background Pattern */}
@@ -342,14 +373,12 @@ const AwardCategories = () => {
                 </motion.div>
               </div>
 
-              <motion.div
+              <div
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-deepGold to-midGold text-darkBrown px-6 py-3 rounded-full font-semibold shadow-lg group-hover:shadow-xl transition-shadow duration-300 w-full justify-center mt-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 Nominate Now
                 <span className="text-lg">→</span>
-              </motion.div>
+              </div>
             </motion.div>
           </Link>
         </motion.div>

@@ -13,6 +13,8 @@ import Category from "@/components/UI/categorynominate/nominatecategories";
 import CountdownTimer from "@/components/Common/Others/countdown";
 import CategoryHeader from "@/components/UI/Categories/categories-header";
 import PlatinumOverview from "@/components/UI/categorynominate/PlatinumOverview";
+import PlatinumAwards from "@/components/UI/nomination/PlatinumAwards";
+import NonCompetitiveAwards from "@/components/UI/nomination/NonCompetitiveAwards";
 
 
 const Page = () => {
@@ -73,14 +75,18 @@ const Page = () => {
     <>
       <CategoryHeader categoryData={categoryData} type="non-competitive" />
       <main className="pb-8">
-      <CountdownTimer
-        onTimeUpdate={handleTimeUpdate}
-        targetDateProp="2025-09-10T19:55:00Z"
-      />
-      <PlatinumOverview />
-      <Whynominate />
-      <HowToNominate />
-      <Category categoryData={categoryData} head={title} />
+        {/* <CountdownTimer
+          onTimeUpdate={handleTimeUpdate}
+          targetDateProp="2025-09-10T19:55:00Z"
+        /> */}
+
+        {/* Enhanced Non-Competitive Awards Section */}
+        <NonCompetitiveAwards />
+
+        {/* <PlatinumOverview /> */}
+        <Whynominate />
+        <HowToNominate />
+        <Category categoryData={categoryData} head={title} />
       </main>
     </>
   );

@@ -42,24 +42,24 @@ export const navlinks: NavLink[] = [
     path: "/awards",
     icon: "Trophy",
     children: [
-      {
-        label: "Awards",
-        path: "/awards",
-        icon: "Scale",
-      },
+      // {
+      //   label: "Awards",
+      //   path: "/awards",
+      //   icon: "Scale",
+      // },
       {
         label: "African Icon",
-        path: "/awards/african-icon",
+        path: "/nomination/sub-categories/africa-lifetime-education-icon",
         icon: "Crown",
       },
       {
-        label: "Competitive",
-        path: "/awards/competitive",
+        label: " Blue Garnet & Gold Certificate",
+        path: "/competitive",
         icon: "Medal",
       },
       {
-        label: "Non-competitive",
-        path: "/awards/non-competitive",
+        label: " Platinum Certificate of Recognition",
+        path: "/non-competitive",
         icon: "Star",
       },
       {
@@ -76,7 +76,7 @@ export const navlinks: NavLink[] = [
     children: [
       {
         label: "Nominate Now",
-        path: "/get-involved/nomination",
+        path: "/nomination",
         icon: "UserPlus",
       },
       {
@@ -233,7 +233,7 @@ export const ctaNavlinks: CTANavLink[] = [
   },
   {
     label: "Vote Now",
-    path: "/voting",
+    path: "/vote",
     description: "AGC voting interface",
     priority: "high",
   },

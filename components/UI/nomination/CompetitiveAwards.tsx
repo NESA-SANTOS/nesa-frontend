@@ -2,9 +2,22 @@
 import { motion } from "framer-motion";
 import { toTopV, parentV, opacityV } from "@/lib/utils/variants";
 import Link from "next/link";
-import { Award, Users, Vote, Download, UserPlus, DollarSign, Wallet } from "lucide-react";
+import { Award, Users, Vote, Download, UserPlus, DollarSign, Wallet, Lock } from "lucide-react";
+import { useAuthContext } from "@/lib/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const CompetitiveAwards = () => {
+  const { isAuthenticated, userRole } = useAuthContext();
+  const router = useRouter();
+
+  // Handle authentication-required actions
+  const handleAuthAction = (link: string) => {
+    if (!isAuthenticated) {
+      router.push('/account/login');
+      return;
+    }
+    router.push(link);
+  };
   const criteriaData = [
     { label: "🎯 Eligibility", value: "Schools, individuals, startups, community orgs, media" },
     { label: "📥 Nomination", value: "Public submission (via AGC wallet only)" },
@@ -15,58 +28,91 @@ const CompetitiveAwards = () => {
     { label: "📜 Recognition", value: "Non-winners with 1,000+ votes/nominations can download certificate" }
   ];
 
-  const actions = [
-    {
-      title: "Start Nomination",
-      description: "Submit a nomination using your AGC wallet",
-      icon: UserPlus,
-      link: "/nomination/competitive/start",
-      buttonText: "Nominate Now",
-      color: "from-[#FFC247] to-[#E48900]",
-      featured: true
-    },
-    {
-      title: "Vote Using AGC",
-      description: "Support nominees and fund scholarships through voting",
-      icon: Vote,
-      link: "/voting",
-      buttonText: "Vote Now",
-      color: "from-green-500 to-green-600",
-      featured: true
-    },
-    {
-      title: "Download Certificate",
-      description: "Access your certificate if you meet the 1,000 vote threshold",
-      icon: Download,
-      link: "/certificates/download?type=competitive",
-      buttonText: "Check Eligibility",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      title: "Become a Judge",
-      description: "Join our expert panel to evaluate nominations",
-      icon: Users,
-      link: "/judgeapply",
-      buttonText: "Apply as Judge",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Sponsor a Subcategory",
-      description: "Support specific award subcategories through sponsorship",
-      icon: DollarSign,
-      link: "/sponsor?category=competitive",
-      buttonText: "Sponsor Now",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      title: "Top Up AGC Wallet",
-      description: "Add funds to participate in nominations and voting",
-      icon: Wallet,
-      link: "/wallet",
-      buttonText: "Top Up Wallet",
-      color: "from-[#FFC247] to-[#E48900]"
-    }
-  ];
+  // Define actions with role-based permissions
+  const getActions = () => {
+    const baseActions = [
+      {
+        title: "Start Nomination",
+        description: isAuthenticated
+          ? "Submit a nomination using your AGC wallet"
+          : "Login to submit nominations",
+        icon: isAuthenticated ? UserPlus : Lock,
+        link: "/nomination/competitive/start",
+        buttonText: isAuthenticated ? "Nominate Now" : "Login to Nominate",
+        color: "from-[#FFC247] to-[#E48900]",
+        featured: true,
+        requiresAuth: true,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+      },
+      {
+        title: "Vote Using AGC",
+        description: isAuthenticated
+          ? "Support nominees and fund scholarships through voting"
+          : "Login to vote for nominees",
+        icon: isAuthenticated ? Vote : Lock,
+        link: "/voting",
+        buttonText: isAuthenticated ? "Vote Now" : "Login to Vote",
+        color: "from-green-500 to-green-600",
+        featured: true,
+        requiresAuth: true,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+      },
+      {
+        title: "Download Certificate",
+        description: isAuthenticated
+          ? "Access your certificate if you meet the 1,000 vote threshold"
+          : "Login to check certificate eligibility",
+        icon: isAuthenticated ? Download : Lock,
+        link: "/certificates/download?type=competitive",
+        buttonText: isAuthenticated ? "Check Eligibility" : "Login to Check",
+        color: "from-purple-500 to-purple-600",
+        requiresAuth: true,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+      },
+      {
+        title: "Become a Judge",
+        description: "Join our expert panel to evaluate nominations",
+        icon: Users,
+        link: "/judgeapply",
+        buttonText: "Apply as Judge",
+        color: "from-blue-500 to-blue-600",
+        requiresAuth: false,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "VOLUNTEER", "NRC_VOLUNTEER"]
+      },
+      {
+        title: "Sponsor a Subcategory",
+        description: "Support specific award subcategories through sponsorship",
+        icon: DollarSign,
+        link: "/sponsor?category=competitive",
+        buttonText: "Sponsor Now",
+        color: "from-orange-500 to-orange-600",
+        requiresAuth: false,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "SPONSOR", "ADMIN", "SUPER_ADMIN"]
+      },
+      {
+        title: "Top Up AGC Wallet",
+        description: isAuthenticated
+          ? "Add funds to participate in nominations and voting"
+          : "Login to access your AGC wallet",
+        icon: isAuthenticated ? Wallet : Lock,
+        link: "/wallet",
+        buttonText: isAuthenticated ? "Top Up Wallet" : "Login for Wallet",
+        color: "from-[#FFC247] to-[#E48900]",
+        requiresAuth: true,
+        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+      }
+    ];
+
+    // Filter actions based on user role
+    return baseActions.filter(action => {
+      if (!action.allowedRoles) return true;
+      if (!isAuthenticated && !action.requiresAuth) return true;
+      if (!isAuthenticated && action.requiresAuth) return true; // Show with login prompt
+      return action.allowedRoles.includes(userRole || "");
+    });
+  };
+
+  const actions = getActions();
 
   const subcategories = [
     { name: "STEM Education Excellence", count: "15 subcategories", icon: "🔬" },
@@ -113,7 +159,7 @@ const CompetitiveAwards = () => {
               
               {/* Criteria Table */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-6 flex items-center">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] text-transparent bg-clip-text mb-6 flex items-center">
                   <Award className="w-6 h-6 text-[#FFC247] mr-3" />
                   Award Criteria & Details
                 </h3>
@@ -210,35 +256,67 @@ const CompetitiveAwards = () => {
                   variants={opacityV}
                   className={`group ${action.featured ? 'lg:col-span-1' : ''}`}
                 >
-                  <Link href={action.link}>
-                    <div className={`bg-gradient-to-br from-[#191307]/80 to-[#33270E]/60 backdrop-blur-sm border border-[#FFC247]/20 rounded-xl p-6 hover:border-[#FFC247]/40 transition-all duration-300 h-full cursor-pointer group-hover:transform group-hover:scale-105 ${
+                  <div
+                    onClick={() => action.requiresAuth && !isAuthenticated ? handleAuthAction(action.link) : null}
+                    className={`bg-gradient-to-br from-[#191307]/80 to-[#33270E]/60 backdrop-blur-sm border border-[#FFC247]/20 rounded-xl p-6 hover:border-[#FFC247]/40 transition-all duration-300 h-full cursor-pointer group-hover:transform group-hover:scale-105 ${
                       action.featured ? 'border-[#FFC247]/40 bg-gradient-to-br from-[#FFC247]/5 to-[#E48900]/5' : ''
-                    }`}>
-                      <div className="text-center">
+                    } ${!isAuthenticated && action.requiresAuth ? 'opacity-75' : ''}`}
+                  >
+                    {(!action.requiresAuth || isAuthenticated) ? (
+                      <Link href={action.link} className="block h-full">
+                        <div className="text-center h-full flex flex-col">
+                          {action.featured && (
+                            <div className="bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">
+                              FEATURED
+                            </div>
+                          )}
+
+                          <div className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                            <action.icon className="w-8 h-8 text-white" />
+                          </div>
+
+                          <h4 className="text-lg font-bold text-[#FFC247] mb-3">
+                            {action.title}
+                          </h4>
+
+                          <p className="text-gray-400 text-sm mb-6 leading-relaxed flex-grow">
+                            {action.description}
+                          </p>
+
+                          <div className={`bg-gradient-to-r ${action.color} text-white font-semibold px-6 py-2 rounded-full text-sm hover:shadow-lg transition-all duration-300 w-full mt-auto text-center`}>
+                            {action.buttonText}
+                          </div>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div className="text-center h-full flex flex-col">
                         {action.featured && (
-                          <div className="bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">
-                            FEATURED
+                          <div className="bg-gradient-to-r from-gray-500 to-gray-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">
+                            LOGIN REQUIRED
                           </div>
                         )}
-                        
-                        <div className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+
+                        <div className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center opacity-75`}>
                           <action.icon className="w-8 h-8 text-white" />
                         </div>
-                        
-                        <h4 className="text-lg font-bold text-[#FFC247] mb-3">
+
+                        <h4 className="text-lg font-bold text-gray-400 mb-3">
                           {action.title}
                         </h4>
-                        
-                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+
+                        <p className="text-gray-500 text-sm mb-6 leading-relaxed flex-grow">
                           {action.description}
                         </p>
-                        
-                        <button className={`bg-gradient-to-r ${action.color} text-white font-semibold px-6 py-2 rounded-full text-sm hover:shadow-lg transition-all duration-300 w-full`}>
+
+                        <button
+                          onClick={() => handleAuthAction(action.link)}
+                          className="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold px-6 py-2 rounded-full text-sm hover:shadow-lg transition-all duration-300 w-full mt-auto"
+                        >
                           {action.buttonText}
                         </button>
                       </div>
-                    </div>
-                  </Link>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>

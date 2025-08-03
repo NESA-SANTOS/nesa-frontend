@@ -21,6 +21,8 @@ export function middleware(request: NextRequest) {
 }
 
 // Apply middleware only to routes below
+// TEMPORARILY DISABLED: Judge routes authentication removed for development/testing
 export const config = {
-  matcher: ["/member/:path*", "/ProfileSetting", "/nominateform", "/judge/:path*"],
+  matcher: ["/member/:path*", "/ProfileSetting", "/nominateform"],
+  // Temporarily removed: "/judge/:path*"
 };

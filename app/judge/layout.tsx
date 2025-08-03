@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from "@/components/Layout/Footer";
-import JudgeProtectedRoute from "@/components/Common/JudgeProtectedRoute";
+// TEMPORARILY DISABLED: Authentication removed for development/testing
+// import JudgeProtectedRoute from "@/components/Common/JudgeProtectedRoute";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -94,7 +95,8 @@ export default function JudgeLayout({ children }: JudgeLayoutProps) {
   };
 
   return (
-    <JudgeProtectedRoute requireActiveJudge={true}>
+    // TEMPORARILY DISABLED: Authentication removed for development/testing
+    // <JudgeProtectedRoute requireActiveJudge={true}>
       <div className="flex flex-col min-h-screen ">
         <nav className="text-white py-4 bg-[#17120a] fixed w-full z-50">
           <div className="container mx-auto px-4 flex justify-between items-center">
@@ -158,6 +160,6 @@ export default function JudgeLayout({ children }: JudgeLayoutProps) {
 
         <Footer />
       </div>
-    </JudgeProtectedRoute>
+    // </JudgeProtectedRoute>
   );
 }
