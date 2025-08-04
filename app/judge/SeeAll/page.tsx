@@ -5,7 +5,7 @@ import SeeAll from "@/components/UI/SeeAll/seeall";
 const MainPage = () => {
   return (
     <div>
-      <SeeAll />
+      <SeeAll isJudgeView={true} />
     </div>
   );
 };

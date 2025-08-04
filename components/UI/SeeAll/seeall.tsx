@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 import { categories, Category, Region, SubCategory, Nominee } from '@/lib/data/awardData';
+import { useRouter } from 'next/navigation';
 
 
 const AwardCategory: React.FC<{
@@ -131,7 +132,29 @@ const SubCategoryComponent: React.FC<{
   );
 };
 
-const NomineeComponent: React.FC<{ nominee: Nominee }> = ({ nominee }) => {
+const NomineeComponent: React.FC<{ 
+  nominee: Nominee, 
+  categoryTitle: string, 
+  subCategoryTitle: string,
+  isJudgeView?: boolean
+}> = ({ nominee, categoryTitle, subCategoryTitle, isJudgeView = false }) => {
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    if (isJudgeView) {
+      // For judges: Navigate to review page
+      router.push(`/judge/sub-category/nominees/nomineeId`);
+    } else {
+      // For regular users: Navigate to nomination form
+      router.push(
+        `/nominateform?type=${encodeURIComponent(categoryTitle)}` +
+        `&title=${encodeURIComponent(subCategoryTitle)}` +
+        `&description=${encodeURIComponent(nominee.achievement)}` +
+        `&image=${encodeURIComponent(nominee.image)}`
+      );
+    }
+  };
+
   return (
     <div 
       className="bg-[#191307] text-white rounded-3xl p-6 flex flex-col justify-between" 
@@ -160,23 +183,58 @@ const NomineeComponent: React.FC<{ nominee: Nominee }> = ({ nominee }) => {
         <p className="text-sm mb-4">{nominee.achievement}</p>
       </div>
       <button 
-        className="w-full py-2 px-4 rounded-lg font-medium mt-auto" 
-        style={{
-          background: 'linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)',
-          color: 'black',
-        }}
+        onClick={handleButtonClick}
+        className="w-full py-2.5 px-4 rounded-lg font-medium mt-auto bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 flex items-center justify-center group" 
       >
-        Review
+        <span className="mr-2 text-lg">{isJudgeView ? '⭐' : '🏆'}</span>
+        <span className="group-hover:translate-x-1 transition-transform duration-300">
+          {isJudgeView ? 'Review' : 'Re-Nominate'}
+        </span>
       </button>
     </div>
   );
 };
 
-const JudgePage: React.FC = () => {
+interface JudgePageProps {
+  initialCategory?: string | null;
+  initialSubCategory?: string | null;
+  isJudgeView?: boolean;
+}
+
+const JudgePage: React.FC<JudgePageProps> = ({ 
+  initialCategory = null, 
+  initialSubCategory = null,
+  isJudgeView = false
+}) => {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState<SubCategory | null>(null);
+  
+  // Find and set initial category and subcategory if provided
+  useEffect(() => {
+    if (initialCategory) {
+      const category = categories.find(c => 
+        c.title.toLowerCase() === initialCategory.toLowerCase() ||
+        c.title.toLowerCase().includes(initialCategory.toLowerCase())
+      );
+      
+      if (category) {
+        setSelectedCategory(category);
+        
+        if (initialSubCategory && category.subCategories) {
+          const subCategory = category.subCategories.find(sc => 
+            sc.title.toLowerCase() === initialSubCategory.toLowerCase() ||
+            sc.title.toLowerCase().includes(initialSubCategory.toLowerCase())
+          );
+          
+          if (subCategory) {
+            setSelectedSubCategory(subCategory);
+          }
+        }
+      }
+    }
+  }, [initialCategory, initialSubCategory]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -347,7 +405,13 @@ const JudgePage: React.FC = () => {
           {selectedSubCategory && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
               {selectedSubCategory.nominees.map((nominee, index) => (
-                <NomineeComponent key={index} nominee={nominee} />
+                <NomineeComponent 
+                  key={index} 
+                  nominee={nominee} 
+                  categoryTitle={selectedCategory?.title || ""} 
+                  subCategoryTitle={selectedSubCategory.title}
+                  isJudgeView={isJudgeView}
+                />
               ))}
             </div>
           )}

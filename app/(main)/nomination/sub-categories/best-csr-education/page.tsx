@@ -255,12 +255,22 @@ const CSRAwardCategoryPage = () => {
                                     <h4 className="text-white text-xl font-bold mb-2">{category.title}</h4>
                                     <p className="text-gray-300 text-sm mb-4">{category.description}</p>
                                 </div>
-                                <button
+                                <div className="flex flex-col gap-3 mt-auto">
+                                  <button
+                                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Best Africa Regional Companies CSR for Education Special Recognition Award in Africa 2024")}&subcategory=${encodeURIComponent(category.title)}`)}
+                                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
+                                  >
+                                    <span className="mr-2 text-lg">👁️</span>
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
+                                  </button>
+                                  <button
                                     onClick={() => handleNominate(category)}
-                                    className="w-full bg-[#FFC247] text-black py-2 rounded font-bold hover:bg-[#FFD277] transition mt-auto"
-                                >
-                                    Nominate
-                                </button>
+                                    className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
+                                  >
+                                    <span className="mr-2 text-lg">🏆</span>
+                                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
+                                  </button>
+                                </div>
                             </div>
                         </div>
                     ))}
