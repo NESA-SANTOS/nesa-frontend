@@ -192,7 +192,7 @@ const CallToAction = () => {
             </div>
             
             <blockquote className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-8 italic">
-              "By 2030, every child and youth across Africa will have access to quality education, 
+              "By 2035, every child and youth across Africa will have access to quality education, 
               supported by a continental network of changemakers, innovators, and champions who 
               believe in the transformative power of learning."
             </blockquote>

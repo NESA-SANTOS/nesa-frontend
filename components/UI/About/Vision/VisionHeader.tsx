@@ -51,8 +51,9 @@ const VisionHeader = () => {
 
           <motion.div variants={toTopV} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {[
-              { number: "2030", label: "Vision Year", icon: "🎯" },
+              { number: "2035", label: "Vision Year", icon: "🎯" },
               { number: "54", label: "African Countries", icon: "🌍" },
+              { number: "25+", label: "Diasporal Countries", icon: "🌍"},
               { number: "1M+", label: "Learners to Reach", icon: "👥" },
               { number: "100K", label: "Scholarships Target", icon: "🎓" }
             ].map((stat, index) => (

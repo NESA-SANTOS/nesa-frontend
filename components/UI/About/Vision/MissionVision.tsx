@@ -55,7 +55,7 @@ const MissionVision = () => {
                   <Eye className="w-8 h-8 text-[#FFC247]" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text">
-                  🌟 Vision (2030)
+                  🌟 Vision (2035)
                 </h3>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">

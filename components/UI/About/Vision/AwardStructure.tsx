@@ -46,14 +46,14 @@ const AwardStructure = () => {
       id: 3,
       title: "Platinum Certificate of Recognition Awards",
       subtitle: "Institutional Honors",
-      description: "Non-competitive institutional honors for policy-makers, governments, global partners, and CSR champions.",
+      description: "Non-competitive institutional honors for policy-makers, governments, global partners, and Education social Impact contributors achieving education for alls.",
       icon: Medal,
       color: "from-gray-400 to-gray-600",
       features: [
         "Government recognition",
         "Policy-maker honors",
         "Global partner appreciation",
-        "CSR champion awards",
+        "Education social Impact contributors awards",
         "Institutional partnerships",
         "Diplomatic recognition"
       ],
@@ -157,7 +157,7 @@ const AwardStructure = () => {
                 📚 Award Categories
               </h3>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                Comprehensive coverage across 8 main categories and 101 specialized subcategories
+                Comprehensive coverage across 8 <span className="text-blue-600">Blue Garnet</span> categories and 101 <span className="text-[#FFC247]">Gold Certificates</span> Sub Categories.
               </p>
             </div>
 

@@ -48,7 +48,7 @@ export const navlinks: NavLink[] = [
       //   icon: "Scale",
       // },
       {
-        label: "African Icon",
+        label: "Africa Icon Blue Garnet Award",
         path: "/nomination/sub-categories/africa-lifetime-education-icon",
         icon: "Crown",
       },

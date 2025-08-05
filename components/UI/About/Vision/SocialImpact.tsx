@@ -16,7 +16,7 @@ const SocialImpact = () => {
         "Community-driven selection",
         "Sustainable funding model"
       ],
-      impact: "50,000+ learners empowered by 2030"
+      impact: "50,000+ learners empowered by 2035"
     },
     {
       title: "🤝 Local Chapters",
@@ -31,7 +31,7 @@ const SocialImpact = () => {
         "Teacher support programs",
         "Local data collection"
       ],
-      impact: "1,000+ local chapters by 2030"
+      impact: "10,000 Members + Localchapters by 2035"
     },
     {
       title: "📡 NESA TV & It's In Me Radio",
@@ -61,7 +61,7 @@ const SocialImpact = () => {
         "Cross-border collaboration",
         "Cultural bridge building"
       ],
-      impact: "10,000+ active ambassadors"
+      impact: "1000+ Active Ambassadors"
     },
     {
       title: "📘 EduAid-Africa Expo & Webinar Series",
@@ -82,7 +82,7 @@ const SocialImpact = () => {
 
   const impactMetrics = [
     { number: "$10M+", label: "Scholarship Funding by 2027", icon: "💰" },
-    { number: "1M+", label: "Learners Reached by 2030", icon: "👥" },
+    { number: "1M+", label: "Learners Reached by 2035", icon: "👥" },
     { number: "100K", label: "Scholarships Issued", icon: "🎓" },
     { number: "54+", label: "Countries & Territories", icon: "🌍" }
   ];

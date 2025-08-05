@@ -887,7 +887,7 @@ const JudgeApplicationForm: React.FC = () => {
 
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Application Submitted Successfully!</h2>
                   <div className="text-gray-600 mb-8 space-y-2 text-sm sm:text-base">
-                    <p>Your judge application has been successfully submitted and is under review by the SOBCD + BOT Panel.</p>
+                    <p>Your Application to be a  judge  has been successfully submitted and is under review by the SOBCD + BOT Panel.</p>
                     <p>You will receive an email confirmation shortly, and we'll notify you of the decision within 7 days.</p>
                     <p className="font-medium text-orange-600">Application Timeline: June 10 - July 15, 2025</p>
                   </div>

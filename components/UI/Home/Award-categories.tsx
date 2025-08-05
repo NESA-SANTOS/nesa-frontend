@@ -73,46 +73,7 @@ const AwardCategories = () => {
           </p>
         </motion.div>
 
-        {/* Award Structure Overview - Enhanced */}
-        {/* <motion.div
-          variants={itemVariants}
-          className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-primaryGold/20 p-8 mb-16 relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primaryGold/10 to-transparent rounded-bl-full"></div>
-
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-primaryGold to-deepGold rounded-full flex items-center justify-center">
-              <FaTrophy className="text-darkBrown text-xl" />
-            </div>
-            <h3 className="text-darkBrown font-bold text-2xl lg:text-3xl">
-              NESA–AFRICA 2025 AWARD STRUCTURE
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: <Trophy className="text-primaryGold" size={24} />, count: "8", label: "Competitive Blue Garnet Award Categories" },
-              { icon: <FaMedal className="text-primaryGold" size={24} />, count: "101", label: "Subcategory Gold Certificate Winners" },
-              { icon: <Award className="text-primaryGold" size={24} />, count: "53", label: "Platinum Recognition Certificates" },
-              { icon: <FaCertificate className="text-primaryGold" size={24} />, count: "6,000+", label: "Letters of Recognition" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-4 rounded-xl bg-gradient-to-b from-whiteGold to-white border border-primaryGold/10"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="flex justify-center mb-2">{stat.icon}</div>
-                <div className="text-2xl font-bold text-primaryGold mb-1">{stat.count}</div>
-                <div className="text-sm text-darkBrown/70 font-poppins">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="mt-6 text-darkBrown/80 text-center font-poppins">
-            All determined through nomination, expert judging, AGC-powered voting, and stakeholder validation.
-          </p>
-        </motion.div> */}
+      
 
         {/* Hero Card - Hidden/Removed */}
 
@@ -160,11 +121,11 @@ const AwardCategories = () => {
               </div>
 
               <h3 className="text-white text-2xl font-bold mb-4">
-                African Education Icon for Decade
+                Africa Icon Blue Garnet Award
               </h3>
 
               <p className="text-primaryGold text-sm font-medium mb-4">
-                (2015–2025)
+                (2005–2025)
               </p>
 
               <p className="text-white/80 mb-6 leading-relaxed">
@@ -250,7 +211,7 @@ const AwardCategories = () => {
               </div>
 
               <h3 className="text-white text-2xl font-bold mb-4">
-                Competitive Awards
+               Blue Garnet & Gold Certificate Awards
               </h3>
 
               <p className="text-white/80 mb-6 leading-relaxed">
@@ -336,7 +297,7 @@ const AwardCategories = () => {
               </div>
 
               <h3 className="text-white text-2xl font-bold mb-4">
-                Non-Competitive Awards
+                Platinum Certificate of Recognition Awards
               </h3>
 
               <p className="text-white/80 mb-6 leading-relaxed">

@@ -110,7 +110,7 @@ const RoadmapTimeline = () => {
       }
     },
     {
-      year: "2030",
+      year: "2035",
       title: "Continental Leadership",
       subtitle: "1 million learners reached; 100,000 scholarships issued; 1,000 awardees recognized continentally",
       color: "from-pink-400 to-rose-600",
@@ -154,7 +154,7 @@ const RoadmapTimeline = () => {
           {/* Section Header */}
           <motion.div variants={toTopV} className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
-              🗺️ Roadmap to 2030
+              🗺️ Roadmap to 2035
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Our strategic journey towards becoming Africa's premier education transformation platform
@@ -253,14 +253,14 @@ const RoadmapTimeline = () => {
             </div>
           </div>
 
-          {/* 2030 Vision Summary */}
+          {/* 2035 Vision Summary */}
           <motion.div variants={toTopV} className="bg-gradient-to-r from-[#FFC247]/10 to-[#E48900]/10 rounded-2xl p-8 border border-[#FFC247]/30">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
-                🎯 2030 Vision Achieved
+                🎯 2035 Vision Achieved
               </h3>
               <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-                By 2030, NESA-Africa will be the continent's leading education transformation platform, 
+                By 2035, NESA-Africa will be the continent's leading education transformation platform, 
                 having created lasting impact across all 54 African countries and beyond.
               </p>
             </div>

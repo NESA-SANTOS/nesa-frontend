@@ -52,7 +52,7 @@ const SmartGoals = () => {
       goals: [
         "2025: Inaugural event and scholarship pilot",
         "2026–2028: Continental rollout and program scaling",
-        "2029–2030: Consolidation into Africa's premier education sustainability hub"
+        "2029–2035: Consolidation into Africa's premier education sustainability hub"
       ]
     }
   ];
@@ -80,7 +80,7 @@ const SmartGoals = () => {
       color: "from-purple-400 to-purple-600"
     },
     {
-      year: "2029-2030",
+      year: "2029-2035",
       title: "Continental Leadership",
       description: "Premier education sustainability hub",
       achievements: ["Policy coalitions", "1M learners reached", "100K scholarships", "1K awardees"],
@@ -101,7 +101,7 @@ const SmartGoals = () => {
           {/* Section Header */}
           <motion.div variants={toTopV} className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
-              📈 SMART Goals (2025–2030)
+              📈 SMART Goals (2025–2035)
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Strategic, Measurable, Achievable, Relevant, and Time-bound objectives for transforming African education
@@ -146,7 +146,7 @@ const SmartGoals = () => {
           <motion.div variants={toTopV} className="space-y-8">
             <div className="text-center">
               <h3 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
-                🗺️ Roadmap to 2030
+                🗺️ Roadmap to 2035
               </h3>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 Our strategic timeline for achieving continental educational transformation
@@ -196,7 +196,7 @@ const SmartGoals = () => {
           <motion.div variants={opacityV} className="bg-gradient-to-r from-[#33270E]/60 to-[#191307]/60 rounded-2xl p-8 border border-[#FFC247]/20">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
-                🎯 2030 Success Targets
+                🎯 2035 Success Targets
               </h3>
             </div>
             
