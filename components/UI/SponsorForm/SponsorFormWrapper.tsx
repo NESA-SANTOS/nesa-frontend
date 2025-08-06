@@ -3,6 +3,21 @@
 import { useState } from 'react';
 import SponsorStep1 from './SponsorStep1';
 import SponsorshipPlans from './SponsorshipPlans';
+import PaymentStep from './PaymentStep';
+import SuccessStep from './SuccessStep';
+
+export type SponsorPlan = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  priceRange?: string;
+  badge: string;
+  color: string;
+  icon: any;
+  popular?: boolean;
+  details: string[];
+};
 
 export type SponsorFormData = {
   company_name: string;
@@ -10,11 +25,10 @@ export type SponsorFormData = {
   email: string;
   phone: string;
   Business_reg_no: string;
-  selectedPlan?: {
-    name: string;
-    price: number;
-    details?: string[];
-  };
+  sponsorshipType?: string;
+  proposedAmount?: number;
+  additionalNotes?: string;
+  selectedPlan?: SponsorPlan;
 };
 
 export default function SponsorFormWrapper() {
@@ -25,6 +39,9 @@ export default function SponsorFormWrapper() {
     email: '',
     phone: '',
     Business_reg_no: '',
+    sponsorshipType: '',
+    proposedAmount: undefined,
+    additionalNotes: '',
     selectedPlan: undefined
   });
 
@@ -36,8 +53,30 @@ export default function SponsorFormWrapper() {
   };
 
   const handleFinalSubmit = async () => {
-    console.log('Final form data:', formData);
-    // Call sponsorapplication() or any API submission logic here
+    try {
+      console.log('Submitting sponsor application:', formData);
+      
+      const response = await fetch('/api/sponsor-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log('Sponsor application submitted successfully:', result);
+        nextStep(); // Move to success step
+      } else {
+        console.error('Sponsor application failed:', result.error);
+        alert(`Application failed: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error submitting sponsor application:', error);
+      alert('An error occurred while submitting your application. Please try again.');
+    }
   };
 
   return (
@@ -54,8 +93,22 @@ export default function SponsorFormWrapper() {
         <SponsorshipPlans
           selectedPlan={formData.selectedPlan}
           onSelect={(plan) => handleDataUpdate({ selectedPlan: plan })}
-          onSubmit={handleFinalSubmit}
+          onSubmit={nextStep}
           onBack={prevStep}
+        />
+      )}
+
+      {step === 3 && (
+        <PaymentStep
+          formData={formData}
+          onBack={prevStep}
+          onSubmit={handleFinalSubmit}
+        />
+      )}
+
+      {step === 4 && (
+        <SuccessStep
+          formData={formData}
         />
       )}
     </div>

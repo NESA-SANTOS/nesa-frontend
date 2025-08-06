@@ -12,11 +12,21 @@ const SponsorshipPage: React.FC = () => {
 
     return (
         <div className="py-20 px-6">
-            <div className="flex flex-row justify-between pt-8">
-                <h1 className="text-2xl font-bold mb-4">Sponsor NESA-Africa 2025</h1>
-
-            <Button text="Sponsor" variant="filled" className="mr-8" onClick={handleSponsorClick} />
-        </div>
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center pt-8 mb-6">
+                <div>
+                    <h1 className="text-3xl font-bold mb-2">Sponsor NESA-Africa 2025</h1>
+                    <p className="text-gray-600">Partner with us to transform African education</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 mt-4 lg:mt-0">
+                    <Button text="Apply to Sponsor" variant="filled" onClick={handleSponsorClick} />
+                    <Link href="/sponsors-hall" className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors text-center">
+                        View Our Sponsors
+                    </Link>
+                    <Link href="/sponsor-tracker" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center">
+                        Track Application
+                    </Link>
+                </div>
+            </div>
         <p>
             <>
                 <h2 className="text-lg font-semibold mb-2">Position Your Brand at the Forefront of Educational Impact Across Africa</h2>

@@ -24,6 +24,10 @@ export const useNRCStatus = (): NRCStatus => {
   const [volunteer, setVolunteer] = useState<NRCVolunteer | undefined>();
 
   const checkStatus = async () => {
+    // TODO: Re-enable authentication-based status checking when backend is ready
+    // Authentication temporarily disabled for testing purposes
+
+    /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
     // Debug logging
     console.log('NRC Status Check - User object:', user);
 
@@ -53,6 +57,46 @@ export const useNRCStatus = (): NRCStatus => {
     } finally {
       setLoading(false);
     }
+    */
+
+    // For testing: Mock approved volunteer status
+    console.log('NRC Status Check - Testing mode: Using mock data');
+    setLoading(true);
+
+    // Simulate API delay
+    setTimeout(() => {
+      setHasApplication(true);
+      setIsApproved(true);
+      setApplication({
+        id: 'test-app-001',
+        fullName: 'Test Volunteer',
+        email: 'test@example.com',
+        phone: '+1234567890',
+        country: 'Nigeria',
+        motivation: 'Testing the NRC system',
+        experience: 'Software testing and quality assurance',
+        availability: 'Available for testing',
+        skills: ['Research', 'Writing', 'Digital Tools'],
+        commitment: true,
+        terms: true,
+        applicationDate: new Date().toISOString(),
+        status: 'approved'
+      });
+      setVolunteer({
+        id: 'test-vol-001',
+        applicationId: 'test-app-001',
+        fullName: 'Test Volunteer',
+        email: 'test@example.com',
+        country: 'Nigeria',
+        approvalDate: new Date().toISOString(),
+        nomineesUploaded: 0,
+        targetNominees: 200,
+        completionRate: 0,
+        lastActive: 'Never',
+        status: 'active'
+      });
+      setLoading(false);
+    }, 500);
   };
 
   useEffect(() => {

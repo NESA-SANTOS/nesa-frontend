@@ -16,6 +16,10 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
   const { loading, canAccessDashboard, isPending, isRejected, hasApplication } = useNRCStatus();
   const router = useRouter();
 
+  // TODO: Re-enable authentication protection when backend is ready
+  // Authentication temporarily disabled for testing purposes
+
+  /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
   // Show loading state
   if (loading || !isAuthenticated) {
     return (
@@ -38,7 +42,13 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
   if (canAccessDashboard) {
     return <>{children}</>;
   }
+  */
 
+  // For testing: Direct access to protected content
+  console.log('NRCProtectedRoute - Testing mode: Allowing direct access');
+  return <>{children}</>;
+
+  /* REMAINING AUTHENTICATION LOGIC - COMMENTED FOR TESTING
   // User has pending application
   if (isPending) {
     return (
@@ -52,7 +62,7 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
           <Clock className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Under Review</h2>
           <p className="text-gray-600 mb-6">
-            Your NRC volunteer application is currently being reviewed by our team. 
+            Your NRC volunteer application is currently being reviewed by our team.
             You'll receive an email notification once a decision has been made.
           </p>
           <Button
@@ -79,7 +89,7 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
           <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Not Approved</h2>
           <p className="text-gray-600 mb-6">
-            Unfortunately, your NRC volunteer application was not approved at this time. 
+            Unfortunately, your NRC volunteer application was not approved at this time.
             Thank you for your interest in the program.
           </p>
           <Button
@@ -122,6 +132,7 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
       </motion.div>
     </div>
   );
+  */
 };
 
 export default NRCProtectedRoute;

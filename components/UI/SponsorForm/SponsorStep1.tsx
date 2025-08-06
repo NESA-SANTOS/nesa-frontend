@@ -15,11 +15,14 @@ import { useRouter } from 'next/navigation';
 
 
 const formSchema = z.object({
-  company_name: z.string(),
+  company_name: z.string().min(2, 'Company name is required'),
   name: z.string().min(2, 'Full Name is required'),
   email: z.string().email('Invalid email'),
   phone: z.string().min(5, 'Phone is required'),
-  Business_reg_no: z.string(),
+  Business_reg_no: z.string().min(2, 'Business registration number is required'),
+  sponsorshipType: z.string().optional(),
+  proposedAmount: z.number().optional(),
+  additionalNotes: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -46,12 +49,20 @@ export default function SponsorStep1({
   });
 
   const [phoneNumber, setPhoneNumber] = useState(data.phone || '');
-      const handleBack = () => {
-      router.back();
-    };
+  const [sponsorshipType, setSponsorshipType] = useState(data.sponsorshipType || '');
+  const [proposedAmount, setProposedAmount] = useState(data.proposedAmount || '');
+  const [additionalNotes, setAdditionalNotes] = useState(data.additionalNotes || '');
+
+  const handleBack = () => {
+    router.back();
+  };
+
   useEffect(() => {
     setValue('phone', phoneNumber);
-  }, [phoneNumber, setValue]);
+    setValue('sponsorshipType', sponsorshipType);
+    setValue('proposedAmount', proposedAmount ? Number(proposedAmount) : undefined);
+    setValue('additionalNotes', additionalNotes);
+  }, [phoneNumber, sponsorshipType, proposedAmount, additionalNotes, setValue]);
 
   const onSubmit = (formData: FormData) => {
     onUpdate(formData);
@@ -194,7 +205,12 @@ export default function SponsorStep1({
                 
                 <div className="mb-6">
                   <label htmlFor="sponsorshipType" className="block text-sm font-medium text-gray-700 mb-2">Select Sponsorship Category</label>
-                    <select id="sponsorshipType" name="sponsorshipType" required>
+                  <select 
+                    id="sponsorshipType" 
+                    value={sponsorshipType}
+                    onChange={(e) => setSponsorshipType(e.target.value)}
+                    className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+                  >
                     <option value="">-- Choose an option --</option>
                     <option value="Award Category Sponsorship">Award Category Sponsorship</option>
                     <option value="Sub-Category Sponsorship">Sub-Category Sponsorship</option>
@@ -204,16 +220,31 @@ export default function SponsorStep1({
                     <option value="EduAid-Africa Expo">EduAid-Africa Expo (Oct 16)</option>
                     <option value="Gala Awards Night">Gala Awards Night (Oct 17)</option>
                     <option value="Full Program Sponsor">Full Program Sponsor</option>
-                    </select>
+                  </select>
                 </div>
+                
                 <div className="mb-6">
-                <label htmlFor="amount">Proposed Sponsorship Amount (USD)</label>
-                <input type="number" id="amount" name="amount" required />
+                  <label htmlFor="proposedAmount" className="block text-sm font-medium text-gray-700 mb-2">Proposed Sponsorship Amount (USD)</label>
+                  <input 
+                    type="number" 
+                    id="proposedAmount" 
+                    value={proposedAmount}
+                    onChange={(e) => setProposedAmount(e.target.value)}
+                    placeholder="Enter amount in USD"
+                    className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+                  />
                 </div>
 
                 <div className="mb-6">
-                <label htmlFor="message">Additional Notes or Custom Package Request</label>
-                <textarea id="message" name="message" rows={4}></textarea>
+                  <label htmlFor="additionalNotes" className="block text-sm font-medium text-gray-700 mb-2">Additional Notes or Custom Package Request</label>
+                  <textarea 
+                    id="additionalNotes" 
+                    value={additionalNotes}
+                    onChange={(e) => setAdditionalNotes(e.target.value)}
+                    rows={4}
+                    placeholder="Tell us about your specific requirements or custom package needs..."
+                    className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-1 focus:ring-yellow-400"
+                  />
                 </div>
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">registration number</label>

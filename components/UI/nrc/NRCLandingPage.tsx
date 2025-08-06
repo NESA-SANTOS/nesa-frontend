@@ -17,6 +17,10 @@ import {
   UserCheck
 } from 'lucide-react';
 import Button from '@/components/Common/Button';
+import OptimizedHeroBackground from './OptimizedHeroBackground';
+
+// Import enhanced CSS for hero section
+import '@/styles/nrc-hero.css';
 
 const NRCLandingPage: React.FC = () => {
   const router = useRouter();
@@ -24,6 +28,10 @@ const NRCLandingPage: React.FC = () => {
   const { loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard } = useNRCStatus();
 
   const handleApplyNow = () => {
+    // TODO: Re-enable authentication when backend is ready
+    // Authentication temporarily disabled for testing purposes
+
+    /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
     if (!isAuthenticated) {
       router.push('/account/login');
       return;
@@ -38,21 +46,38 @@ const NRCLandingPage: React.FC = () => {
       // User already has an application, show status
       return;
     }
+    */
 
+    // For testing: Direct access to application form
     router.push('/get-involved/nrc-volunteer/apply');
   };
 
   const getButtonText = () => {
+    // TODO: Re-enable dynamic button text when backend is ready
+    // Authentication-based button text temporarily disabled for testing
+
+    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
     if (!isAuthenticated) return 'Login to Apply';
     if (canAccessDashboard) return 'Go to Dashboard';
     if (isPending) return 'Application Pending';
     if (isRejected) return 'Application Not Approved';
     if (hasApplication) return 'View Application Status';
+    */
+
+    // For testing: Simple button text
     return 'Apply Now';
   };
 
   const getButtonDisabled = () => {
+    // TODO: Re-enable button state logic when backend is ready
+    // Button state temporarily enabled for testing
+
+    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
     return isPending || isRejected;
+    */
+
+    // For testing: Button always enabled
+    return false;
   };
 
   const benefits = [
@@ -98,41 +123,94 @@ const NRCLandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#ea580c] to-[#dc2626] text-white py-16">
-        <div className="container mx-auto px-4">
+      {/* Enhanced Hero Section with Background Image */}
+      <section
+        className="relative min-h-screen flex items-center overflow-hidden nrc-hero-container"
+        aria-label="NESA Nominee Research Corps volunteer program hero section"
+        role="banner"
+      >
+        {/* Preload background image */}
+        <div className="nrc-hero-preload" aria-hidden="true" />
+
+        {/* Optimized Background Image without Overlay */}
+        <div className="absolute inset-0 z-0">
+          <OptimizedHeroBackground
+            src="/images/bg/education.png"
+            alt="Education and research background - students and educators in Africa"
+            className="nrc-hero-bg nrc-hero-gpu-accelerated"
+            priority={true}
+            quality={90}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full container mx-auto px-4 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center text-white nrc-hero-animate-in"
           >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Users className="w-8 h-8" />
-              <span className="text-lg font-medium">NESA Nominee Research Corps</span>
+            <div className="flex items-center justify-center gap-2 mb-4" role="banner">
+              <Users className="w-8 h-8 text-white drop-shadow-2xl" aria-hidden="true" />
+              <span className="text-lg font-medium text-white drop-shadow-2xl">NESA Nominee Research Corps</span>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+
+            <h1
+              className="nrc-hero-title font-bold mb-6 text-white drop-shadow-2xl"
+              id="hero-title"
+              style={{
+                textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6), 6px 6px 12px rgba(0,0,0,0.4)'
+              }}
+            >
               Join the NRC Volunteer Program
             </h1>
-            
-            <p className="text-xl md:text-2xl leading-relaxed mb-8 font-light">
-              Help identify and profile 6,000+ impactful changemakers across Africa 
+
+            <p
+              className="nrc-hero-subtitle leading-relaxed mb-8 font-light text-white drop-shadow-2xl"
+              aria-describedby="hero-title"
+              style={{
+                textShadow: '1px 1px 3px rgba(0,0,0,0.8), 2px 2px 6px rgba(0,0,0,0.6)'
+              }}
+            >
+              Help identify and profile 6,000+ impactful changemakers across Africa
               for the NESA-Africa 2025 Awards
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-sm md:text-base">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                <span>Remote (All African Countries + Diaspora)</span>
+            <div
+              className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-8 text-sm md:text-base"
+              role="list"
+              aria-label="Program details"
+            >
+              <div
+                className="flex items-center gap-2 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30 text-white"
+                role="listitem"
+                style={{
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                }}
+              >
+                <MapPin className="w-5 h-5" aria-hidden="true" />
+                <span className="font-medium">Remote (All African Countries + Diaspora)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>July 15 – August 20, 2025</span>
+              <div
+                className="flex items-center gap-2 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30 text-white"
+                role="listitem"
+                style={{
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                }}
+              >
+                <Calendar className="w-5 h-5" aria-hidden="true" />
+                <span className="font-medium">July 15 – August 20, 2025</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5" />
-                <span>30 Volunteer Positions</span>
+              <div
+                className="flex items-center gap-2 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30 text-white"
+                role="listitem"
+                style={{
+                  textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+                }}
+              >
+                <Users className="w-5 h-5" aria-hidden="true" />
+                <span className="font-medium">30 Volunteer Positions</span>
               </div>
             </div>
 
@@ -141,18 +219,60 @@ const NRCLandingPage: React.FC = () => {
               onClick={handleApplyNow}
               disabled={getButtonDisabled()}
               variant="filled"
-              className={`font-semibold px-8 py-4 text-lg ${
+              className={`font-semibold px-8 py-4 text-lg shadow-xl nrc-hero-button nrc-hero-gpu-accelerated ${
                 getButtonDisabled()
                   ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-white text-[#ea580c] hover:bg-gray-100'
+                  : 'bg-white text-[#ea580c] hover:bg-gray-100 hover:scale-105 transition-all duration-300'
               }`}
+              aria-describedby="hero-title"
+              aria-label={getButtonDisabled()
+                ? "Application period has ended"
+                : "Apply to join the NESA Nominee Research Corps volunteer program"
+              }
             />
           </motion.div>
         </div>
+
+        {/* Enhanced Scroll Indicator */}
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 nrc-hero-scroll-indicator focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2"
+          onClick={() => {
+            const nextSection = document.querySelector('#about-section');
+            nextSection?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          aria-label="Scroll down to learn more about the program"
+          type="button"
+        >
+          <div className="flex flex-col items-center text-white">
+            <span
+              className="text-sm mb-2 font-medium"
+              style={{
+                textShadow: '1px 1px 3px rgba(0,0,0,0.8), 2px 2px 6px rgba(0,0,0,0.6)'
+              }}
+            >
+              Scroll to explore
+            </span>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white rounded-full flex justify-center hover:border-white/80 transition-colors duration-300 bg-black/40 backdrop-blur-sm"
+              aria-hidden="true"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-1 h-3 bg-white rounded-full mt-2"
+              />
+            </motion.div>
+          </div>
+        </motion.button>
       </section>
 
       {/* Program Overview */}
-      <section className="py-16 bg-gray-50">
+      <section id="about-section" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

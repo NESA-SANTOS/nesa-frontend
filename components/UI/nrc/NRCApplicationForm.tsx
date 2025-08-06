@@ -134,15 +134,25 @@ const NRCApplicationForm: React.FC = () => {
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for applying to the NESA NRC program. We'll review your application 
+            Thank you for applying to the NESA NRC program. We'll review your application
             and contact you by July 15, 2025.
           </p>
-          <Button
-            text="Return to Home"
-            onClick={() => router.push('/')}
-            variant="filled"
-            className="bg-[#ea580c] hover:bg-[#dc2626] text-white"
-          />
+
+          {/* Testing Mode: Dashboard Access Button */}
+          <div className="space-y-3">
+            <Button
+              text="Go to Dashboard (Testing)"
+              onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
+              variant="filled"
+              className="bg-[#ea580c] hover:bg-[#dc2626] text-white w-full"
+            />
+            <Button
+              text="Return to Home"
+              onClick={() => router.push('/')}
+              variant="outline"
+              className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white w-full"
+            />
+          </div>
         </motion.div>
       </div>
     );
@@ -412,7 +422,7 @@ const NRCApplicationForm: React.FC = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="pt-6">
+            <div className="pt-6 space-y-3">
               <Button
                 text={loading ? "Submitting..." : "Submit Application"}
                 type="submit"
@@ -420,6 +430,19 @@ const NRCApplicationForm: React.FC = () => {
                 variant="filled"
                 className="w-full bg-[#ea580c] hover:bg-[#dc2626] text-white py-4 text-lg font-semibold"
               />
+
+              {/* Testing Mode: Dashboard Access Button */}
+              <div className="pt-2 border-t border-gray-200">
+                <p className="text-xs text-gray-500 text-center mb-2">
+                  Testing Mode: Skip to dashboard without submitting
+                </p>
+                <Button
+                  text="Go to Dashboard (Testing)"
+                  onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
+                  variant="outline"
+                  className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 py-3"
+                />
+              </div>
             </div>
           </form>
         </motion.div>

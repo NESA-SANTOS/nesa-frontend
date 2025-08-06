@@ -194,8 +194,9 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   {
     label: "Become a sponsor",
     path: "/sponsor",
-    description: "Ambassador pathway",
+    description: "Sponsorship application",
   },
+  
   {
     label: "Buy Merchandise",
     path: "/voting",
