@@ -21,6 +21,7 @@ import { submitNRCApplication } from '@/lib/services/mockNRCService';
 
 // Form validation schema
 const nrcApplicationSchema = z.object({
+  category: z.enum(['volunteer', 'internal', 'observer', 'public']),
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
@@ -32,6 +33,16 @@ const nrcApplicationSchema = z.object({
   commitment: z.boolean().refine(val => val === true, 'You must commit to completing 200+ profiles'),
   terms: z.boolean().refine(val => val === true, 'You must agree to the terms and conditions'),
   cv: z.any().optional(),
+  
+  // Category specific fields
+  department: z.string().optional(),
+  role: z.string().optional(),
+  yearsOfService: z.string().optional(),
+  institution: z.string().optional(),
+  researchInterests: z.array(z.string()).optional(),
+  proposedDuration: z.string().optional(),
+  nominationType: z.enum(['individual', 'organization']).optional(),
+  nominationReason: z.string().optional(),
 });
 
 type NRCApplicationData = z.infer<typeof nrcApplicationSchema>;
@@ -42,6 +53,7 @@ const NRCApplicationForm: React.FC = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [cvFile, setCvFile] = useState<File | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<'volunteer' | 'internal' | 'observer' | 'public'>('volunteer');
 
   const {
     register,
@@ -51,6 +63,19 @@ const NRCApplicationForm: React.FC = () => {
     watch,
   } = useForm<NRCApplicationData>({
     resolver: zodResolver(nrcApplicationSchema),
+    defaultValues: {
+      category: 'volunteer',
+      fullName: '',
+      email: '',
+      phone: '',
+      country: '',
+      motivation: '',
+      experience: '',
+      availability: '',
+      skills: [],
+      commitment: false,
+      terms: false
+    }
   });
 
   const availableSkills = [
@@ -91,26 +116,17 @@ const NRCApplicationForm: React.FC = () => {
   const onSubmit = async (data: NRCApplicationData) => {
     setLoading(true);
     try {
-      const response = await submitNRCApplication({
-        fullName: data.fullName,
-        email: data.email,
-        phone: data.phone,
-        country: data.country,
-        motivation: data.motivation,
-        experience: data.experience,
-        availability: data.availability,
+      // Simulating a submission delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // For testing, we'll just show success immediately
+      console.log('Form data submitted:', {
+        ...data,
         skills: selectedSkills,
-        commitment: data.commitment,
-        terms: data.terms,
         cv: cvFile || undefined
       });
-
-      if (response.success) {
-        setShowSuccess(true);
-      } else {
-        console.error('Application submission failed:', response.message);
-        // You could show an error message here
-      }
+      
+      setShowSuccess(true);
     } catch (error) {
       console.error('Application submission error:', error);
     } finally {
@@ -137,20 +153,18 @@ const NRCApplicationForm: React.FC = () => {
             Thank you for applying to the NESA NRC program. We'll review your application
             and contact you by July 15, 2025.
           </p>
-
-          {/* Testing Mode: Dashboard Access Button */}
-          <div className="space-y-3">
-            <Button
-              text="Go to Dashboard (Testing)"
-              onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
-              variant="filled"
-              className="bg-[#ea580c] hover:bg-[#dc2626] text-white w-full"
-            />
+          <div className="space-y-4">
             <Button
               text="Return to Home"
               onClick={() => router.push('/')}
+              variant="filled"
+              className="w-full bg-[#ea580c] hover:bg-[#dc2626] text-white"
+            />
+            <Button
+              text="Go to Dashboard (Testing)"
+              onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
               variant="outline"
-              className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white w-full"
+              className="w-full border-[#ea580c] text-[#ea580c] hover:bg-orange-50"
             />
           </div>
         </motion.div>
@@ -175,12 +189,12 @@ const NRCApplicationForm: React.FC = () => {
             <ArrowLeft className="w-5 h-5" />
             <span>Back to NRC Program</span>
           </button>
-          
+
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            NRC Volunteer Application
+            NRC Application
           </h1>
           <p className="text-gray-600">
-            Join the NESA Nominee Research Corps and help shape Africa's education future.
+            Join the NESA Research Corps and help shape Africa's education future. Select your role to begin.
           </p>
         </motion.div>
 
@@ -192,6 +206,27 @@ const NRCApplicationForm: React.FC = () => {
           className="bg-white rounded-lg shadow-lg p-8"
         >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Category Selection */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Application Category *
+              </label>
+              <select
+                {...register('category')}
+                onChange={(e) => setSelectedCategory(e.target.value as any)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ea580c] focus:border-transparent"
+              >
+                <option value="">Select your category</option>
+                <option value="internal">Internal Staff (SCEF/NESA Team Members)</option>
+                <option value="volunteer">Regional Volunteer (Africa & Diaspora)</option>
+                <option value="observer">International Observer / Research Fellow</option>
+                <option value="public">General Public (Public Nomination Role)</option>
+              </select>
+              {errors.category && (
+                <p className="text-red-500 text-sm mt-1">{errors.category.message}</p>
+              )}
+            </div>
+
             {/* Personal Information */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -398,7 +433,7 @@ const NRCApplicationForm: React.FC = () => {
                   className="mt-1 w-4 h-4 text-[#ea580c] border-gray-300 rounded focus:ring-[#ea580c]"
                 />
                 <span className="text-sm text-gray-700">
-                  I commit to completing at least 200 verified nominee profiles during the 
+                  I commit to completing at least 200 verified nominee profiles during the
                   engagement period (July 15 - August 20, 2025) *
                 </span>
               </label>
@@ -422,7 +457,7 @@ const NRCApplicationForm: React.FC = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="pt-6 space-y-3">
+            <div className="pt-6">
               <Button
                 text={loading ? "Submitting..." : "Submit Application"}
                 type="submit"
@@ -430,19 +465,6 @@ const NRCApplicationForm: React.FC = () => {
                 variant="filled"
                 className="w-full bg-[#ea580c] hover:bg-[#dc2626] text-white py-4 text-lg font-semibold"
               />
-
-              {/* Testing Mode: Dashboard Access Button */}
-              <div className="pt-2 border-t border-gray-200">
-                <p className="text-xs text-gray-500 text-center mb-2">
-                  Testing Mode: Skip to dashboard without submitting
-                </p>
-                <Button
-                  text="Go to Dashboard (Testing)"
-                  onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
-                  variant="outline"
-                  className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 py-3"
-                />
-              </div>
             </div>
           </form>
         </motion.div>

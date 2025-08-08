@@ -62,6 +62,51 @@ const handleNominate = (category: Category) => {
 
   return (
     <div className="min-h-screen bg-[#FFF5E0]">
+
+      {/* Sub-Categories Section */}
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+          The Africa Diaspora association Educational Impact Award Sub-Categories
+          <span className="absolute bottom-0 left-0 w-16 h-1 bg-[#FFC247]"></span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {subcategories.slice(1).map((category, index) => (
+            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col">
+              <div className="relative h-60 flex items-center justify-center p-6">
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  width={300}
+                  height={300}
+                  objectFit="contain"
+                />
+              </div>
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 className="text-white text-xl font-bold mb-2">{category.title}</h4>
+                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                </div>
+                <div className="flex flex-col gap-3 mt-auto">
+                  <button
+                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Africa Diaspora association Educational Impact Projects Recognition Award in Africa")}&subcategory=${encodeURIComponent(category.title)}`)}
+                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">👁️</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
+                  </button>
+                  <button
+                    onClick={() => handleNominate(category)}
+                    className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">🏆</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Hero Section */}
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
@@ -131,50 +176,7 @@ const handleNominate = (category: Category) => {
         </div>
       </div>
 
-      {/* Sub-Categories Section */}
-      <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
-          The Africa Diaspora association Educational Impact Award Sub-Categories
-          <span className="absolute bottom-0 left-0 w-16 h-1 bg-[#FFC247]"></span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {subcategories.slice(1).map((category, index) => (
-            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col">
-              <div className="relative h-60 flex items-center justify-center p-6">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  width={300}
-                  height={300}
-                  objectFit="contain"
-                />
-              </div>
-              <div className="p-6 flex-grow flex flex-col justify-between">
-                <div>
-                  <h4 className="text-white text-xl font-bold mb-2">{category.title}</h4>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
-                </div>
-                <div className="flex flex-col gap-3 mt-auto">
-                  <button
-                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Africa Diaspora association Educational Impact Projects Recognition Award in Africa")}&subcategory=${encodeURIComponent(category.title)}`)}
-                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">👁️</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
-                  </button>
-                  <button
-                    onClick={() => handleNominate(category)}
-                    className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">🏆</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      
     </div>
   );
 };

@@ -91,7 +91,7 @@ export const socials: Social[] = [
 
 export const contactInfos: { value: string; icon: JSX.Element }[] = [
   {
-    value: "19, Maxwell Okigbo Street off Ain Mesha rd, Surulere-Lagos, Nigeria",
+    value: "19, Godwin Okigbo street marsha Surulere Lagos Nigeria",
     icon: <CiLocationOn />,
   },
   {

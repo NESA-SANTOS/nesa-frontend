@@ -14,13 +14,16 @@ interface Category {
 
 const SpecialRecognitionPage = () => {
   const overview = {
-    title: "NESA-Africa 2025 – Africa Lifetime Education Icon Award",
+    title: "Africa Icon Blue Garnet Awards (Non-Competitive – Lifetime Impact, 2005–2025)",
     description: (
       <>
-        <span className="block font-semibold text-lg mb-2">Overview:</span>
+        <span className="block font-semibold text-lg mb-2">Do you know a leader whose work in education has changed lives across Africa and the world?</span>
         <span>
-          The Africa Lifetime Education Icon Award is NESA-Africa 2025’s highest-tier non-competitive honor, reserved for exceptional individuals across Africa and the diaspora who have demonstrated sustained, transformational impact on the continent’s education landscape from 2014 to 2024.<br /><br />
-          This Blue Garnet Tier Award is not open to public voting. Instead, it follows a prestigious judge-led selection process, supported by public nominations and strategic partner input. The award emphasizes alignment with SDG 4 & 5, Africa Agenda 2063, ESG principles, and long-term educational legacy.
+          The Africa Icon Blue Garnet Awards is NESA-Africa 2025’s highest-tier non-competitive honor, reserved for exceptional individuals across Africa and the diaspora who have demonstrated sustained, transformational impact on the continent’s education landscape from 2005 to 2025.<br /><br />
+          <strong>Coverage & Representation:</strong><br />
+          • Africa & Diaspora – Honoring education icons from all five African regions (North, West, East, Central, and Southern Africa)<br />
+          • Diaspora Africans – Recognizing Africans abroad who have contributed to Africa's educational development<br />
+          • Friends of Africa – Honoring global allies, organizations, and leaders outside Africa who have supported Africa's journey toward Education for All
         </span>
       </>
     ),
@@ -34,18 +37,18 @@ const SpecialRecognitionPage = () => {
     //   image: "/images/nesa-card2.png"
     // },
     {
-      title: "Africa Education Philanthropy Icon Of The Decade (2014-2024)",
-      description: "Honors significant philanthropic contributions that have improved educational access and quality, advancing SDG 4's targets.",
+      title: "Africa Education Philanthropy Icon",
+      description: "For philanthropists whose sustained contributions between 2005–2025 have transformed educational access, infrastructure, and opportunities across Africa.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "Literary And New Curriculum Advocate Africa Education Icon Of The Decade (2014-2024)",
-      description: "Recognizes influential literary works and new curricula that address critical educational needs and challenges, fostering quality education.",
+      title: "Literary & New Curriculum Advocate",
+      description: "For educators, authors, and reformers who have advanced curriculum modernization, cultural literacy, and learning innovation in line with Africa's evolving needs.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "Africa Technical Educator Icon Of The Decade (2014-2024)",
-      description: "Celebrates pioneers in technical education and skills training, fostering entrepreneurship and innovation, supporting SDG 4's goals of inclusive and equitable education.",
+      title: "Africa Technical Educator Icon",
+      description: "For champions of technical and vocational education whose work has strengthened Africa's workforce readiness and bridged the skills gap over the last two decades.",
       image: "/images/nesa-card2.png"
     }
   ];
@@ -81,6 +84,7 @@ const SpecialRecognitionPage = () => {
 
   return (
     <div className="min-h-screen bg-[#FFF5E0]">
+      
       {/* Hero Section */}
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
@@ -107,6 +111,52 @@ const SpecialRecognitionPage = () => {
           </button>
         </div>
       </div>
+      {/* Sub-Categories Section */}
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+          Award Subcategories
+          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {subcategories.map((category, index) => (
+            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6">
+              <div className="h-[220px] flex items-center justify-center mb-4">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    width={364}
+                    height={198}
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                </div>
+                <div className="flex flex-col gap-3 mt-auto">
+                  <button
+                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Africa Lifetime Education Icon Special Recognition Award")}&subcategory=${encodeURIComponent(category.title)}`)}
+                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">👁️</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
+                  </button>
+                  <button
+                    onClick={() => handleNominate(category)}
+                    className="w-full bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] py-2.5 rounded-lg hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 font-medium tracking-wide flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">🏆</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
           {/* Award Philosophy & Overview Section */}
           <div className="bg-[#FFF5E0] py-12 px-4">
             <div className="max-w-5xl mx-auto">
@@ -123,6 +173,55 @@ const SpecialRecognitionPage = () => {
             </p>
               </div>
 
+              {/* Social Impact Focus */}
+              <div className="mb-10">
+            <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#191307]">
+              Social Impact Focus (2005–2025)
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="text-lg text-[#191307] mb-4">
+              Nominees must have made significant, measurable contributions to:
+            </p>
+            <ul className="list-disc pl-6 text-[#191307] space-y-2">
+              <li>Increasing access to quality education</li>
+              <li>Supporting educational equity across gender, region, and socio-economic groups</li>
+              <li>Innovating learning systems through technology, arts, curriculum reform, or teacher training</li>
+              <li>Advancing Africa's progress toward UN SDG 4: Quality Education and AU Agenda 2063 Goal 1</li>
+            </ul>
+              </div>
+
+              {/* How Winners Are Chosen */}
+              <div className="mb-10">
+            <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#191307]">
+              How Winners Are Chosen
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="text-lg text-[#191307] mb-4">
+              Winners are selected through extensive impact assessment by the NESA-Africa Awards Board.
+            </p>
+            <p className="text-lg text-[#191307] mb-4">
+              Selection is based on documented achievements, long-term influence, and cross-border impact in at least two African regions or in both Africa & the Diaspora.
+            </p>
+            <p className="text-lg text-[#191307] font-semibold">
+              This is a once-in-a-lifetime honor — each recipient can only win the Africa Icon Blue Garnet Award once.
+            </p>
+              </div>
+
+              {/* Recognition for All Nominees */}
+              <div className="mb-10">
+            <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#191307]">
+              Recognition for All Nominees
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="text-lg text-[#191307] mb-4">
+              Even if a nominee does not win, they can:
+            </p>
+            <ul className="list-disc pl-6 text-[#191307] space-y-2">
+              <li>Download a Certificate of Nomination & Recognition via EduAid Africa</li>
+              <li>Certificates are available with a voluntary donation, which directly supports scholarships, teacher training, and school rebuilding programs across Africa</li>
+            </ul>
+              </div>
+
               {/* Award Overview */}
               <div className="mb-10">
             <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Award Overview</h2>
@@ -130,7 +229,7 @@ const SpecialRecognitionPage = () => {
               <div>
                 <div className="mb-2 flex">
               <span className="font-bold w-40 text-[#E48900]">Award Name:</span>
-              <span className="text-[#191307]">Africa Lifetime Education Icon Award (Blue Garnet Tier)</span>
+              <span className="text-[#191307]">Africa Icon Blue Garnet Awards</span>
                 </div>
                 <div className="mb-2 flex">
               <span className="font-bold w-40 text-[#E48900]">Award Type:</span>
@@ -138,7 +237,7 @@ const SpecialRecognitionPage = () => {
                 </div>
                 <div className="mb-2 flex">
               <span className="font-bold w-40 text-[#E48900]">Eligibility:</span>
-              <span className="text-[#191307]">10+ years contribution to African education (2014–2024)</span>
+              <span className="text-[#191307]">20+ years contribution to African education (2005–2025)</span>
                 </div>
                 <div className="mb-2 flex">
               <span className="font-bold w-40 text-[#E48900]">Nomination Access:</span>
@@ -252,18 +351,48 @@ const SpecialRecognitionPage = () => {
               </tr>
               <tr className="border-t">
                 <td className="py-2 px-4">Nomination Closes</td>
-                <td className="py-2 px-4">November 1, 2025</td>
+                <td className="py-2 px-4">November 20, 2025</td>
               </tr>
               <tr className="border-t">
                 <td className="py-2 px-4">Judges Evaluation Period</td>
                 <td className="py-2 px-4">September – November 20, 2025</td>
               </tr>
               <tr className="border-t">
+                <td className="py-2 px-4">Webinars on NESA-TV</td>
+                <td className="py-2 px-4">October 13 – December 13, 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">"It's In Me" Radio Podcast</td>
+                <td className="py-2 px-4">From September 2025</td>
+              </tr>
+              <tr className="border-t">
                 <td className="py-2 px-4">Award Gala + Recognition</td>
-                <td className="py-2 px-4">December 22, 2025</td>
+                <td className="py-2 px-4">December 18, 2025 – Muson Centre, Lagos, Nigeria</td>
               </tr>
                 </tbody>
               </table>
+            </div>
+              </div>
+
+              {/* How to Nominate */}
+              <div className="mb-10">
+            <h2 className="text-3xl font-bold mb-4 relative inline-block text-[#191307]">
+              How to Nominate
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="text-lg text-[#191307] mb-4">
+              Visit www.nesa.africa or scan the QR code below to submit your nominee.
+            </p>
+            <div className="bg-white rounded-xl shadow p-6">
+              <p className="text-[#191307] mb-4">
+                <strong>Nomination Process:</strong>
+              </p>
+              <ul className="list-disc pl-6 text-[#191307] space-y-2">
+                <li>Complete the online nomination form</li>
+                <li>Provide detailed information about the nominee's contributions</li>
+                <li>Include supporting documentation of their impact</li>
+                <li>Submit before the November 20, 2025 deadline</li>
+              </ul>
             </div>
               </div>
 
@@ -366,52 +495,7 @@ const SpecialRecognitionPage = () => {
         </div>
       </div>
 
-      {/* Sub-Categories Section */}
-      <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
-          The Special Recognition Award Sub-Categories
-          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {subcategories.map((category, index) => (
-            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6">
-              <div className="h-[220px] flex items-center justify-center mb-4">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    width={364}
-                    height={198}
-                    objectFit="contain"
-                  />
-                </div>
-              </div>
-              <div className="flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
-                </div>
-                <div className="flex flex-col gap-3 mt-auto">
-                  <button
-                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Africa Lifetime Education Icon Special Recognition Award")}&subcategory=${encodeURIComponent(category.title)}`)}
-                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">👁️</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
-                  </button>
-                  <button
-                    onClick={() => handleNominate(category)}
-                    className="w-full bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] py-2.5 rounded-lg hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 font-medium tracking-wide flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">🏆</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate Now</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      
     </div>
   );
 };

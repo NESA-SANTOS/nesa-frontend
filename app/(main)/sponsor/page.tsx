@@ -589,6 +589,179 @@ export default function SponsorPage() {
         </div>
       </section>
 
+      {/* Payment Information Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%)`,
+            backgroundSize: '20px 20px'
+          }}></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
+              <FiCheck className="w-4 h-4 mr-2" />
+              Secure Payment Options
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Official Payment Details
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Make your sponsorship payment directly to our official NESA-Africa account. 
+              Multiple currency options available for your convenience.
+            </p>
+          </motion.div>
+
+          {/* Bank Details Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-white/20 shadow-2xl mb-12"
+          >
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FiAward className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">NEW EDUCATION STANDARDS AWARD</h3>
+              <p className="text-blue-100">PROVIDUS Bank</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Naira Account */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">₦</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Nigerian Naira</h4>
+                    <p className="text-xs text-blue-200">NGN Account</p>
+                  </div>
+                </div>
+                <div className="bg-black/20 rounded-lg p-4">
+                  <p className="text-xs text-blue-200 mb-1">Account Number</p>
+                  <p className="text-lg font-mono font-bold text-white tracking-wider">1305476015</p>
+                </div>
+                <button 
+                  onClick={() => navigator.clipboard.writeText('1305476015')}
+                  className="w-full mt-3 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-medium transition-all duration-200"
+                >
+                  Copy Account Number
+                </button>
+              </div>
+
+              {/* USD Account */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">$</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">US Dollar</h4>
+                    <p className="text-xs text-blue-200">USD Account</p>
+                  </div>
+                </div>
+                <div className="bg-black/20 rounded-lg p-4">
+                  <p className="text-xs text-blue-200 mb-1">Account Number</p>
+                  <p className="text-lg font-mono font-bold text-white tracking-wider">1305486988</p>
+                </div>
+                <button 
+                  onClick={() => navigator.clipboard.writeText('1305486988')}
+                  className="w-full mt-3 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-medium transition-all duration-200"
+                >
+                  Copy Account Number
+                </button>
+              </div>
+
+              {/* GBP Account */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">£</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">British Pound</h4>
+                    <p className="text-xs text-blue-200">GBP Account</p>
+                  </div>
+                </div>
+                <div className="bg-black/20 rounded-lg p-4">
+                  <p className="text-xs text-blue-200 mb-1">Account Number</p>
+                  <p className="text-lg font-mono font-bold text-white tracking-wider">1305532926</p>
+                </div>
+                <button 
+                  onClick={() => navigator.clipboard.writeText('1305532926')}
+                  className="w-full mt-3 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-medium transition-all duration-200"
+                >
+                  Copy Account Number
+                </button>
+              </div>
+
+              {/* EUR Account */}
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white font-bold text-sm">€</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">Euro</h4>
+                    <p className="text-xs text-blue-200">EUR Account</p>
+                  </div>
+                </div>
+                <div className="bg-black/20 rounded-lg p-4">
+                  <p className="text-xs text-blue-200 mb-1">Account Number</p>
+                  <p className="text-lg font-mono font-bold text-white tracking-wider">1305532933</p>
+                </div>
+                <button 
+                  onClick={() => navigator.clipboard.writeText('1305532933')}
+                  className="w-full mt-3 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-medium transition-all duration-200"
+                >
+                  Copy Account Number
+                </button>
+              </div>
+            </div>
+
+            {/* Important Notes */}
+            <div className="mt-8 bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
+              <div className="flex items-start">
+                <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                  <FiCheck className="w-3 h-3 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-yellow-100 mb-2">Payment Instructions</h4>
+                  <ul className="text-sm text-yellow-200 space-y-1">
+                    <li>• Include your company name and "NESA Sponsorship" in the payment reference</li>
+                    <li>• Send payment confirmation to partnerships@nesa.africa</li>
+                    <li>• Allow 2-3 business days for payment verification</li>
+                    <li>• You will receive an official receipt and sponsorship certificate upon confirmation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Security Notice */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center px-6 py-3 bg-green-500/20 border border-green-500/30 rounded-full text-green-100">
+              <FiCheck className="w-5 h-5 mr-2" />
+              <span className="font-semibold">Verified Official Account • Secure Payments Guaranteed</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">

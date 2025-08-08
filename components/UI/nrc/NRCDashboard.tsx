@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import NomineeForm from './forms/NomineeForm';
 import {
   Users,
   Plus,
@@ -13,6 +14,7 @@ import {
   FileText,
   Calendar,
   Award,
+  ArrowLeft,
   Globe,
   BarChart3,
   PieChart,
@@ -999,10 +1001,18 @@ const NRCDashboard: React.FC = () => {
   // Show nominee form if requested
   if (showNomineeForm) {
     return (
-      <NomineeUploadForm
-        onBack={handleBackFromNomineeForm}
-        onSave={handleSaveNominee}
-      />
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4">
+          <button
+            onClick={handleBackFromNomineeForm}
+            className="flex items-center text-gray-600 hover:text-gray-900 mb-4"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Dashboard
+          </button>
+          <NomineeForm />
+        </div>
+      </div>
     );
   }
 
