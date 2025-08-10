@@ -95,6 +95,7 @@ const SpecialRecognitionPage = () => {
             {typeof slides[currentIndex].description === 'string' ? slides[currentIndex].description : slides[currentIndex].description}
           </p>
         </div>
+    
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {slides.map((_, index) => (
@@ -111,7 +112,7 @@ const SpecialRecognitionPage = () => {
           </button>
         </div>
       </div>
-      {/* Sub-Categories Section */}
+            {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           Award Subcategories
@@ -157,6 +158,7 @@ const SpecialRecognitionPage = () => {
           ))}
         </div>
       </div>
+    
           {/* Award Philosophy & Overview Section */}
           <div className="bg-[#FFF5E0] py-12 px-4">
             <div className="max-w-5xl mx-auto">

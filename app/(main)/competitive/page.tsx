@@ -44,7 +44,7 @@ const Page = () => {
     {
       title: "Best EduTech Organization in Africa",
       description: "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
-      subCategoryPath: "/sub-categories/best-edutech-organization"
+      subCategoryPath: "nomination/sub-categories/best-edutech-organization"
     },
     {
       title: "Best NGO Contribution to Education (Nigeria)404",
@@ -69,19 +69,20 @@ const Page = () => {
   return (
     <>
       <CategoryHeader categoryData={categoryData} />
+       
       <main className="pb-8">
         {/* <CountdownTimer
           onTimeUpdate={handleTimeUpdate}
           targetDateProp="2025-09-10T19:55:00Z"
         /> */}
-
+      <Category categoryData={categoryData} head={title} />
         {/* Enhanced Competitive Awards Section */}
         <CompetitiveAwards />
 
         {/* <CompetitiveCategoriesOverview /> */}
         <Whynominate />
         <HowToNominate />
-        <Category categoryData={categoryData} head={title} />
+       
       </main>
     </>
   );

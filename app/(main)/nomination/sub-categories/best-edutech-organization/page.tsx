@@ -23,35 +23,35 @@ const router = useRouter()
 
   const subcategories: Category[] = [
     {
-      title: "Innovation In Educational Technology Award",
+      title: "Best EduTech Startup",
       description:
         "Recognizes organizations that have developed innovative technological solutions to enhance learning and education delivery",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "Excellence In E-Learning Solutions Award",
+      title: "Best EduTech Established Company",
       description:
         "Awards organizations that have created outstanding e-learning platforms or solutions that significantly improve access to education.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "Best Use Of Artificial Intelligence In Education",
+      title: "Best EduTech Social Impact Initiative",
       description:
         "Honors organizations that leverage artificial intelligence to personalize learning experiences, improve educational processes, or enhance...",
       image: "/images/nesa-card2.png"
     },
-    {
-      title: "Outstanding Contribution To Digital Literacy Award",
-      description:
-        "Recognizes organizations that have made significant contributions to improving digital literacy among students, teachers, and communities.",
-      image: "/images/nesa-card2.png"
-    },
-    {
-      title: "Best Mobile Learning Solution Award",
-      description:
-        "Awards organizations that have created outstanding e-learning platforms or solutions that significantly improve access to education.",
-      image: "/images/nesa-card2.png"
-    },
+    // {
+    //   title: "Outstanding Contribution To Digital Literacy Award",
+    //   description:
+    //     "Recognizes organizations that have made significant contributions to improving digital literacy among students, teachers, and communities.",
+    //   image: "/images/nesa-card2.png"
+    // },
+    // {
+    //   title: "Best Mobile Learning Solution Award",
+    //   description:
+    //     "Awards organizations that have created outstanding e-learning platforms or solutions that significantly improve access to education.",
+    //   image: "/images/nesa-card2.png"
+    // },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -100,6 +100,7 @@ const router = useRouter()
               : subcategories[currentIndex - 1].description}
           </p>
         </div>
+       
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {[mainCategory, ...subcategories].map((_, index) => (
@@ -134,51 +135,7 @@ const router = useRouter()
         </div>
       </div>
 
-      {/* Purpose and Benefits Section */}
-      <div className="bg-white w-full">
-        <div className="max-w-6xl mx-auto py-12 px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 relative inline-block">
-              Purpose
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-            </h2>
-            <p className="mb-4">
-              To acknowledge the contributions of EduTech organizations that have leveraged technology to enhance
-              educational experiences and outcomes in Nigeria and across Africa. This award aims to promote further
-              innovation and investment in educational technology, highlighting the importance of EduTech in achieving
-              educational excellence.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl mb-6 relative inline-block">
-              Benefits
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-            </h2>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
-                <div>
-                  <strong>Awardees:</strong> winners receive widespread recognition for their contributions to educational technology, it provides
-                  opportunity to network with other award winners, educational leaders, and policymakers, and it increases visibility
-                  through media coverage and promotional activities associated with the NESA-Africa/Nigeria 2025 Awards.
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
-                <div>
-                  <strong>Nigeria and Africa:</strong> It encourages more eduTech innovations, leading to improved educational infrastructure and
-                  resources, and it empowers communities through better education, leading to social and economic development,
-                  and it inspires other organizations to contribute to educational technology, creating a ripple effect across various
-                  sectors.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Sub-Categories Section */}
+  {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           The Edutech Award Sub-Categories
@@ -233,6 +190,51 @@ const router = useRouter()
           ))}
         </div>
       </div>
+      {/* Purpose and Benefits Section */}
+      <div className="bg-white w-full">
+        <div className="max-w-6xl mx-auto py-12 px-4">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6 relative inline-block">
+              Purpose
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="mb-4">
+              To acknowledge the contributions of EduTech organizations that have leveraged technology to enhance
+              educational experiences and outcomes in Nigeria and across Africa. This award aims to promote further
+              innovation and investment in educational technology, highlighting the importance of EduTech in achieving
+              educational excellence.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-3xl mb-6 relative inline-block">
+              Benefits
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
+                <div>
+                  <strong>Awardees:</strong> winners receive widespread recognition for their contributions to educational technology, it provides
+                  opportunity to network with other award winners, educational leaders, and policymakers, and it increases visibility
+                  through media coverage and promotional activities associated with the NESA-Africa/Nigeria 2025 Awards.
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
+                <div>
+                  <strong>Nigeria and Africa:</strong> It encourages more eduTech innovations, leading to improved educational infrastructure and
+                  resources, and it empowers communities through better education, leading to social and economic development,
+                  and it inspires other organizations to contribute to educational technology, creating a ripple effect across various
+                  sectors.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+     
     </div>
   );
 };

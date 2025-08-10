@@ -170,6 +170,7 @@ const CSRInEducationAwardPage = () => {
                         {subcategories[currentIndex].description}
                     </p>
                 </div>
+             
                 {/* Carousel Indicator Dots and Navigation Arrows */}
                 <div className="absolute bottom-4 left-0 right-0 flex justify-between items-center px-4">
                     <div className="flex space-x-2">
@@ -196,34 +197,7 @@ const CSRInEducationAwardPage = () => {
                 </div>
             </div>
 
-            {/* Purpose and Benefits Section */}
-            <div className="bg-white w-full">
-                <div className="max-w-6xl mx-auto py-12 px-4">
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold mb-6 relative inline-block">
-                            Purpose
-                            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-                        </h2>
-                        <p className="mb-4">
-                            To recognize and honor corporate entities across various sectors for their outstanding contributions to the education sector through CSR initiatives.
-                        </p>
-                    </div>
-                    <div className="mb-12">
-                        <h2 className="text-3xl font-bold mb-6 relative inline-block">
-                            Benefits
-                            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-                        </h2>
-                        <ul className="list-disc pl-5">
-                            <li>Enhanced corporate reputation and visibility.</li>
-                            <li>Opportunities for networking with other industry leaders.</li>
-                            <li>Recognition for the positive impact on education and community development.</li>
-                            <li>Potential to attract talent and customers through demonstrated commitment to social responsibility.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            {/* Sub-Categories Section */}
+   {/* Sub-Categories Section */}
             <div className="max-w-6xl mx-auto py-12 px-4">
                 <h2 className="text-3xl font-bold mb-8 relative inline-block">
                     The CSR Award Sub-Categories
@@ -257,6 +231,34 @@ const CSRInEducationAwardPage = () => {
                     ))}
                 </div>
             </div>
+            {/* Purpose and Benefits Section */}
+            <div className="bg-white w-full">
+                <div className="max-w-6xl mx-auto py-12 px-4">
+                    <div className="mb-12">
+                        <h2 className="text-3xl font-bold mb-6 relative inline-block">
+                            Purpose
+                            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+                        </h2>
+                        <p className="mb-4">
+                            To recognize and honor corporate entities across various sectors for their outstanding contributions to the education sector through CSR initiatives.
+                        </p>
+                    </div>
+                    <div className="mb-12">
+                        <h2 className="text-3xl font-bold mb-6 relative inline-block">
+                            Benefits
+                            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+                        </h2>
+                        <ul className="list-disc pl-5">
+                            <li>Enhanced corporate reputation and visibility.</li>
+                            <li>Opportunities for networking with other industry leaders.</li>
+                            <li>Recognition for the positive impact on education and community development.</li>
+                            <li>Potential to attract talent and customers through demonstrated commitment to social responsibility.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
     );
 };

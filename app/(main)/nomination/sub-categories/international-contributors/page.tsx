@@ -85,6 +85,7 @@ const InternationalBilateralAwardPage = () => {
             {categories[currentIndex].description}
           </p>
         </div>
+      
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {categories.map((_, index) => (
@@ -99,6 +100,42 @@ const InternationalBilateralAwardPage = () => {
           <button onClick={nextSlide} className="p-2 rounded transition bg-[#FFC247]">
             <IoMdArrowForward size={24} color="#191307" />
           </button>
+        </div>
+      </div>
+
+            {/* Sub-Categories Section */}
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+          International and Bilateral Contributors to Education Award Sub-categories
+          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.slice(1).map((category, index) => (
+            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6 w-full h-full">
+              <div className="flex items-center justify-center mb-4 h-52">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                </div>
+                <button
+                  onClick={() => handleNominate(category)}
+                  className="w-full bg-[#FFC247] text-black py-2 rounded hover:bg-[#FFD277] transition mt-auto"
+                >
+                  Nominate
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -145,41 +182,7 @@ const InternationalBilateralAwardPage = () => {
         </div>
       </div>
 
-      {/* Sub-Categories Section */}
-      <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
-          International and Bilateral Contributors to Education Award Sub-categories
-          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.slice(1).map((category, index) => (
-            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6 w-full h-full">
-              <div className="flex items-center justify-center mb-4 h-52">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </div>
-              <div className="flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
-                </div>
-                <button
-                  onClick={() => handleNominate(category)}
-                  className="w-full bg-[#FFC247] text-black py-2 rounded hover:bg-[#FFD277] transition mt-auto"
-                >
-                  Nominate
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+  
     </div>
   );
 };

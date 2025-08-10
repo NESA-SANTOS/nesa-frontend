@@ -885,93 +885,1455 @@ export interface Category {
             ]
           }
         ]
-      }
-    ]
+      },
+      {
+        "name": "East Africa",
+        "subCategories": [
+          {
+            "title": "Best Banking and Finance CSR in Education in East Africa",
+            "description": "Recognizing outstanding contributions in the banking and finance sector to education in East Africa",
+            "nominees": [
+              {"name": "Equity Bank", "image": "/images/csricons/equitybank.png", "achievement": "Empowering youth through scholarships and financial literacy programs.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "KCB Bank", "image": "/images/csricons/kcb.png", "achievement": "Supporting school infrastructure and digital learning.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Co-op Bank", "image": "/images/csricons/coopbank.png", "achievement": "Providing scholarships and supporting school development.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Standard Chartered", "image": "/images/csricons/standardchartered.png", "achievement": "Supporting STEM education and leadership initiatives.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "ABSA", "image": "/images/csricons/absa.png", "achievement": "Providing scholarships and digital learning resources.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "DTB", "image": "/images/csricons/dtb.png", "achievement": "Empowering youth through financial education programs.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "National Bank", "image": "/images/csricons/nationalbank.png", "achievement": "Providing educational support and scholarships.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "BK Group", "image": "/images/csricons/bkgroup.png", "achievement": "Funding school infrastructure and technology programs.", "state": "Kigali", "country": "Rwanda"},
+              {"name": "Yellow", "image": "/images/csricons/yellow.png", "achievement": "Supporting digital literacy and financial education.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Central Bank of Tanzania", "image": "/images/csricons/centralbanktz.png", "achievement": "Providing scholarships and supporting school development.", "state": "Dar es Salaam", "country": "Tanzania"}
+            ]
+          },
+          {
+            "title": "Best Telecommunications CSR in Education in East Africa",
+            "description": "Honoring telecommunications companies making significant educational contributions in East Africa",
+            "nominees": [
+              {"name": "Vodacom", "image": "/images/csricons/vodacom.png", "achievement": "Digital education platforms and school connectivity programs.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "MTN", "image": "/images/csricons/mtn.png", "achievement": "Supporting e-learning and digital skills training.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Airtel", "image": "/images/csricons/airtel.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Telkom", "image": "/images/csricons/telkom.png", "achievement": "Empowering schools with internet and digital learning.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Cell C", "image": "/images/csricons/cellc.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Zantel", "image": "/images/csricons/zantel.png", "achievement": "Supporting online learning and school connectivity.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Liquid Telecom", "image": "/images/csricons/liquidtelecom.png", "achievement": "Connecting schools and supporting STEM education.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Neotel", "image": "/images/csricons/neotel.png", "achievement": "Providing digital infrastructure for education.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Smile", "image": "/images/csricons/smile.png", "achievement": "Providing internet access for schools.", "state": "Kampala", "country": "Uganda"},
+              {"name": "BongoNet", "image": "/images/csricons/bongonet.png", "achievement": "Supporting digital learning initiatives.", "state": "Dar es Salaam", "country": "Tanzania"}
+            ]
+          },
+          {
+            "title": "Best Technology and ICT CSR in Education in East Africa",
+            "description": "Recognizing technology and ICT companies making substantial educational impacts in East Africa",
+            "nominees": [
+              {"name": "Andela", "image": "/images/csricons/andela.png", "achievement": "Supporting coding and robotics education.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "BRCK", "image": "/images/csricons/brck.png", "achievement": "Providing digital skills training and resources.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Safaricom", "image": "/images/csricons/safaricom.png", "achievement": "Empowering schools with technology solutions.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Liquid Telecom", "image": "/images/csricons/liquidtelecom.png", "achievement": "Supporting ICT infrastructure for schools.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Cellulant", "image": "/images/csricons/cellulant.png", "achievement": "Providing software solutions for education.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Africa's Talking", "image": "/images/csricons/africastalking.png", "achievement": "Supporting digital transformation in schools.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Twiga Foods", "image": "/images/csricons/twiga.png", "achievement": "Empowering schools with technology solutions.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "M-KOPA", "image": "/images/csricons/mkopa.png", "achievement": "Providing internet connectivity for schools.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Fuzu", "image": "/images/csricons/fuzu.png", "achievement": "Supporting digital literacy and teacher training.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Jumia", "image": "/images/csricons/jumia.png", "achievement": "Promoting e-commerce education and entrepreneurship.", "state": "Nairobi", "country": "Kenya"}
+            ]
+          },
+          {
+            "title": "Agriculture And Agribusiness CSR in Education in East Africa",
+            "description": "Honoring agriculture and agribusiness companies making significant educational contributions in East Africa",
+            "nominees": [
+              {"name": "Kilombero Sugar", "image": "/images/csricons/kilombero.png", "achievement": "Supporting agricultural education and rural development.", "state": "Morogoro", "country": "Tanzania"},
+              {"name": "KTDA", "image": "/images/csricons/ktda.png", "achievement": "Providing scholarships and supporting school development.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Top Quality Seed", "image": "/images/csricons/topqualityseed.png", "achievement": "Supporting agricultural education and rural development.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "EABL", "image": "/images/csricons/eabl.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Bakhresa Group", "image": "/images/csricons/bakhresa.png", "achievement": "Providing scholarships and supporting school development.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Heineken", "image": "/images/csricons/heineken.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Mumias Sugar", "image": "/images/csricons/mumiassugar.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Mombasa Cement", "image": "/images/csricons/mombasacement.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Mombasa", "country": "Kenya"},
+              {"name": "Crown Paints", "image": "/images/csricons/crownpaints.png", "achievement": "Supporting technical education and training programs.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Akili Holdings", "image": "/images/csricons/akiliholdings.png", "achievement": "Promoting agricultural innovation and education.", "state": "Nairobi", "country": "Kenya"}
+            ]
+          },
+          {
+            "title": "Manufacturing And Industrial CSR in Education in East Africa",
+            "description": "Recognizing outstanding contributions in the manufacturing and industrial sector to education in East Africa",
+            "nominees": [
+              {"name": "Bamburi Cement", "image": "/images/csricons/bamburicement.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "EABL", "image": "/images/csricons/eabl.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Kenya Breweries", "image": "/images/csricons/kenyabreweries.png", "achievement": "Providing scholarships and supporting school development.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Bipco", "image": "/images/csricons/bipco.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Crown Paints", "image": "/images/csricons/crownpaints.png", "achievement": "Supporting technical education and training programs.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Heineken", "image": "/images/csricons/heineken.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Mombasa Cement", "image": "/images/csricons/mombasacement.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Mombasa", "country": "Kenya"}
+            ]
+          },
+          {
+            "title": "Social Media Influencer CSR For Education in East Africa",
+            "description": "Recognizing social media influencers making substantial educational impacts in East Africa",
+            "nominees": [
+              {"name": "Nominee 1", "image": "/images/influencers/nominee1.png", "achievement": "Promoting education and empowerment through social media advocacy.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 2", "image": "/images/influencers/nominee2.png", "achievement": "Supporting girls' education and empowerment through social media.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 3", "image": "/images/influencers/nominee3.png", "achievement": "Promoting literacy and education awareness through social media campaigns.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 4", "image": "/images/influencers/nominee4.png", "achievement": "Supporting youth education and entrepreneurship through online mentoring and resources.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 5", "image": "/images/influencers/nominee5.png", "achievement": "Promoting health education and awareness through social media campaigns.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 6", "image": "/images/influencers/nominee6.png", "achievement": "Supporting sustainable living education through online content and community initiatives.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 7", "image": "/images/influencers/nominee7.png", "achievement": "Promoting technology education and digital literacy through social media tutorials.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 8", "image": "/images/influencers/nominee8.png", "achievement": "Supporting women's education and entrepreneurship through online courses and mentorship.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 9", "image": "/images/influencers/nominee9.png", "achievement": "Promoting educational comedy and literacy through social media content.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 10", "image": "/images/influencers/nominee10.png", "achievement": "Promoting arts education and cultural awareness through online platforms.", "state": "Nairobi", "country": "Kenya"}
+            ]
+          },
+          {
+            "title": "African International Sports Stars CSR For Education in East Africa",
+            "description": "Honoring East African international sports stars making significant educational contributions in East Africa",
+            "nominees": [
+              {"name": "Nominee 1", "image": "/images/sports/nominee1.png", "achievement": "Supporting youth education and sports development through scholarships and community programs.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 2", "image": "/images/sports/nominee2.png", "achievement": "Promoting education and sports opportunities for underprivileged youth.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 3", "image": "/images/sports/nominee3.png", "achievement": "Supporting educational initiatives and sports academies in East Africa.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 4", "image": "/images/sports/nominee4.png", "achievement": "Promoting education and sports development in rural areas of East Africa.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 5", "image": "/images/sports/nominee5.png", "achievement": "Supporting educational programs and sports facilities in underprivileged communities.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 6", "image": "/images/sports/nominee6.png", "achievement": "Promoting goalkeeper training programs and educational support for aspiring athletes.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 7", "image": "/images/sports/nominee7.png", "achievement": "Supporting education and sports infrastructure development in East Africa.", "state": "Nairobi", "country": "Kenya"},
+              {"name": "Nominee 8", "image": "/images/sports/nominee8.png", "achievement": "Promoting youth education and football development programs in East Africa.", "state": "Kampala", "country": "Uganda"},
+              {"name": "Nominee 9", "image": "/images/sports/nominee9.png", "achievement": "Supporting educational initiatives and sports academies in East Africa.", "state": "Dar es Salaam", "country": "Tanzania"},
+              {"name": "Nominee 10", "image": "/images/sports/nominee10.png", "achievement": "Promoting education and sports opportunities for youth in East Africa.", "state": "Nairobi", "country": "Kenya"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "South Africa",
+        "subCategories": [
+          {
+            "title": "Best Banking and Finance CSR in Education in South Africa",
+            "description": "Recognizing outstanding contributions in the banking and finance sector to education in South Africa",
+            "nominees": [
+              {"name": "Standard Bank", "image": "/images/csricons/stanbicibtc.png", "achievement": "Feeding Young Minds – Implementing school feeding programs and supporting educational materials in South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "FirstRand", "image": "/images/csricons/firstrand.png", "achievement": "Tomorrow's Leaders – Providing scholarships and leadership training for students in South Africa and Namibia.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nedbank", "image": "/images/csricons/nedbank.png", "achievement": "Supporting financial literacy and school infrastructure projects.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "ABSA", "image": "/images/csricons/absa.png", "achievement": "Providing scholarships and digital learning resources.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Capitec", "image": "/images/csricons/capitec.png", "achievement": "Empowering youth through financial education programs.", "state": "Stellenbosch", "country": "South Africa"},
+              {"name": "Investec", "image": "/images/csricons/investec.png", "achievement": "Supporting STEM education and leadership initiatives.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "African Bank", "image": "/images/csricons/africanbank.png", "achievement": "Providing educational support and scholarships.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "RMB", "image": "/images/csricons/rmb.png", "achievement": "Funding school infrastructure and technology programs.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "TymeBank", "image": "/images/csricons/tymebank.png", "achievement": "Supporting digital literacy and financial education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Sasfin", "image": "/images/csricons/sasfin.png", "achievement": "Providing scholarships and supporting school development.", "state": "Johannesburg", "country": "South Africa"}
+            ]
+          },
+          {
+            "title": "Best Telecommunications CSR in Education in South Africa",
+            "description": "Honoring telecommunications companies making significant educational contributions in South Africa",
+            "nominees": [
+              {"name": "Vodacom", "image": "/images/csricons/vodacom.png", "achievement": "Digital education platforms and school connectivity programs.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "MTN", "image": "/images/csricons/mtn.png", "achievement": "Supporting e-learning and digital skills training.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Cell C", "image": "/images/csricons/cellc.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Telkom", "image": "/images/csricons/telkom.png", "achievement": "Empowering schools with internet and digital learning.", "state": "Pretoria", "country": "South Africa"},
+              {"name": "Liquid Telecom", "image": "/images/csricons/liquidtelecom.png", "achievement": "Connecting schools and supporting STEM education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Neotel", "image": "/images/csricons/neotel.png", "achievement": "Providing digital infrastructure for education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Rain", "image": "/images/csricons/rain.png", "achievement": "Supporting online learning and school connectivity.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Smile", "image": "/images/csricons/smile.png", "achievement": "Providing internet access for schools.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Paratus", "image": "/images/csricons/paratus.png", "achievement": "Supporting digital learning initiatives.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "EOH", "image": "/images/csricons/eoh.png", "achievement": "Empowering schools with technology solutions.", "state": "Johannesburg", "country": "South Africa"}
+            ]
+          },
+          {
+            "title": "Best Technology and ICT CSR in Education in South Africa",
+            "description": "Recognizing technology and ICT companies making substantial educational impacts in South Africa",
+            "nominees": [
+              {"name": "Dimension Data", "image": "/images/csricons/dimensiondata.png", "achievement": "Supporting coding and robotics education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "BCX", "image": "/images/csricons/bcx.png", "achievement": "Providing digital skills training and resources.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Altron", "image": "/images/csricons/altron.png", "achievement": "Empowering schools with technology solutions.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Mustek", "image": "/images/csricons/mustek.png", "achievement": "Supporting ICT infrastructure for schools.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Adapt IT", "image": "/images/csricons/adaptit.png", "achievement": "Providing software solutions for education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Datatec", "image": "/images/csricons/datatec.png", "achievement": "Supporting digital transformation in schools.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "EOH", "image": "/images/csricons/eoh.png", "achievement": "Empowering schools with technology solutions.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "SEACOM", "image": "/images/csricons/seacom.png", "achievement": "Providing internet connectivity for schools.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Microsoft South Africa", "image": "/images/csricons/microsoft.png", "achievement": "Supporting digital literacy and teacher training.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "GreenMatter", "image": "/images/csricons/greenmatter.png", "achievement": "Promoting environmental education and sustainability.", "state": "Johannesburg", "country": "South Africa"}
+            ]
+          },
+          {
+            "title": "African International Sports Stars CSR For Education in South Africa",
+            "description": "Honoring South African international sports stars making significant educational contributions in South Africa",
+            "nominees": [
+              {"name": "Percy Tau", "image": "/images/africacsr/percystau.png", "achievement": "Supporting youth education and sports development through scholarships and community programs.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Thembi Kgatlana", "image": "/images/africacsr/thembikgatlana.png", "achievement": "Promoting education and sports opportunities for underprivileged youth.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Thulani Hlatshwayo", "image": "/images/africacsr/thulanihlatshwayo.png", "achievement": "Supporting educational initiatives and sports academies in South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Desiree Ellis", "image": "/images/africacsr/desireeellis.png", "achievement": "Promoting education and sports development in rural areas of South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Janine van Wyk", "image": "/images/africacsr/janinevanwyk.png", "achievement": "Supporting educational programs and sports facilities in underprivileged communities.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Lucas Radebe", "image": "/images/africacsr/lucasradebe.png", "achievement": "Promoting goalkeeper training programs and educational support for aspiring athletes.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Benni McCarthy", "image": "/images/africacsr/bennimccarthy.png", "achievement": "Supporting education and sports infrastructure development in South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Portia Modise", "image": "/images/africacsr/portiamodise.png", "achievement": "Promoting youth education and football development programs in South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Aaron Mokoena", "image": "/images/africacsr/aaronmokoena.png", "achievement": "Supporting educational initiatives and sports academies in South Africa.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Siphiwe Tshabalala", "image": "/images/africacsr/siphiwetshabalala.png", "achievement": "Promoting education and sports opportunities for youth in South Africa.", "state": "Johannesburg", "country": "South Africa"}
+            ]
+          },
+          {
+            "title": "Manufacturing And Industrial CSR in Education in South Africa",
+            "description": "Recognizing outstanding contributions in the manufacturing and industrial sector to education in South Africa",
+            "nominees": [
+              {"name": "Sasol", "image": "/images/csricons/sasol.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Impala Platinum", "image": "/images/csricons/impalaplatinum.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Anglo American", "image": "/images/csricons/angloamerican.png", "achievement": "Providing scholarships and supporting school development.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "De Beers Group", "image": "/images/csricons/debeers.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Barloworld", "image": "/images/csricons/barloworld.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Gold Star", "image": "/images/csricons/goldstar.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "MOZAL", "image": "/images/csricons/mozal.png", "achievement": "Supporting technical education and training programs.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Murray & Roberts", "image": "/images/csricons/murrayandroberts.png", "achievement": "Supporting engineering education and infrastructure development.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Tongaat Hulett", "image": "/images/csricons/tongaat.png", "achievement": "Supporting school infrastructure and STEM education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Namibia Breweries Limited", "image": "/images/csricons/namibiabreweries.png", "achievement": "Supporting vocational training and community development.", "state": "Windhoek", "country": "Namibia"}
+            ]
+          },
+          {
+            "title": "Agriculture And Agribusiness CSR in Education in South Africa",
+            "description": "Honoring agriculture and agribusiness companies making significant educational contributions in South Africa",
+            "nominees": [
+              {"name": "Tongaat Hulett", "image": "/images/csricons/tongaat.png", "achievement": "Supporting school infrastructure and STEM education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Illovo", "image": "/images/csricons/illovo.png", "achievement": "Supporting agricultural education and rural development.", "state": "Durban", "country": "South Africa"},
+              {"name": "Namib Mills", "image": "/images/csricons/namibmills.png", "achievement": "Providing scholarships and supporting school development.", "state": "Windhoek", "country": "Namibia"},
+              {"name": "Murray & Roberts", "image": "/images/csricons/murrayandroberts.png", "achievement": "Supporting engineering education and infrastructure development.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "De Beers Group", "image": "/images/csricons/debeers.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Namibia Breweries Limited", "image": "/images/csricons/namibiabreweries.png", "achievement": "Supporting vocational training and community development.", "state": "Windhoek", "country": "Namibia"},
+              {"name": "Tongaat Hulett", "image": "/images/csricons/tongaat.png", "achievement": "Supporting school infrastructure and STEM education.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Namib Mills", "image": "/images/csricons/namibmills.png", "achievement": "Providing scholarships and supporting school development.", "state": "Windhoek", "country": "Namibia"},
+              {"name": "Namibia Breweries Limited", "image": "/images/csricons/namibiabreweries.png", "achievement": "Supporting vocational training and community development.", "state": "Windhoek", "country": "Namibia"},
+              {"name": "Angola Beverages", "image": "/images/csricons/angolabeverages.png", "achievement": "Supporting beverage industry education and training programs.", "state": "Luanda", "country": "Angola"}
+            ]
+          },
+          {
+            "title": "Social Media Influencer CSR For Education in South Africa",
+            "description": "Recognizing social media influencers making substantial educational impacts in South Africa",
+            "nominees": [
+              {"name": "Nominee 1", "image": "/images/influencers/nominee1.png", "achievement": "Promoting education and empowerment through social media advocacy.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 2", "image": "/images/influencers/nominee2.png", "achievement": "Supporting girls' education and empowerment through social media.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 3", "image": "/images/influencers/nominee3.png", "achievement": "Promoting literacy and education awareness through social media campaigns.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 4", "image": "/images/influencers/nominee4.png", "achievement": "Supporting youth education and entrepreneurship through online mentoring and resources.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 5", "image": "/images/influencers/nominee5.png", "achievement": "Promoting health education and awareness through social media campaigns.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 6", "image": "/images/influencers/nominee6.png", "achievement": "Supporting sustainable living education through online content and community initiatives.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 7", "image": "/images/influencers/nominee7.png", "achievement": "Promoting technology education and digital literacy through social media tutorials.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 8", "image": "/images/influencers/nominee8.png", "achievement": "Supporting women's education and entrepreneurship through online courses and mentorship.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 9", "image": "/images/influencers/nominee9.png", "achievement": "Promoting educational comedy and literacy through social media content.", "state": "Johannesburg", "country": "South Africa"},
+              {"name": "Nominee 10", "image": "/images/influencers/nominee10.png", "achievement": "Promoting arts education and cultural awareness through online platforms.", "state": "Johannesburg", "country": "South Africa"}
+            ]
+          }
+        ]
+      },
+         {
+        "name": "West Africa",
+        "subCategories": [
+          {
+            "title": "Best Banking and Finance CSR in Education in West Africa",
+            "description": "Recognizing outstanding contributions in the banking and finance sector to education in West Africa",
+            "nominees": [
+              {"name": "Ecobank", "image": "/images/csricons/ecobank.png", "achievement": "Empowering youth through scholarships and financial literacy programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "UBA", "image": "/images/csricons/uba.png", "achievement": "Supporting school infrastructure and digital learning.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Zenith Bank", "image": "/images/csricons/zenith.png", "achievement": "Providing scholarships and supporting school development.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "GTBank", "image": "/images/csricons/gtbank.png", "achievement": "Supporting STEM education and leadership initiatives.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "FirstBank", "image": "/images/csricons/firstbank.png", "achievement": "Providing scholarships and digital learning resources.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Access Bank", "image": "/images/csricons/accessbank.png", "achievement": "Empowering youth through financial education programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Fidelity Bank", "image": "/images/csricons/fidelity.png", "achievement": "Providing educational support and scholarships.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Union Bank", "image": "/images/csricons/unionbank.png", "achievement": "Funding school infrastructure and technology programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Stanbic IBTC", "image": "/images/csricons/stanbicibtc.png", "achievement": "Supporting digital literacy and financial education.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "United Bank of Africa", "image": "/images/csricons/uba.png", "achievement": "Providing scholarships and supporting school development.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          },
+          {
+            "title": "Best Telecommunications CSR in Education in West Africa",
+            "description": "Honoring telecommunications companies making significant educational contributions in West Africa",
+            "nominees": [
+              {"name": "MTN", "image": "/images/csricons/mtn.png", "achievement": "Digital education platforms and school connectivity programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Airtel", "image": "/images/csricons/airtel.png", "achievement": "Supporting e-learning and digital skills training.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Vodacom", "image": "/images/csricons/vodacom.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Accra", "country": "Ghana"},
+              {"name": "Orange", "image": "/images/csricons/orange.png", "achievement": "Empowering schools with internet and digital learning.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "9mobile", "image": "/images/csricons/9mobile.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Expresso", "image": "/images/csricons/expresso.png", "achievement": "Supporting online learning and school connectivity.", "state": "Dakar", "country": "Senegal"},
+              {"name": "Moov Africa", "image": "/images/csricons/moovafrica.png", "achievement": "Connecting schools and supporting STEM education.", "state": "Lomé", "country": "Togo"},
+              {"name": "Airtel Nigeria", "image": "/images/csricons/airtel.png", "achievement": "Providing digital infrastructure for education.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "MTN Project Fame", "image": "/images/csricons/mtn.png", "achievement": "Providing internet access for schools.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          },
+          {
+            "title": "Best Technology and ICT CSR in Education in West Africa",
+            "description": "Recognizing technology and ICT companies making substantial educational impacts in West Africa",
+            "nominees": [
+              {"name": "Flutterwave", "image": "/images/csricons/flutterwave.png", "achievement": "Supporting coding and robotics education.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Paystack", "image": "/images/csricons/paystack.png", "achievement": "Providing digital skills training and resources.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "MainOne", "image": "/images/csricons/mainone.png", "achievement": "Empowering schools with technology solutions.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Andela", "image": "/images/csricons/andela.png", "achievement": "Supporting ICT infrastructure for schools.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Interswitch", "image": "/images/csricons/interswitch.png", "achievement": "Providing software solutions for education.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Jumia", "image": "/images/csricons/jumia.png", "achievement": "Supporting digital transformation in schools.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Kobo360", "image": "/images/csricons/kobo360.png", "achievement": "Empowering schools with technology solutions.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "TradeDepot", "image": "/images/csricons/tradedepot.png", "achievement": "Providing internet connectivity for schools.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "GIG Logistics", "image": "/images/csricons/giglogistics.png", "achievement": "Supporting digital literacy and teacher training.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "e-Settlement", "image": "/images/csricons/esettlement.png", "achievement": "Promoting e-commerce education and entrepreneurship.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          },
+          {
+            "title": "Agriculture And Agribusiness CSR in Education in West Africa",
+            "description": "Honoring agriculture and agribusiness companies making significant educational contributions in West Africa",
+            "nominees": [
+              {"name": "Olam", "image": "/images/csricons/olam.png", "achievement": "Supporting agricultural education and rural development.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nestle", "image": "/images/csricons/nestle.png", "achievement": "Providing scholarships and supporting school development.", "state": "Accra", "country": "Ghana"},
+              {"name": "Dangote Sugar", "image": "/images/csricons/dangotesugar.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "FMN", "image": "/images/csricons/fmn.png", "achievement": "Providing scholarships and supporting school development.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Tropingo Foods", "image": "/images/csricons/tropingo.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Accra", "country": "Ghana"},
+              {"name": "Cargill", "image": "/images/csricons/cargill.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Cocoa Processing Company Ltd.", "image": "/images/csricons/cocoaprocessing.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Accra", "country": "Ghana"},
+              {"name": "Guinness", "image": "/images/csricons/guinness.png", "achievement": "Supporting technical education and training programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "S.A.H.", "image": "/images/csricons/sah.png", "achievement": "Promoting agricultural innovation and education.", "state": "Abidjan", "country": "Ivory Coast"}
+            ]
+          },
+          {
+            "title": "Manufacturing And Industrial CSR in Education in West Africa",
+            "description": "Recognizing outstanding contributions in the manufacturing and industrial sector to education in West Africa",
+            "nominees": [
+              {"name": "Dangote Group", "image": "/images/csricons/dangotegroup.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Lafarge", "image": "/images/csricons/lafarge.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nestle", "image": "/images/csricons/nestle.png", "achievement": "Providing scholarships and supporting school development.", "state": "Accra", "country": "Ghana"},
+              {"name": "FMN", "image": "/images/csricons/fmn.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "CIMAF", "image": "/images/csricons/cimaf.png", "achievement": "Supporting technical education and training programs.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Guinness", "image": "/images/csricons/guinness.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Unilever", "image": "/images/csricons/unilever.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Cocoa Processing Company Ltd.", "image": "/images/csricons/cocoaprocessing.png", "achievement": "Supporting technical education and training programs.", "state": "Accra", "country": "Ghana"},
+              {"name": "Bolloré", "image": "/images/csricons/bollore.png", "achievement": "Promoting industrial innovation and education.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Olam", "image": "/images/csricons/olam.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          },
+          {
+            "title": "Social Media Influencer CSR For Education in West Africa",
+            "description": "Recognizing social media influencers making substantial educational impacts in West Africa",
+            "nominees": [
+              {"name": "Nominee 1", "image": "/images/influencers/nominee1.png", "achievement": "Promoting education and empowerment through social media advocacy.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 2", "image": "/images/influencers/nominee2.png", "achievement": "Supporting girls' education and empowerment through social media.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 3", "image": "/images/influencers/nominee3.png", "achievement": "Promoting literacy and education awareness through social media campaigns.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 4", "image": "/images/influencers/nominee4.png", "achievement": "Supporting youth education and entrepreneurship through online mentoring and resources.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 5", "image": "/images/influencers/nominee5.png", "achievement": "Promoting health education and awareness through social media campaigns.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 6", "image": "/images/influencers/nominee6.png", "achievement": "Supporting sustainable living education through online content and community initiatives.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 7", "image": "/images/influencers/nominee7.png", "achievement": "Promoting technology education and digital literacy through social media tutorials.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 8", "image": "/images/influencers/nominee8.png", "achievement": "Supporting women's education and entrepreneurship through online courses and mentorship.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 9", "image": "/images/influencers/nominee9.png", "achievement": "Promoting educational comedy and literacy through social media content.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 10", "image": "/images/influencers/nominee10.png", "achievement": "Promoting arts education and cultural awareness through online platforms.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          },
+          {
+            "title": "African International Sports Stars CSR For Education in West Africa",
+            "description": "Honoring West African international sports stars making significant educational contributions in West Africa",
+            "nominees": [
+              {"name": "Nominee 1", "image": "/images/sports/nominee1.png", "achievement": "Supporting youth education and sports development through scholarships and community programs.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 2", "image": "/images/sports/nominee2.png", "achievement": "Promoting education and sports opportunities for underprivileged youth.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 3", "image": "/images/sports/nominee3.png", "achievement": "Supporting educational initiatives and sports academies in West Africa.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 4", "image": "/images/sports/nominee4.png", "achievement": "Promoting education and sports development in rural areas of West Africa.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 5", "image": "/images/sports/nominee5.png", "achievement": "Supporting educational programs and sports facilities in underprivileged communities.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 6", "image": "/images/sports/nominee6.png", "achievement": "Promoting goalkeeper training programs and educational support for aspiring athletes.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 7", "image": "/images/sports/nominee7.png", "achievement": "Supporting education and sports infrastructure development in West Africa.", "state": "Lagos", "country": "Nigeria"},
+              {"name": "Nominee 8", "image": "/images/sports/nominee8.png", "achievement": "Promoting youth education and football development programs in West Africa.", "state": "Accra", "country": "Ghana"},
+              {"name": "Nominee 9", "image": "/images/sports/nominee9.png", "achievement": "Supporting educational initiatives and sports academies in West Africa.", "state": "Abidjan", "country": "Ivory Coast"},
+              {"name": "Nominee 10", "image": "/images/sports/nominee10.png", "achievement": "Promoting education and sports opportunities for youth in West Africa.", "state": "Lagos", "country": "Nigeria"}
+            ]
+          }
+        ] 
+      },
+         
+        {
+          "name": "Central Africa",
+          "subCategories": [
+            {
+              "title": "Best Banking and Finance CSR in Education in Central Africa",
+              "description": "Recognizing outstanding contributions in the banking and finance sector to education in Central Africa",
+              "nominees": [
+                {"name": "Ecobank", "image": "/images/csricons/ecobank.png", "achievement": "Empowering youth through scholarships and financial literacy programs.", "state": "Douala", "country": "Cameroon"},
+                {"name": "BGFI Bank", "image": "/images/csricons/bgfibank.png", "achievement": "Supporting school infrastructure and digital learning.", "state": "Libreville", "country": "Gabon"},
+                {"name": "Standard Chartered", "image": "/images/csricons/standardchartered.png", "achievement": "Providing scholarships and supporting school development.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "UBA", "image": "/images/csricons/uba.png", "achievement": "Supporting STEM education and leadership initiatives.", "state": "Douala", "country": "Cameroon"},
+                {"name": "Afriland First Bank", "image": "/images/csricons/afriland.png", "achievement": "Providing scholarships and digital learning resources.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "Commercial Bank", "image": "/images/csricons/commercialbank.png", "achievement": "Empowering youth through financial education programs.", "state": "Douala", "country": "Cameroon"},
+                {"name": "BICEC", "image": "/images/csricons/bicec.png", "achievement": "Providing educational support and scholarships.", "state": "Douala", "country": "Cameroon"},
+                {"name": "Société Générale Congo", "image": "/images/csricons/societegenerale.png", "achievement": "Funding school infrastructure and technology programs.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "Ecobank Congo", "image": "/images/csricons/ecobank.png", "achievement": "Supporting digital literacy and financial education.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "Tigo Chad", "image": "/images/csricons/tigo.png", "achievement": "Providing scholarships and supporting school development.", "state": "N'Djamena", "country": "Chad"}
+              ]
+            },
+            {
+              "title": "Best Telecommunications CSR in Education in Central Africa",
+              "description": "Honoring telecommunications companies making significant educational contributions in Central Africa",
+              "nominees": [
+                {"name": "MTN Cameroon", "image": "/images/csricons/mtn.png", "achievement": "Digital education platforms and school connectivity programs.", "state": "Douala", "country": "Cameroon"},
+                {"name": "Airtel Congo", "image": "/images/csricons/airtel.png", "achievement": "Supporting e-learning and digital skills training.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "Orange Central Africa", "image": "/images/csricons/orange.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Bangui", "country": "Central African Republic"},
+                {"name": "Camtel", "image": "/images/csricons/camtel.png", "achievement": "Empowering schools with internet and digital learning.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "Moov Africa", "image": "/images/csricons/moovafrica.png", "achievement": "Providing digital resources and supporting school technology.", "state": "Libreville", "country": "Gabon"},
+                {"name": "Africell", "image": "/images/csricons/africell.png", "achievement": "Supporting online learning and school connectivity.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "Vodacom Congo", "image": "/images/csricons/vodacom.png", "achievement": "Connecting schools and supporting STEM education.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "Unitel Angola", "image": "/images/csricons/unitel.png", "achievement": "Providing digital infrastructure for education.", "state": "Luanda", "country": "Angola"},
+                {"name": "GITGE", "image": "/images/csricons/gitge.png", "achievement": "Providing internet access for schools.", "state": "Malabo", "country": "Equatorial Guinea"}
+              ]
+            },
+            {
+              "title": "Best Technology and ICT CSR in Education in Central Africa",
+              "description": "Recognizing technology and ICT companies making substantial educational impacts in Central Africa",
+              "nominees": [
+                {"name": "Huawei Central Africa", "image": "/images/csricons/huawei.png", "achievement": "Supporting coding and robotics education.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "Ericsson Central Africa", "image": "/images/csricons/ericsson.png", "achievement": "Providing digital skills training and resources.", "state": "Douala", "country": "Cameroon"},
+                {"name": "ZTE Central Africa", "image": "/images/csricons/zte.png", "achievement": "Empowering schools with technology solutions.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "Camtel", "image": "/images/csricons/camtel.png", "achievement": "Supporting ICT infrastructure for schools.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "Liquid Telecom Central Africa", "image": "/images/csricons/liquidtelecom.png", "achievement": "Providing software solutions for education.", "state": "Libreville", "country": "Gabon"},
+                {"name": "SES Central Africa", "image": "/images/csricons/ses.png", "achievement": "Supporting digital transformation in schools.", "state": "Douala", "country": "Cameroon"},
+                {"name": "1WayAfrica", "image": "/images/csricons/1wayafrica.png", "achievement": "Empowering schools with technology solutions.", "state": "Malabo", "country": "Equatorial Guinea"},
+                {"name": "Ringo", "image": "/images/csricons/ringo.png", "achievement": "Providing internet connectivity for schools.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "Africom", "image": "/images/csricons/africom.png", "achievement": "Supporting digital literacy and teacher training.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "Hi-Tech Solutions Central Africa", "image": "/images/csricons/hitech.png", "achievement": "Promoting e-commerce education and entrepreneurship.", "state": "Douala", "country": "Cameroon"}
+              ]
+            },
+            {
+              "title": "Manufacturing And Industrial CSR in Education in Central Africa",
+              "description": "Recognizing outstanding contributions in the manufacturing and industrial sector to education in Central Africa",
+              "nominees": [
+                {"name": "CBG", "image": "/images/csricons/cbg.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Conakry", "country": "Guinea"},
+                {"name": "Alucam", "image": "/images/csricons/alucam.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Douala", "country": "Cameroon"},
+                {"name": "Ciment de l'Afrique (CIMAF)", "image": "/images/csricons/cimaf.png", "achievement": "Providing scholarships and supporting school development.", "state": "Abidjan", "country": "Ivory Coast"},
+                {"name": "Total Gabon", "image": "/images/csricons/totalgabon.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "Libreville", "country": "Gabon"},
+                {"name": "CIB", "image": "/images/csricons/cib.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "Perenco", "image": "/images/csricons/perenco.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Libreville", "country": "Gabon"},
+                {"name": "Heidelberg Materials", "image": "/images/csricons/heidelberg.png", "achievement": "Supporting technical education and training programs.", "state": "Douala", "country": "Cameroon"},
+                {"name": "Glencore", "image": "/images/csricons/glencore.png", "achievement": "Promoting industrial innovation and education.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "SNPC", "image": "/images/csricons/snpc.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "ExxonMobil", "image": "/images/csricons/exxonmobil.png", "achievement": "Supporting engineering education and providing scholarships.", "state": "Malabo", "country": "Equatorial Guinea"}
+              ]
+            },
+            {
+              "title": "Agriculture And Agribusiness CSR in Education in Central Africa",
+              "description": "Honoring agriculture and agribusiness companies making significant educational contributions in Central Africa",
+              "nominees": [
+                {"name": "PALMCI", "image": "/images/csricons/palmci.png", "achievement": "Supporting agricultural education and rural development.", "state": "Abidjan", "country": "Ivory Coast"},
+                {"name": "Gabon Maize", "image": "/images/csricons/gabonmaize.png", "achievement": "Providing scholarships and supporting school development.", "state": "Libreville", "country": "Gabon"},
+                {"name": "SEEG", "image": "/images/csricons/seeg.png", "achievement": "Supporting STEM education and school infrastructure.", "state": "Libreville", "country": "Gabon"},
+                {"name": "Feronia", "image": "/images/csricons/feronia.png", "achievement": "Providing scholarships and supporting school development.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "CotonTchad", "image": "/images/csricons/cotontchad.png", "achievement": "Supporting vocational training and educational partnerships.", "state": "N'Djamena", "country": "Chad"},
+                {"name": "COMILOG", "image": "/images/csricons/comilog.png", "achievement": "Supporting technical education and infrastructure support.", "state": "Moanda", "country": "Gabon"},
+                {"name": "Cocoa Processing Company Ltd.", "image": "/images/csricons/cocoaprocessing.png", "achievement": "Supporting sustainable development education and scholarships.", "state": "Libreville", "country": "Gabon"},
+                {"name": "SOSUCAM", "image": "/images/csricons/sosucam.png", "achievement": "Supporting technical education and training programs.", "state": "Yaoundé", "country": "Cameroon"},
+                {"name": "CIB", "image": "/images/csricons/cib.png", "achievement": "Promoting agricultural innovation and education.", "state": "Brazzaville", "country": "Congo"}
+              ]
+            },
+            {
+              "title": "Social Media Influencer CSR For Education in Central Africa",
+              "description": "Recognizing social media influencers making substantial educational impacts in Central Africa",
+              "nominees": [
+                {"name": "Fally Ipupa", "image": "/images/influencers/fallyipupa.png", "achievement": "Promoting education and empowerment through social media advocacy.", "state": "Kinshasa", "country": "DR Congo"},
+                {"name": "Awilo Longomba", "image": "/images/influencers/awilolongomba.png", "achievement": "Supporting girls' education and empowerment through social media.", "state": "Brazzaville", "country": "Congo"},
+                {"name": "Innoss'B", "image": "/images/influencers/innossb.png", "achievement": "Promoting literacy and education awareness through social media campaigns.", "state": "Kinshasa", "country": "DR Congo"}
+              ]
+            }
+          ],
+       
+  }]
 },
 
       
 {
   "title": "Best EduTech Organization in Nigeria and Africa 2024",
   "description": "Acknowledges educational technology organizations that have demonstrated exemplary commitment and results in advancing education from 2014-2024.",
-  "subCategories": [
+  "regions": [
     {
-      "title": "Best Telecommunications CSR in Education in Central Africa",
-      "description": "Recognizes telecommunications companies with impactful corporate social responsibility initiatives in education in Central Africa.",
-      "nominees": [
-        { "name": "Andela", "image": "/images/edutech/Andela.png", "country": "Nigeria", "achievement": "Innovative tech education and talent development" },
-        { "name": "M-Shule", "image": "/images/edutech/M-Shule.png", "country": "Kenya", "achievement": "Mobile learning solutions for primary education" },
-        { "name": "uLesson", "image": "/images/edutech/uLesson.png", "country": "Nigeria", "achievement": "Digital learning platform for secondary students" },
-        { "name": "Ubongo", "image": "/images/edutech/Ubongo.png", "country": "Tanzania", "achievement": "Educational entertainment for young learners" },
-        { "name": "Scholaro", "image": "/images/edutech/Scholaro.png", "country": "Nigeria", "achievement": "Global grade conversion and academic services" },
-        { "name": "Edusko", "image": "/images/edutech/Edusko.png", "country": "Nigeria", "achievement": "Connecting parents with quality schools" },
-        { "name": "BRCK", "image": "/images/edutech/BRCK.png", "country": "Kenya", "achievement": "Rugged technology solutions for education" },
-        { "name": "Snapplify", "image": "/images/edutech/Snapplify.png", "country": "South Africa", "achievement": "Digital publishing and e-learning solutions" },
-        { "name": "eAfrilearn", "image": "/images/edutech/eAfrilearn.png", "country": "Nigeria", "achievement": "Online learning platform for African students" },
-        { "name": "Eneza Education", "image": "/images/edutech/Eneza Education.png", "country": "Kenya", "achievement": "SMS-based learning for rural areas" }
+      "name": "North Africa",
+      "subCategories": [
+        {
+          "title": "Best EduTech Startup in North Africa",
+          "description": "Recognizes telecommunications companies with impactful corporate social responsibility initiatives in education in North Africa.",
+          "nominees": [
+            {
+              "name": "Nafham (Egypt)",
+              "image": "/images/edutech/nafham.png",
+              "country": "Egypt",
+              "achievement": "Developed an online platform offering free K-12 video lessons aligned with national curricula, utilizing crowdsourced video content to address curriculum gaps. Reached over 4 million students across Egypt and the MENA region."
+            },
+            {
+              "name": "Almentor (Egypt)",
+              "image": "/images/edutech/almentor.png",
+              "country": "Egypt",
+              "achievement": "Created an e-learning platform providing video-based online courses from regional experts, integrating AI-driven personalized learning paths. Empowered over 2 million learners."
+            },
+            {
+              "name": "uLesson (Nigeria)",
+              "image": "/images/edutech/uLesson.png",
+              "country": "Nigeria",
+              "achievement": "Interactive learning platform offering curriculum-based video lessons, quizzes, and live classes for African students. Over 2 million app downloads."
+            },
+            {
+              "name": "ClassQuiz (Tunisia)",
+              "image": "/images/edutech/classquiz.png",
+              "country": "Tunisia",
+              "achievement": "Gamified education platform enabling teachers to create and share quizzes, fostering interactive learning experiences."
+            },
+            {
+              "name": "Edraak (MENA region)",
+              "image": "/images/edutech/edraak.png",
+              "country": "Jordan",
+              "achievement": "A pioneering MOOC platform offering free online courses in Arabic, impacting millions of learners across the Arab world."
+            },
+            {
+              "name": "Maroc Numeric Fund (Morocco)",
+              "image": "/images/edutech/marocnumeric.png",
+              "country": "Morocco",
+              "achievement": "Investment fund supporting tech startups in Morocco, including those focused on education technology."
+            },
+            {
+              "name": "Tadrib Online (Egypt)",
+              "image": "/images/edutech/tadrib.png",
+              "country": "Egypt",
+              "achievement": "Online platform offering vocational and professional training programs tailored to the Egyptian market."
+            },
+            {
+              "name": "Chifco (Tunisia)",
+              "image": "/images/edutech/chifco.png",
+              "country": "Tunisia",
+              "achievement": "Smart solutions provider leveraging IoT and AI for educational and industrial applications."
+            },
+            {
+              "name": "MCISE (Morocco)",
+              "image": "/images/edutech/mcise.png",
+              "country": "Morocco",
+              "achievement": "Moroccan Center for Innovation and Social Entrepreneurship advancing social impact through education projects."
+            },
+            {
+              "name": "Medsol (Egypt)",
+              "image": "/images/edutech/medsol.png",
+              "country": "Egypt",
+              "achievement": "Provider of education-related technology solutions, including digital learning platforms."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Established Company in North Africa",
+          "description": "Honors telecommunications companies with significant educational initiatives in North Africa.",
+          "nominees": [
+            {
+              "name": "ATLAR (Algeria)",
+              "image": "/images/edutech/atlar.png",
+              "country": "Algeria",
+              "achievement": "Leading provider of digital classrooms and e-learning solutions."
+            },
+            {
+              "name": "Arab Academy for Science and Technology (Egypt)",
+              "image": "/images/edutech/arabacademy.png",
+              "country": "Egypt",
+              "achievement": "Regional university with educational programs integrating technology and practical skills."
+            },
+            {
+              "name": "GOMYCODE (Tunisia)",
+              "image": "/images/edutech/gomycode.png",
+              "country": "Tunisia",
+              "achievement": "Offers coding courses and digital skills training through physical and online platforms."
+            },
+            {
+              "name": "Menaitech (Morocco)",
+              "image": "/images/edutech/menaitech.png",
+              "country": "Morocco",
+              "achievement": "Developer of payroll and HR software adapted for the MENA education sector."
+            },
+            {
+              "name": "TechKnowledge (Libya)",
+              "image": "/images/edutech/techknowledge.png",
+              "country": "Libya",
+              "achievement": "Provides digital learning solutions to universities and schools across Libya."
+            },
+            {
+              "name": "Edunation (Jordan)",
+              "image": "/images/edutech/edunation.png",
+              "country": "Jordan",
+              "achievement": "Learning management platform enabling schools to create, manage, and deliver online classes."
+            },
+            {
+              "name": "Ciseco (Morocco)",
+              "image": "/images/edutech/ciseco.png",
+              "country": "Morocco",
+              "achievement": "Delivers educational content and technology solutions to North African institutions."
+            },
+            {
+              "name": "Edraak (Jordan)",
+              "image": "/images/edutech/edraak.png",
+              "country": "Jordan",
+              "achievement": "Provides MOOCs with a focus on Arabic-language content."
+            },
+            {
+              "name": "Kngine (Egypt)",
+              "image": "/images/edutech/kngine.png",
+              "country": "Egypt",
+              "achievement": "AI-powered search engine designed to enhance learning and knowledge discovery."
+            },
+            {
+              "name": "Learnovia (Egypt)",
+              "image": "/images/edutech/learnovia.png",
+              "country": "Egypt",
+              "achievement": "Learning management platform that includes course creation, student tracking, and reporting."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Social Impact Initiative in North Africa",
+          "description": "Recognizes technology projects with significant impact on education in North Africa.",
+          "nominees": [
+            {
+              "name": "Injaz Egypt (Egypt)",
+              "image": "/images/edutech/injaz.png",
+              "country": "Egypt",
+              "achievement": "Bridging the gap between education and employment through entrepreneurship programs."
+            },
+            {
+              "name": "EFE Egypt (Education for Employment) (Egypt)",
+              "image": "/images/edutech/efeegypt.png",
+              "country": "Egypt",
+              "achievement": "Providing youth with training and job placement to improve employability."
+            },
+            {
+              "name": "Career 180 (Egypt)",
+              "image": "/images/edutech/career180.png",
+              "country": "Egypt",
+              "achievement": "Career counseling and professional development platform reaching 500,000 young people."
+            },
+            {
+              "name": "Hack the Future (Tunisia)",
+              "image": "/images/edutech/hackfuture.png",
+              "country": "Tunisia",
+              "achievement": "Organizes hackathons and future skills training for youth."
+            },
+            {
+              "name": "Future Leaders (Morocco)",
+              "image": "/images/edutech/futureleaders.png",
+              "country": "Morocco",
+              "achievement": "Engages students in leadership and community development programs."
+            },
+            {
+              "name": "Teach for Morocco (Morocco)",
+              "image": "/images/edutech/teachformorocco.png",
+              "country": "Morocco",
+              "achievement": "Recruits and trains young leaders to teach in underserved schools."
+            },
+            {
+              "name": "Arab Digital Opportunities (Libya)",
+              "image": "/images/edutech/arabdigitalopportunities.png",
+              "country": "Libya",
+              "achievement": "Offers technology and online learning opportunities to youth."
+            },
+            {
+              "name": "Empower Her (Tunisia)",
+              "image": "/images/edutech/empowerher.png",
+              "country": "Tunisia",
+              "achievement": "Empowering young women through technology and entrepreneurship training."
+            },
+            {
+              "name": "Digital Learning Egypt (Egypt)",
+              "image": "/images/edutech/digitallearningegypt.png",
+              "country": "Egypt",
+              "achievement": "Provides online courses and digital resources to improve education accessibility."
+            },
+            {
+              "name": "Youth for Science Foundation (Tunisia)",
+              "image": "/images/edutech/youthforscience.png",
+              "country": "Tunisia",
+              "achievement": "Promotes STEM education and scientific research among youth."
+            }
+          ]
+        }
       ]
     },
     {
-      "title": "Best Telecommunications CSR in Education in Eastern Africa",
-      "description": "Honors telecommunications companies with significant educational initiatives in Eastern Africa.",
-      "nominees": [
-        { "name": "Khan Academy", "image": "/images/edutech/Khan Academy.png", "country": "Global", "achievement": "Free online courses and tutorials" },
-        { "name": "Siyavula", "image": "/images/edutech/Siyavula.png", "country": "South Africa", "achievement": "Open textbooks and adaptive practice" },
-        { "name": "Sterio.me", "image": "/images/edutech/Sterio.me.png", "country": "Nigeria", "achievement": "Audio learning via mobile phones" },
-        { "name": "Eneza Education", "image": "/images/edutech/Eneza Education.png", "country": "Kenya", "achievement": "SMS-based learning for rural areas" },
-        { "name": "Tuteria", "image": "/images/edutech/Tuteria.png", "country": "Nigeria", "achievement": "Connecting learners with local tutors" },
-        { "name": "Edves", "image": "/images/edutech/Edves.png", "country": "Nigeria", "achievement": "School management software solutions" },
-        { "name": "PrepClass", "image": "/images/edutech/PrepClass.png", "country": "Nigeria", "achievement": "Personalized learning and exam prep" },
-        { "name": "Tessa", "image": "/images/edutech/Tessa.png", "country": "Pan-African", "achievement": "Teacher education in sub-Saharan Africa" },
-        { "name": "Edmodo", "image": "/images/edutech/Edmodo.png", "country": "Global", "achievement": "Educational technology and social learning platform" },
-        { "name": "Kytabu", "image": "/images/edutech/Kytabu.png", "country": "Kenya", "achievement": "Textbook content leasing app" }
+      "name": "South Africa",
+      "subCategories": [
+        {
+          "title": "Best EduTech Startup in South Africa",
+          "description": "Recognizes innovative educational technology startups in South Africa.",
+          "nominees": [
+            {
+              "name": "Siyavula Foundation",
+              "image": "/images/edutech/siyavula.png",
+              "country": "South Africa",
+              "achievement": "Free online textbooks and practice questions for high school students in mathematics and science subjects, accessible to all students."
+            },
+            {
+              "name": "GetSmarter",
+              "image": "/images/edutech/getsmarter.png",
+              "country": "South Africa",
+              "achievement": "Premium online education provider offering short courses from top universities. Educational courses over 350,000 people."
+            },
+            {
+              "name": "Snapplify",
+              "image": "/images/edutech/snapplify.png",
+              "country": "South Africa",
+              "achievement": "Digital content platform offering e-books, audiobooks, and educational resources for schools and universities."
+            },
+            {
+              "name": "Think Ahead",
+              "image": "/images/edutech/thinkahead.png",
+              "country": "South Africa",
+              "achievement": "Digital learning platform providing educational content and resources for enhanced learning experiences."
+            },
+            {
+              "name": "ITSI",
+              "image": "/images/edutech/itsi.png",
+              "country": "South Africa",
+              "achievement": "Technology and innovation platform providing digital education solutions and technology training programs."
+            },
+            {
+              "name": "Via Afrika",
+              "image": "/images/edutech/viaafrika.png",
+              "country": "South Africa",
+              "achievement": "Educational publisher and content provider offering digital textbooks and learning materials for South African schools."
+            },
+            {
+              "name": "INA Box",
+              "image": "/images/edutech/inabox.png",
+              "country": "South Africa",
+              "achievement": "Digital education solutions provider offering innovative learning platforms and educational technology services."
+            },
+            {
+              "name": "Digemy",
+              "image": "/images/edutech/digemy.png",
+              "country": "South Africa",
+              "achievement": "Online learning platform that uses AI-driven adaptive learning to create personalized learning pathways for students."
+            },
+            {
+              "name": "FunDza Literacy Trust",
+              "image": "/images/edutech/fundza.png",
+              "country": "South Africa",
+              "achievement": "Mobile reading platform providing engaging stories and literacy content to improve reading skills among young South Africans."
+            },
+            {
+              "name": "Varsity Vibe",
+              "image": "/images/edutech/varsityvibe.png",
+              "country": "South Africa",
+              "achievement": "Student support platform that provides guidance and resources for university students to achieve academic success."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Established Company in South Africa",
+          "description": "Honors established educational technology companies with significant impact in South Africa.",
+          "nominees": [
+            {
+              "name": "Think Ahead",
+              "image": "/images/edutech/thinkahead.png",
+              "country": "South Africa",
+              "achievement": "Established educational technology company providing comprehensive learning solutions and professional development programs."
+            },
+            {
+              "name": "ITSI",
+              "image": "/images/edutech/itsi.png",
+              "country": "South Africa",
+              "achievement": "Leading educational technology provider offering digital classroom solutions and educational content management systems."
+            },
+            {
+              "name": "Via Afrika",
+              "image": "/images/edutech/viaafrika.png",
+              "country": "South Africa",
+              "achievement": "Prominent educational publisher providing comprehensive learning materials and digital education solutions for African schools."
+            },
+            {
+              "name": "GetSmarter",
+              "image": "/images/edutech/getsmarter.png",
+              "country": "South Africa",
+              "achievement": "Established online education provider partnering with leading universities to deliver premium short courses and certifications."
+            },
+            {
+              "name": "Snapplify",
+              "image": "/images/edutech/snapplify.png",
+              "country": "South Africa",
+              "achievement": "Digital content distribution platform serving educational institutions with e-books, digital resources and content management."
+            },
+            {
+              "name": "INA Box",
+              "image": "/images/edutech/inabox.png",
+              "country": "South Africa",
+              "achievement": "Established technology solutions provider offering comprehensive digital education platforms and learning management systems."
+            },
+            {
+              "name": "Digemy",
+              "image": "/images/edutech/digemy.png",
+              "country": "South Africa",
+              "achievement": "Adaptive learning platform company using advanced analytics and AI to personalize educational experiences for students."
+            },
+            {
+              "name": "FunDza Literacy Trust",
+              "image": "/images/edutech/fundza.png",
+              "country": "South Africa",
+              "achievement": "Established literacy organization using mobile technology and gamification to improve reading levels across South Africa."
+            },
+            {
+              "name": "Varsity Vibe",
+              "image": "/images/edutech/varsityvibe.png",
+              "country": "South Africa",
+              "achievement": "Student services platform providing academic support, career guidance and university application assistance to South African students."
+            },
+            {
+              "name": "Mammoth",
+              "image": "/images/edutech/mammoth.png",
+              "country": "South Africa",
+              "achievement": "Provides digital learning solutions and comprehensive educational technology services for schools and training institutions."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Social Impact Initiative in South Africa",
+          "description": "Recognizes educational technology initiatives with significant social impact in South Africa.",
+          "nominees": [
+            {
+              "name": "CONNECT",
+              "image": "/images/edutech/connect.png",
+              "country": "South Africa",
+              "achievement": "Digital inclusion initiative providing technology access and digital literacy training to underserved communities across South Africa."
+            },
+            {
+              "name": "Mish Tech Geeks",
+              "image": "/images/edutech/mishtech.png",
+              "country": "South Africa",
+              "achievement": "Youth empowerment program focusing on technology education and digital skills development for disadvantaged students."
+            },
+            {
+              "name": "FunDza Literacy Trust",
+              "image": "/images/edutech/fundza.png",
+              "country": "South Africa",
+              "achievement": "Mobile literacy platform using stories and interactive content to improve reading skills among South African youth."
+            },
+            {
+              "name": "Project Isizwe",
+              "image": "/images/edutech/projectisizwe.png",
+              "country": "South Africa",
+              "achievement": "Social impact initiative providing free WiFi and internet access to schools and communities, bridging the digital divide."
+            },
+            {
+              "name": "Dream Factory Foundation",
+              "image": "/images/edutech/dreamfactory.png",
+              "country": "South Africa",
+              "achievement": "Youth development program using technology and entrepreneurship training to empower young people in townships."
+            },
+            {
+              "name": "Numeric",
+              "image": "/images/edutech/numeric.png",
+              "country": "South Africa",
+              "achievement": "Mathematics education initiative using digital tools and gamification to improve numeracy skills among South African students."
+            },
+            {
+              "name": "SulaBula Literacy Project",
+              "image": "/images/edutech/sulabula.png",
+              "country": "South Africa",
+              "achievement": "Community-based literacy program using technology to improve reading and writing skills in rural and underserved areas."
+            },
+            {
+              "name": "Empower Her",
+              "image": "/images/edutech/empowerher_sa.png",
+              "country": "South Africa",
+              "achievement": "Women empowerment initiative providing technology training and entrepreneurship skills to young women in South Africa."
+            },
+            {
+              "name": "Khula Development Group",
+              "image": "/images/edutech/khula.png",
+              "country": "South Africa",
+              "achievement": "Community development organization using technology and education to create sustainable development solutions in rural communities."
+            },
+            {
+              "name": "Teach South Africa",
+              "image": "/images/edutech/teachsa.png",
+              "country": "South Africa",
+              "achievement": "Educational initiative training and placing young graduates in high-need schools to improve educational outcomes."
+            }
+          ]
+        }
       ]
     },
     {
-      "title": "Best Technology Project CSR in Education in Central Africa",
-      "description": "Recognizes technology projects with significant impact on education in Central Africa.",
-      "nominees": [
-        { "name": "Funzi", "image": "/images/edutech/Funzi.png", "country": "Finland/Africa", "achievement": "Mobile learning for skills development" },
-        { "name": "PrepClass", "image": "/images/edutech/PrepClass.png", "country": "Nigeria", "achievement": "Personalized learning and exam prep" },
-        { "name": "Decipher", "image": "/images/edutech/Decipher.png", "country": "Nigeria", "achievement": "Cryptography education platform" },
-        { "name": "Achieve!", "image": "/images/edutech/Achieve!.png", "country": "Nigeria", "achievement": "Goal-oriented learning solutions" },
-        { "name": "MyChild", "image": "/images/edutech/MyChild.png", "country": "Uganda", "achievement": "Parent-school communication app" },
-        { "name": "Ubongo", "image": "/images/edutech/Ubongo.png", "country": "Tanzania", "achievement": "Educational entertainment for young learners" },
-        { "name": "M-Shule", "image": "/images/edutech/M-Shule.png", "country": "Kenya", "achievement": "Mobile learning solutions for primary education" },
-        { "name": "Learnable", "image": "/images/edutech/Learnable.png", "country": "Nigeria", "achievement": "Online learning platform for tech skills" },
-        { "name": "uLesson", "image": "/images/edutech/uLesson.png", "country": "Nigeria", "achievement": "Digital learning platform for secondary students" },
-        { "name": "Edusko", "image": "/images/edutech/Edusko.png", "country": "Nigeria", "achievement": "Connecting parents with quality schools" }
+      "name": "West Africa",
+      "subCategories": [
+        {
+          "title": "Best EduTech Startup in West Africa",
+          "description": "Recognizes innovative educational technology startups in West Africa.",
+          "nominees": [
+            {
+              "name": "Andela",
+              "image": "/images/edutech/andela.png",
+              "country": "Nigeria",
+              "achievement": "Global talent accelerator providing software engineering training and connecting African developers with international opportunities."
+            },
+            {
+              "name": "Tuteria",
+              "image": "/images/edutech/tuteria.png",
+              "country": "Nigeria",
+              "achievement": "Online platform connecting students with qualified tutors for personalized learning experiences across various subjects."
+            },
+            {
+              "name": "uLesson",
+              "image": "/images/edutech/ulesson.png",
+              "country": "Nigeria",
+              "achievement": "Interactive learning platform offering curriculum-based video lessons, quizzes, and live classes for African students."
+            },
+            {
+              "name": "Ubongo",
+              "image": "/images/edutech/ubongo.png",
+              "country": "Nigeria",
+              "achievement": "Educational entertainment company creating localized learning content through cartoons, games, and mobile applications."
+            },
+            {
+              "name": "BRCК",
+              "image": "/images/edutech/brck.png",
+              "country": "Nigeria",
+              "achievement": "Technology solutions provider developing rugged internet connectivity devices and educational content for African schools."
+            },
+            {
+              "name": "Edukoya",
+              "image": "/images/edutech/edukoya.png",
+              "country": "Nigeria",
+              "achievement": "Social learning platform enabling collaborative study experiences and peer-to-peer knowledge sharing among students."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Senegal",
+              "achievement": "AI-powered SMS-based learning platform providing accessible education content via mobile phones without internet connectivity."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Ghana",
+              "achievement": "Mobile learning platform delivering educational content via SMS and mobile apps to students across Africa."
+            },
+            {
+              "name": "Afrilearn",
+              "image": "/images/edutech/afrilearn.png",
+              "country": "Nigeria",
+              "achievement": "Digital learning platform providing curriculum-aligned video lessons and interactive content for African students."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Established Company in West Africa",
+          "description": "Honors established educational technology companies with significant impact in West Africa.",
+          "nominees": [
+            {
+              "name": "Khan Academy",
+              "image": "/images/edutech/khanacademy.png",
+              "country": "Nigeria",
+              "achievement": "Global non-profit providing free, world-class education through comprehensive online courses and personalized learning dashboard."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Nigeria",
+              "achievement": "Comprehensive exam preparation platform offering practice tests, video lessons, and study materials for standardized tests."
+            },
+            {
+              "name": "Sterlo.me",
+              "image": "/images/edutech/sterlo.png",
+              "country": "Nigeria",
+              "achievement": "Digital content management platform providing educational institutions with tools for content creation and distribution."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Ghana",
+              "achievement": "Established mobile learning provider offering educational content and assessment tools across multiple African countries."
+            },
+            {
+              "name": "Tuteria",
+              "image": "/images/edutech/tuteria.png",
+              "country": "Nigeria",
+              "achievement": "Leading online tutoring marketplace connecting students with qualified instructors across various academic subjects."
+            },
+            {
+              "name": "EDVES",
+              "image": "/images/edutech/edves.png",
+              "country": "Nigeria",
+              "achievement": "Educational technology solutions provider offering learning management systems and digital content for schools."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Nigeria",
+              "achievement": "Established test preparation platform providing comprehensive study materials and mock examinations for various standardized tests."
+            },
+            {
+              "name": "Teesas",
+              "image": "/images/edutech/teesas.png",
+              "country": "Senegal",
+              "achievement": "Educational technology provider offering digital learning solutions and content management systems for African schools."
+            },
+            {
+              "name": "Edmodo",
+              "image": "/images/edutech/edmodo.png",
+              "country": "Ghana",
+              "achievement": "Social learning platform connecting teachers, students, and parents through secure communication and collaborative tools."
+            },
+            {
+              "name": "KYTABU",
+              "image": "/images/edutech/kytabu.png",
+              "country": "Nigeria",
+              "achievement": "Digital textbook platform providing affordable access to educational content through mobile devices and tablets."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Social Impact Initiative in West Africa",
+          "description": "Recognizes educational technology initiatives with significant social impact in West Africa.",
+          "nominees": [
+            {
+              "name": "Funda",
+              "image": "/images/edutech/funda.png",
+              "country": "Nigeria",
+              "achievement": "Educational foundation providing technology access and digital literacy training to underserved communities."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Nigeria",
+              "achievement": "Social impact initiative offering free and subsidized exam preparation resources to disadvantaged students."
+            },
+            {
+              "name": "Socrates.ai",
+              "image": "/images/edutech/socrates.png",
+              "country": "Nigeria",
+              "achievement": "AI-powered educational assistant providing personalized learning support and academic guidance to students."
+            },
+            {
+              "name": "Achieve!",
+              "image": "/images/edutech/achieve.png",
+              "country": "Nigeria",
+              "achievement": "Youth empowerment program focusing on educational achievement and career development through technology training."
+            },
+            {
+              "name": "MyChild",
+              "image": "/images/edutech/mychild.png",
+              "country": "Nigeria",
+              "achievement": "Parental engagement platform connecting parents with schools and providing tools for child development monitoring."
+            },
+            {
+              "name": "Ubongo",
+              "image": "/images/edutech/ubongo.png",
+              "country": "Nigeria",
+              "achievement": "Social impact media company creating educational entertainment content to improve learning outcomes for African children."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Senegal",
+              "achievement": "Inclusive learning platform providing accessible education through SMS technology, reaching students without internet access."
+            },
+            {
+              "name": "Learnable",
+              "image": "/images/edutech/learnable.png",
+              "country": "Ghana",
+              "achievement": "Skills development platform offering coding and digital literacy training to bridge the technology skills gap."
+            },
+            {
+              "name": "uLesson",
+              "image": "/images/edutech/ulesson.png",
+              "country": "Nigeria",
+              "achievement": "Educational equity initiative providing high-quality learning content to students across different socioeconomic backgrounds."
+            },
+            {
+              "name": "Edukoya",
+              "image": "/images/edutech/edukoya.png",
+              "country": "Nigeria",
+              "achievement": "Community learning platform fostering collaborative education and peer support among African students."
+            }
+          ]
+        }
       ]
     },
     {
-      "title": "Best Technology Project CSR in Education in Western Africa",
-      "description": "Honors technology projects with notable educational impact in Western Africa.",
-      "nominees": [
-        { "name": "Tech4Dev", "image": "/images/edutech/Tech4Dev.png", "country": "Nigeria", "achievement": "Technology education for development" },
-        { "name": "WeCode Africa", "image": "/images/edutech/WeCode Africa.png", "country": "Nigeria", "achievement": "Coding education for African youth" },
-        { "name": "Digify Africa", "image": "/images/edutech/Digify Africa.png", "country": "South Africa", "achievement": "Digital skills training programs" },
-        { "name": "She Hacks Africa", "image": "/images/edutech/She Hacks Africa.png", "country": "Nigeria", "achievement": "Empowering women in tech" },
-        { "name": "Andela", "image": "/images/edutech/Andela.png", "country": "Nigeria", "achievement": "Innovative tech education and talent development" },
-        { "name": "Moringa School", "image": "/images/edutech/Moringa School.png", "country": "Kenya", "achievement": "Market-driven tech education" },
-        { "name": "CodeSpark Africa", "image": "/images/edutech/CodeSpark Africa.png", "country": "Nigeria", "achievement": "Coding education for children" },
-        { "name": "GirlCode", "image": "/images/edutech/GirlCode.png", "country": "South Africa", "achievement": "Empowering women in technology" },
-        { "name": "NN Nation HUB", "image": "/images/edutech/NN Nation HUB.png", "country": "Nigeria", "achievement": "Innovation and entrepreneurship hub" },
-        { "name": "Refactory", "image": "/images/edutech/Refactory.png", "country": "Uganda", "achievement": "Software development training" }
+      "name": "East Africa",
+      "subCategories": [
+        {
+          "title": "Best EduTech Startup in East Africa",
+          "description": "Recognizes innovative educational technology startups in East Africa.",
+          "nominees": [
+            {
+              "name": "KYTABU",
+              "image": "/images/edutech/kytabu.png",
+              "country": "Kenya",
+              "achievement": "Digital textbook platform providing affordable access to educational content through mobile and tablet applications."
+            },
+            {
+              "name": "Andela",
+              "image": "/images/edutech/andela.png",
+              "country": "Kenya",
+              "achievement": "Global talent network training software developers and connecting them with international technology companies."
+            },
+            {
+              "name": "Abt Oasis",
+              "image": "/images/edutech/abtoasis.png",
+              "country": "Kenya",
+              "achievement": "Educational consultancy providing training and development solutions for schools and educational institutions."
+            },
+            {
+              "name": "Moringa School",
+              "image": "/images/edutech/moringa.png",
+              "country": "Kenya",
+              "achievement": "Coding bootcamp and technology training institute preparing students for careers in software development and data science."
+            },
+            {
+              "name": "BRCK",
+              "image": "/images/edutech/brck.png",
+              "country": "Kenya",
+              "achievement": "Hardware and connectivity solutions provider developing internet infrastructure for educational institutions in Africa."
+            },
+            {
+              "name": "Ubongo",
+              "image": "/images/edutech/ubongo.png",
+              "country": "Tanzania",
+              "achievement": "Educational entertainment company creating localized learning content through animated shows and interactive media."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Kenya",
+              "achievement": "AI-powered learning platform delivering educational content via SMS and mobile applications without internet requirements."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Kenya",
+              "achievement": "Mobile learning platform providing curriculum-based educational content and assessment tools via SMS and mobile apps."
+            },
+            {
+              "name": "Arifu",
+              "image": "/images/edutech/arifu.png",
+              "country": "Kenya",
+              "achievement": "Mobile-based learning platform delivering bite-sized educational content and skills training through SMS and chatbots."
+            },
+            {
+              "name": "Chalkboard Education",
+              "image": "/images/edutech/chalkboard.png",
+              "country": "Uganda",
+              "achievement": "Digital learning platform providing interactive educational content and classroom management tools for African schools."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Established Company in East Africa",
+          "description": "Honors established educational technology companies with significant impact in East Africa.",
+          "nominees": [
+            {
+              "name": "KYTABU",
+              "image": "/images/edutech/kytabu.png",
+              "country": "Kenya",
+              "achievement": "Leading digital textbook provider offering comprehensive educational content library and learning analytics platform."
+            },
+            {
+              "name": "Andela",
+              "image": "/images/edutech/andela.png",
+              "country": "Kenya",
+              "achievement": "Established global talent network with proven track record of training and placing African developers internationally."
+            },
+            {
+              "name": "Abt Oasis",
+              "image": "/images/edutech/abtoasis.png",
+              "country": "Kenya",
+              "achievement": "Established educational consultancy providing comprehensive training solutions and capacity building programs."
+            },
+            {
+              "name": "Moringa School",
+              "image": "/images/edutech/moringa.png",
+              "country": "Kenya",
+              "achievement": "Premier technology training institute with established curriculum and strong industry partnerships for job placement."
+            },
+            {
+              "name": "BRCK",
+              "image": "/images/edutech/brck.png",
+              "country": "Kenya",
+              "achievement": "Established hardware solutions provider with proven connectivity infrastructure for educational institutions across Africa."
+            },
+            {
+              "name": "Ubongo",
+              "image": "/images/edutech/ubongo.png",
+              "country": "Tanzania",
+              "achievement": "Leading educational entertainment company with established content distribution across multiple African countries."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Kenya",
+              "achievement": "Established AI-driven learning platform with proven impact in delivering accessible education through mobile technology."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Kenya",
+              "achievement": "Leading mobile education provider with established presence across multiple East African countries."
+            },
+            {
+              "name": "Arifu",
+              "image": "/images/edutech/arifu.png",
+              "country": "Kenya",
+              "achievement": "Established mobile learning platform with proven methodology for delivering skills training at scale."
+            },
+            {
+              "name": "Chalkboard Education",
+              "image": "/images/edutech/chalkboard.png",
+              "country": "Uganda",
+              "achievement": "Established digital education provider offering comprehensive learning management systems for schools."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Social Impact Initiative in East Africa",
+          "description": "Recognizes educational technology initiatives with significant social impact in East Africa.",
+          "nominees": [
+            {
+              "name": "Teach for Uganda",
+              "image": "/images/edutech/teachuganda.png",
+              "country": "Uganda",
+              "achievement": "Educational leadership program training and placing young professionals in underserved schools to improve learning outcomes."
+            },
+            {
+              "name": "Arifu",
+              "image": "/images/edutech/arifu.png",
+              "country": "Kenya",
+              "achievement": "Social impact mobile learning platform providing skills training and livelihood programs to underserved communities."
+            },
+            {
+              "name": "Chalkboard Education",
+              "image": "/images/edutech/chalkboard.png",
+              "country": "Uganda",
+              "achievement": "Social impact educational technology initiative providing low-cost digital learning solutions to rural schools."
+            },
+            {
+              "name": "BRCK",
+              "image": "/images/edutech/brck.png",
+              "country": "Kenya",
+              "achievement": "Digital inclusion initiative providing internet connectivity and educational content to remote and underserved schools."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Kenya",
+              "achievement": "Educational equity program providing affordable learning resources to students from low-income families across East Africa."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Kenya",
+              "achievement": "Inclusive education initiative providing SMS-based learning to students without access to internet or smartphones."
+            },
+            {
+              "name": "DOT (Digital Opportunity Trust)",
+              "image": "/images/edutech/dot.png",
+              "country": "Kenya",
+              "achievement": "Youth empowerment program training young people to become digital leaders and technology mentors in their communities."
+            },
+            {
+              "name": "EFAC (Education for a Child)",
+              "image": "/images/edutech/efac.png",
+              "country": "Kenya",
+              "achievement": "Educational access initiative using technology to provide learning opportunities for out-of-school children."
+            },
+            {
+              "name": "Teach for Uganda",
+              "image": "/images/edutech/teachuganda.png",
+              "country": "Uganda",
+              "achievement": "Teacher training and deployment program using innovative teaching methods to improve educational quality in rural areas."
+            },
+            {
+              "name": "Youth for Technology Foundation (YTF)",
+              "image": "/images/edutech/ytf.png",
+              "country": "Kenya",
+              "achievement": "Youth development program providing technology training and digital skills development for career advancement."
+            }
+          ]
+        }
       ]
     },
     {
-      "title": "Best Telecommunications CSR in Education in Western Africa",
-      "description": "Recognizes telecommunications companies with impactful educational initiatives in Western Africa.",
-      "nominees": [
-        { "name": "uLesson", "image": "/images/edutech/uLesson.png", "country": "Nigeria", "achievement": "Digital learning platform for secondary students" },
-        { "name": "Tuteria", "image": "/images/edutech/Tuteria.png", "country": "Nigeria", "achievement": "Connecting learners with local tutors" },
-        { "name": "EduTech Africa", "image": "/images/edutech/EduTech Africa.png", "country": "Nigeria", "achievement": "Educational technology and innovation" },
-        { "name": "Brighter Monday", "image": "/images/edutech/Brighter Monday.png", "country": "Nigeria", "achievement": "Job and skills platform" },
-        { "name": "Sparkle", "image": "/images/edutech/Sparkle.png", "country": "Nigeria", "achievement": "Fintech solutions with educational impact" },
-        { "name": "TechHer", "image": "/images/edutech/TechHer.png", "country": "Nigeria", "achievement": "Empowering women in tech" },
-        { "name": "Code Lagos", "image": "/images/edutech/Code Lagos.png", "country": "Nigeria", "achievement": "Coding education initiative" },
-        { "name": "Benevolent Technology", "image": "/images/edutech/Benevolent Technology.png", "country": "Ghana", "achievement": "Tech solutions for educational advancement" },
-        { "name": "GoMyWay", "image": "/images/edutech/GoMyWay.png", "country": "Nigeria", "achievement": "Technology for educational mobility" },
-        { "name": "Youth Empowerment Foundation", "image": "/images/edutech/Youth Empowerment Foundation.png", "country": "Nigeria", "achievement": "Youth development through tech education" }
+      "name": "Central Africa",
+      "subCategories": [
+        {
+          "title": "Best EduTech Startup in Central Africa",
+          "description": "Recognizes innovative educational technology startups in Central Africa.",
+          "nominees": [
+            {
+              "name": "Andela",
+              "image": "/images/edutech/andela.png",
+              "country": "DRC",
+              "achievement": "Software development training program providing coding education and connecting local developers with global opportunities."
+            },
+            {
+              "name": "Tech Talent Lab",
+              "image": "/images/edutech/techtalent.png",
+              "country": "Chad",
+              "achievement": "Technology skills development initiative providing training and mentorship for young programmers and digital creators."
+            },
+            {
+              "name": "uLesson",
+              "image": "/images/edutech/ulesson.png",
+              "country": "Benin",
+              "achievement": "Interactive mobile learning platform offering curriculum-aligned educational content for students across Central Africa."
+            },
+            {
+              "name": "Ubongo",
+              "image": "/images/edutech/ubongo.png",
+              "country": "DRC",
+              "achievement": "Educational entertainment startup creating localized animated content and learning games for children."
+            },
+            {
+              "name": "BRCK",
+              "image": "/images/edutech/brck.png",
+              "country": "Cameroon",
+              "achievement": "Educational connectivity solutions provider developing internet infrastructure and digital learning tools for schools."
+            },
+            {
+              "name": "Edukoya",
+              "image": "/images/edutech/edukoya.png",
+              "country": "Rwanda",
+              "achievement": "Social learning platform enabling collaborative study experiences and peer-to-peer knowledge sharing among students."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Cameroon",
+              "achievement": "SMS-based learning platform providing educational content accessible through basic mobile phones without internet."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Madagascar",
+              "achievement": "Mobile learning startup delivering curriculum-based content and assessments through SMS and mobile applications."
+            },
+            {
+              "name": "Afrilearn",
+              "image": "/images/edutech/afrilearn.png",
+              "country": "DRC",
+              "achievement": "Digital learning platform providing video-based lessons and interactive educational content for African students."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Established Company in Central Africa",
+          "description": "Honors established educational technology companies with significant impact in Central Africa.",
+          "nominees": [
+            {
+              "name": "Khan Academy",
+              "image": "/images/edutech/khanacademy.png",
+              "country": "DRC",
+              "achievement": "Global educational platform providing free, comprehensive learning resources and personalized education experiences."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Cameroon",
+              "achievement": "Exam preparation platform offering comprehensive study materials and practice tests for standardized examinations."
+            },
+            {
+              "name": "Girls in Tech",
+              "image": "/images/edutech/girlsintech.png",
+              "country": "Rwanda",
+              "achievement": "Technology empowerment organization providing coding education and digital skills training for women and girls."
+            },
+            {
+              "name": "Eneza Education",
+              "image": "/images/edutech/eneza.png",
+              "country": "Cameroon",
+              "achievement": "Established mobile learning provider offering educational content delivery and student assessment tools."
+            },
+            {
+              "name": "Tuteria",
+              "image": "/images/edutech/tuteria.png",
+              "country": "Madagascar",
+              "achievement": "Online tutoring marketplace connecting students with qualified instructors for personalized learning experiences."
+            },
+            {
+              "name": "Youth Empowerment Foundation",
+              "image": "/images/edutech/youthempowerment.png",
+              "country": "DRC",
+              "achievement": "Educational foundation providing technology training and digital literacy programs for young people."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Madagascar",
+              "achievement": "Educational services provider offering test preparation resources and academic support for students."
+            },
+            {
+              "name": "Teesas",
+              "image": "/images/edutech/teesas.png",
+              "country": "DRC",
+              "achievement": "Educational technology solutions provider offering digital learning platforms and content management systems."
+            },
+            {
+              "name": "Edmodo",
+              "image": "/images/edutech/edmodo.png",
+              "country": "Cameroon",
+              "achievement": "Social learning platform connecting educators, students, and parents through collaborative digital classroom environments."
+            },
+            {
+              "name": "KYTABU",
+              "image": "/images/edutech/kytabu.png",
+              "country": "Rwanda",
+              "achievement": "Digital textbook platform providing affordable access to educational content through mobile and tablet devices."
+            }
+          ]
+        },
+        {
+          "title": "Best EduTech Social Impact Initiative in Central Africa",
+          "description": "Recognizes educational technology initiatives with significant social impact in Central Africa.",
+          "nominees": [
+            {
+              "name": "Funda",
+              "image": "/images/edutech/funda.png",
+              "country": "DRC",
+              "achievement": "Educational foundation providing technology access and digital literacy training to underserved communities."
+            },
+            {
+              "name": "PrepClass",
+              "image": "/images/edutech/prepclass.png",
+              "country": "Cameroon",
+              "achievement": "Educational equity initiative offering free and subsidized learning resources to students from disadvantaged backgrounds."
+            },
+            {
+              "name": "Girls in Tech",
+              "image": "/images/edutech/girlsintech.png",
+              "country": "Rwanda",
+              "achievement": "Gender equality program providing technology education and career development opportunities for women."
+            },
+            {
+              "name": "Achieve!",
+              "image": "/images/edutech/achieve.png",
+              "country": "Cameroon",
+              "achievement": "Youth empowerment initiative focusing on educational achievement and skills development through technology training."
+            },
+            {
+              "name": "MyChild",
+              "image": "/images/edutech/mychild.png",
+              "country": "Madagascar",
+              "achievement": "Child development program connecting parents with educational resources and child development monitoring tools."
+            },
+            {
+              "name": "Youth Empowerment Foundation",
+              "image": "/images/edutech/youthempowerment.png",
+              "country": "DRC",
+              "achievement": "Community development program providing education, training, and mentorship for young people in Central Africa."
+            },
+            {
+              "name": "M-Shule",
+              "image": "/images/edutech/mshule.png",
+              "country": "Madagascar",
+              "achievement": "Inclusive education initiative providing SMS-based learning to students in remote areas without internet access."
+            },
+            {
+              "name": "Learnable",
+              "image": "/images/edutech/learnable.png",
+              "country": "DRC",
+              "achievement": "Skills development platform offering coding and digital literacy training to bridge the technology gap."
+            },
+            {
+              "name": "uLesson",
+              "image": "/images/edutech/ulesson.png",
+              "country": "Cameroon",
+              "achievement": "Educational access program providing high-quality learning content to students across different socioeconomic levels."
+            },
+            {
+              "name": "Edukoya",
+              "image": "/images/edutech/edukoya.png",
+              "country": "Rwanda",
+              "achievement": "Community learning initiative fostering collaborative education and peer support networks among students."
+            }
+          ]
+        }
       ]
     }
   ]

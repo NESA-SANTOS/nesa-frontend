@@ -1,40 +1,54 @@
 "use client";
-import { useState, useEffect, useCallback } from 'react';
+
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
-import NominationPage from '@/components/UI/nomination/nominate';
 import { useRouter } from 'next/navigation';
+import NominationPage from '@/components/UI/nomination/nominate';
+
 interface Category {
   title: string;
   description: string;
   image: string;
 }
 
-const AfricaDiasporaAwardPage = () => {
+const NigeriaNGOAwardCategoryPage = () => {
+  
+  const router = useRouter();
+  
   const subcategories: Category[] = [
     {
-      title: "The Best Diaspora-Led Educational Infrastructure.",
-      description: "This Award recognizes and honors the significant contributions made by the Nigerian diaspora towards achieving 'Education for All' in Nigeria. This award, set for the 2023 cycle, aims to celebrate diaspora individuals, groups, or organizations that have made a substantial impact through skills transfer, corporate social responsibility (CSR) initiatives, advocacy, and other educational support back home in Nigeria.",
+      title: "The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024",
+      description: "This award aims to celebrate and recognize educational excellence across Africa. The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024 Award is dedicated to highlighting the outstanding efforts of non-governmental organizations (NGOs) that have made significant contributions to improving education in Nigeria. This award will honor NGOs that have demonstrated exceptional commitment, innovation, and impact in their educational initiatives.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "The Best Diaspora-Led Educational Infrastructure.",
-      description: "This Award recognizes and honors the significant contributions made by the Nigerian diaspora towards achieving 'Education for All' in Nigeria. This award, set for the 2023 cycle, aims to celebrate diaspora individuals, groups, or organizations that have made a substantial impact through skills transfer, corporate social responsibility (CSR) initiatives, advocacy, and other educational support back home in Nigeria.",
+      title: "Best Educational Infrastructure Initiative By An NGO in Nigeria",
+      description: "This award honors NGOs that have made substantial effort in improving or building educational infrastructure in Nigeria. It includes initiatives like constructing schools, libraries, and other educational facilities.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "The Best Diaspora-Led Educational Program Innovation",
-      description: "Awards organizations that have created outstanding e-learning platforms or solutions that significantly improve access to education.",
+      title: "Exceptional Donation Of Educational Materials By An NGO in Nigeria",
+      description: "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions in Nigeria like books, computers, and other learning resources.",
       image: "/images/nesa-card2.png"
     },
     {
-      title: "The Best Diaspora-Led Teacher Training and Support Initiative.",
-      description: "Honors organizations that leverage artificial intelligence to personalize learning experiences, improve educational processes, or enhance...",
+      title: "Outstanding Donation Of Education Aid By NGO in Nigeria",
+      description: "Celebrates NGOs that provide substantial educational aid in Nigeria, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
       image: "/images/nesa-card2.png"
     },
-  
+    {
+      title: "Youth Empowerment Through Educational Services by an NGO in Nigeria",
+      description: "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development in Nigeria.",
+      image: "/images/nesa-card2.png"
+    },
+    {
+      title: "Women and Girls' Empowerment in Education by an NGO in Nigeria",
+      description: "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives in Nigeria.",
+      image: "/images/nesa-card2.png"
+    },
   ];
-  const router = useRouter();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
@@ -51,29 +65,29 @@ const AfricaDiasporaAwardPage = () => {
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-const handleNominate = (category: Category) => {
-  router.push(
-    `/nominateform?type=${encodeURIComponent('Diaspora Contributions to Education in Africa')}` +
-    `&title=${encodeURIComponent(category.title)}` +
-    `&description=${encodeURIComponent(category.description)}` +
-    `&image=${encodeURIComponent(category.image)}`
-  );
-};
+  
+  const handleNominate = (category: Category) => {
+    router.push(
+      `/nominateform?type=${encodeURIComponent("Nigeria NGO Education Award")}` +
+      `&title=${encodeURIComponent(category.title)}` +
+      `&description=${encodeURIComponent(category.description)}` +
+      `&image=${encodeURIComponent(category.image)}`
+    );
+  };
 
   return (
     <div className="min-h-screen bg-[#FFF5E0]">
-
- 
       {/* Hero Section */}
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-2 md:mt-16 text-center">Category 2</h2>
+          <h2 className="text-2xl mb-2 md:mt-16 text-center">Nigeria NGO Category</h2>
           <h1 className="text-4xl font-bold text-[#FFC247] mb-4 text-center">{subcategories[currentIndex].title}</h1>
           <p className="mb-8 text-center">
             {subcategories[currentIndex].description}
           </p>
         </div>
+        
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {subcategories.map((_, index) => (
@@ -90,10 +104,11 @@ const handleNominate = (category: Category) => {
           </button>
         </div>
       </div>
-           {/* Sub-Categories Section */}
+
+      {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
-          The Africa Diaspora association Educational Impact Award Sub-Categories
+          The Nigeria NGO Award Sub-Categories
           <span className="absolute bottom-0 left-0 w-16 h-1 bg-[#FFC247]"></span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,12 +125,12 @@ const handleNominate = (category: Category) => {
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
-                  <h4 className="text-white text-xl font-bold mb-2">{category.title}</h4>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
                   <p className="text-gray-300 text-sm mb-4">{category.description}</p>
                 </div>
                 <div className="flex flex-col gap-3 mt-auto">
                   <button
-                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Africa Diaspora association Educational Impact Projects Recognition Award in Africa")}&subcategory=${encodeURIComponent(category.title)}`)}
+                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Nigeria NGO Education Award")}&subcategory=${encodeURIComponent(category.title)}`)}
                     className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
                   >
                     <span className="mr-2 text-lg">👁️</span>
@@ -134,7 +149,7 @@ const handleNominate = (category: Category) => {
           ))}
         </div>
       </div>
-
+      
       {/* Purpose and Benefits Section */}
       <div className="bg-white w-full">
         <div className="max-w-6xl mx-auto py-12 px-4">
@@ -144,9 +159,10 @@ const handleNominate = (category: Category) => {
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
             </h2>
             <p className="mb-4">
-              To honor the significant contributions of Africa diaspora associations that have positively impacted education in
-              their home countries. It aims to recognize the dedication, innovation, and impact of these associations in
-              promoting educational development across Africa.
+              To acknowledge the contributions of NGOs that have made significant impact in improving education in Nigeria. 
+              This award aims to promote further innovation and investment in educational initiatives by NGOs, highlighting 
+              the importance of non-governmental organizations in achieving educational excellence and supporting the 
+              educational development of Nigeria.
             </p>
           </div>
 
@@ -159,7 +175,7 @@ const handleNominate = (category: Category) => {
               <li className="flex items-start">
                 <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
                 <div>
-                  <strong>Awardees:</strong> It would provide enhanced visibility and credibility in the NGO and education sectors, opportunities for
+                  <strong>Awardees:</strong> Enhanced visibility and credibility in the NGO and education sectors, opportunities for
                   networking and collaboration with other educational leaders and stakeholders, potential for increased funding
                   and support for their initiatives, and national recognition and prestige.
                 </div>
@@ -167,8 +183,8 @@ const handleNominate = (category: Category) => {
               <li className="flex items-start">
                 <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
                 <div>
-                  <strong>Nigeria and Africa:</strong> It improves quality of education and student outcomes in Nigeria, and encourages the best
-                  practices and innovations in the NGO sector and increases progress towards achieving the SDGs related to
+                  <strong>Nigeria and Africa:</strong> Improves quality of education and student outcomes in Nigeria, encourages best
+                  practices and innovations in the NGO sector, and increases progress towards achieving the SDGs related to
                   education.
                 </div>
               </li>
@@ -176,10 +192,8 @@ const handleNominate = (category: Category) => {
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };
 
-export default AfricaDiasporaAwardPage;
+export default NigeriaNGOAwardCategoryPage;

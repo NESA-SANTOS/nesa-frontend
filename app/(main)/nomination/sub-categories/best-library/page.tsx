@@ -95,6 +95,7 @@ const router = useRouter()
             {categories[currentIndex].description}
           </p>
         </div>
+         
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {categories.map((_, index) => (
@@ -109,6 +110,50 @@ const router = useRouter()
           <button onClick={nextSlide} className="p-2 rounded transition bg-[#FFC247]">
             <IoMdArrowForward size={24} color="#191307" />
           </button>
+        </div>
+      </div>
+      {/* Sub-Categories Section */}
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+          The best library in Nigerian tertiary institutions Award Sub-Categories
+          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.slice(1).map((category, index) => (
+            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6">
+              <div className="flex items-center justify-center mb-4">
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  width={364}
+                  height={198}
+                  objectFit="contain"
+                />
+              </div>
+              <div className="flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                </div>
+                <div className="flex flex-col gap-3 mt-auto">
+                  <button
+                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("The best library in Nigerian tertiary institutions award 2024")}&subcategory=${encodeURIComponent(category.title)}`)}
+                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">👁️</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
+                  </button>
+                  <button
+                    onClick={() => handleNominate(category)}
+                    className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
+                  >
+                    <span className="mr-2 text-lg">🏆</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -158,50 +203,7 @@ const router = useRouter()
         </div>
       </div>
 
-      {/* Sub-Categories Section */}
-      <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
-          The best library in Nigerian tertiary institutions Award Sub-Categories
-          <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.slice(1).map((category, index) => (
-            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col p-6">
-              <div className="flex items-center justify-center mb-4">
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  width={364}
-                  height={198}
-                  objectFit="contain"
-                />
-              </div>
-              <div className="flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
-                </div>
-                <div className="flex flex-col gap-3 mt-auto">
-                  <button
-                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("The best library in Nigerian tertiary institutions award 2024")}&subcategory=${encodeURIComponent(category.title)}`)}
-                    className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">👁️</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
-                  </button>
-                  <button
-                    onClick={() => handleNominate(category)}
-                    className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
-                  >
-                    <span className="mr-2 text-lg">🏆</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+     
     </div>
   );
 };

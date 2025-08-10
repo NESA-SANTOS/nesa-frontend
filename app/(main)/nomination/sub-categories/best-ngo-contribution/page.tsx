@@ -88,6 +88,7 @@ const NGOAwardCategoryPage = () => {
             {subcategories[currentIndex].description}
           </p>
         </div>
+        
         {/* Carousel Indicator Dots */}
         <div className="absolute bottom-4 left-4 flex space-x-2">
           {subcategories.map((_, index) => (
@@ -105,50 +106,7 @@ const NGOAwardCategoryPage = () => {
         </div>
       </div>
 
-      {/* Purpose and Benefits Section */}
-      <div className="bg-white w-full">
-        <div className="max-w-6xl mx-auto py-12 px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 relative inline-block">
-              Purpose
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-            </h2>
-            <p className="mb-4">
-              To acknowledge the contributions of EduTech organizations that have leveraged technology to enhance
-              educational experiences and outcomes in Nigeria and across Africa. This award aims to promote further
-              innovation and investment in educational technology, highlighting the importance of EduTech in achieving
-              educational excellence.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl mb-6 relative inline-block">
-              Benefits
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
-            </h2>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
-                <div>
-                  <strong>Awardees:</strong> It would provide enhanced visibility and credibility in the NGO and education sectors, opportunities for
-                  networking and collaboration with other educational leaders and stakeholders, potential for increased funding
-                  and support for their initiatives, and national recognition and prestige.
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
-                <div>
-                  <strong>Nigeria and Africa:</strong> It improves quality of education and student outcomes in Nigeria, and encourages the best
-                  practices and innovations in the NGO sector and increases progress towards achieving the SDGs related to
-                  education.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Sub-Categories Section */}
+  {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           The NGO Award Sub-Categories
@@ -192,6 +150,50 @@ const NGOAwardCategoryPage = () => {
           ))}
         </div>
       </div>
+      {/* Purpose and Benefits Section */}
+      <div className="bg-white w-full">
+        <div className="max-w-6xl mx-auto py-12 px-4">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6 relative inline-block">
+              Purpose
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <p className="mb-4">
+              To acknowledge the contributions of EduTech organizations that have leveraged technology to enhance
+              educational experiences and outcomes in Nigeria and across Africa. This award aims to promote further
+              innovation and investment in educational technology, highlighting the importance of EduTech in achieving
+              educational excellence.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-3xl mb-6 relative inline-block">
+              Benefits
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
+                <div>
+                  <strong>Awardees:</strong> It would provide enhanced visibility and credibility in the NGO and education sectors, opportunities for
+                  networking and collaboration with other educational leaders and stakeholders, potential for increased funding
+                  and support for their initiatives, and national recognition and prestige.
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
+                <div>
+                  <strong>Nigeria and Africa:</strong> It improves quality of education and student outcomes in Nigeria, and encourages the best
+                  practices and innovations in the NGO sector and increases progress towards achieving the SDGs related to
+                  education.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    
     </div>
   );
 };

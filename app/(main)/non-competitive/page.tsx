@@ -79,14 +79,14 @@ const Page = () => {
           onTimeUpdate={handleTimeUpdate}
           targetDateProp="2025-09-10T19:55:00Z"
         /> */}
-
+        <Category categoryData={categoryData} head={title} />
         {/* Enhanced Non-Competitive Awards Section */}
         <NonCompetitiveAwards />
 
         {/* <PlatinumOverview /> */}
         <Whynominate />
         <HowToNominate />
-        <Category categoryData={categoryData} head={title} />
+        
       </main>
     </>
   );

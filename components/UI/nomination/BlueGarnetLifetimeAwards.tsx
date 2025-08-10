@@ -84,7 +84,7 @@ const BlueGarnetLifetimeAwards = () => {
               
               {/* Criteria Table */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 inline-block text-transparent bg-clip-text mb-6 flex items-center">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 text-transparent bg-clip-text mb-6 flex items-center">
                   <Award className="w-6 h-6 text-blue-400 mr-3" />
                   Award Criteria & Details
                 </h3>
