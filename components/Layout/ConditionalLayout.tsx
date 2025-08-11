@@ -5,6 +5,7 @@ import { useAuthContext } from '@/lib/context/AuthContext';
 import PublicLayout from './PublicLayout';
 import AuthenticatedLayout from './AuthenticatedLayout';
 import LoadingSpinner from '@/components/Common/LoadingSpinner';
+import { useScrollToTop } from '@/lib/hooks/useScrollToTop';
 
 interface ConditionalLayoutProps {
   children: React.ReactNode;
@@ -16,6 +17,9 @@ const ConditionalLayout: React.FC<ConditionalLayoutProps> = ({
   forcePublic = false 
 }) => {
   const { isAuthenticated, isLoading } = useAuthContext();
+  
+  // Automatically scroll to top on route changes
+  useScrollToTop();
 
   // Show loading spinner while determining authentication state
   if (isLoading) {

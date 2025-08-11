@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll restoration and smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure pages start at the top */
+body {
+  overflow-x: hidden;
+}
+
+/* Fix for Next.js scroll restoration */
+#__next {
+  isolation: isolate;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
