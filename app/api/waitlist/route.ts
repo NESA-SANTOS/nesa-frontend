@@ -4,6 +4,10 @@ import Waitlist from '@/lib/models/Waitlist';
 import googleSheetsService from '@/lib/services/googleSheetsService';
 import { DatabaseError, ExternalServiceError } from '@/lib/utils/errorHandler';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
 export async function POST(request: NextRequest) {
   let requestBody: any;
   

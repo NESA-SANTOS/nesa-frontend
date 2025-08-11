@@ -2,7 +2,10 @@ import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
+// Don't throw error during build time if MONGODB_URI is not available
+const isBuildTime = process.env.NEXT_PHASE === 'phase-production-build';
+
+if (!MONGODB_URI && !isBuildTime) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
@@ -23,6 +26,16 @@ if (!global.mongoose) {
 }
 
 async function connectDB(): Promise<typeof mongoose> {
+  // During build time, don't attempt to connect to database
+  if (isBuildTime) {
+    throw new Error('Database connection not available during build time');
+  }
+
+  // Check if MONGODB_URI is available at runtime
+  if (!MONGODB_URI) {
+    throw new Error('Please define the MONGODB_URI environment variable');
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -36,7 +49,7 @@ async function connectDB(): Promise<typeof mongoose> {
       family: 4, // Use IPv4, skip trying IPv6
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       console.log('✅ Connected to MongoDB');
       return mongoose;
     }).catch((error) => {

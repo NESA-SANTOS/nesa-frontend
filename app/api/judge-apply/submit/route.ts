@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { judgeVerificationEmailTemplate, sendEmail } from '@/lib/templates/emailTemplates';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 // Mock database - In production, replace with actual database
 let judgeApplications: any[] = [];
 

@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 // Mock GFA Wallet data - In production, this would be replaced with actual wallet service
 const mockWalletData: { [key: string]: any } = {
   'user123': {

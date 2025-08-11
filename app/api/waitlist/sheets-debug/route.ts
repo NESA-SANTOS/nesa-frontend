@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import googleSheetsService from '@/lib/services/googleSheetsService';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 export async function GET(request: NextRequest) {
   try {
     const debugInfo: any = {

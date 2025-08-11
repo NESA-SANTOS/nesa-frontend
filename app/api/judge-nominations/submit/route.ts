@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 // Mock database for judge nominations
 let judgeNominations: any[] = [];
 

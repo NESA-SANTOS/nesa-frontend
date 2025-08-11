@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 // Mock database - In production, this would be replaced with actual database
 let endorsements: any[] = [];
 

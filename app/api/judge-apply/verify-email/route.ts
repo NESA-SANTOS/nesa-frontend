@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { judgeApprovalEmailTemplate, sendEmail } from '@/lib/templates/emailTemplates';
 
+// Route segment config - prevent static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = false;
+
+
 // Mock database - In production, replace with actual database
 // This should be the same reference as in submit/route.ts
 // In production, this would be a shared database connection
