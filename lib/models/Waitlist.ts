@@ -43,6 +43,7 @@ const WaitlistSchema = new Schema<IWaitlist>({
       'join_nesa_team',
       'apply_nrc_volunteer',
       'get_gala_ticket',
+      'buy_merchandise',
       'donate'
     ]
   }],

@@ -17,7 +17,8 @@ import {
   ArrowLeft,
   Sparkles,
   Heart,
-  Star
+  Star,
+  ShoppingCart
 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -34,6 +35,8 @@ import {
 } from '@/lib/utils/errorHandler';
 import styles from './waitlist.module.css';
 import { useScrollToTopOnMount } from '@/lib/hooks/useScrollToTop';
+import { id } from 'zod/v4/locales';
+import { Description } from '@headlessui/react';
 
 // Validation schema
 const waitlistSchema = z.object({
@@ -102,12 +105,20 @@ const categories = [
     color: 'from-cyan-500 to-cyan-600'
   },
   {
+    id: 'buy_merchandise',
+    label: 'Buy Merchandise',
+    description: 'Get exclusive NESA-Africa merchandise',
+    icon: <ShoppingCart className='w-5 h-5'/>,
+    color: 'from-indigo-500 to indigo-600'
+  },
+  {
     id: 'get_gala_ticket',
     label: 'Get Gala Ticket',
     description: 'Attend the prestigious NESA-Africa Awards Gala',
     icon: <Star className="w-5 h-5" />,
     color: 'from-yellow-500 to-yellow-600'
   },
+  
   {
     id: 'donate',
     label: 'Donate',

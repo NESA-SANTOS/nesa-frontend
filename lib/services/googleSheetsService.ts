@@ -328,6 +328,7 @@ class GoogleSheetsService {
         'join_nesa_team': 'Join NESA Team',
         'apply_nrc_volunteer': 'Apply as NRC Volunteer',
         'get_gala_ticket': 'Get Gala Ticket',
+        'buy_merchandise': 'Buy Merchandise',
         'donate': 'Donate'
       };
 
